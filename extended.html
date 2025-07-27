@@ -60,13 +60,16 @@
     .print-button:hover {
       background-color: #0056b3;
     }
+    /* Hide only when printing */
     @media print {
-      nav, .print-button, img, ol, p, h3 { display: none; }
-      body { background: white; }
+      nav, .print-button { display: none; }
       h2 { color: black; }
       ul { list-style-type: none; padding: 0; }
       ul li::before { content: "☐ "; }
+      .instructions, .photos { display: none !important; }
     }
+    .instructions { margin-top: 5px; font-size: 0.95em; color: #333; }
+    .photos img { max-width: 300px; display: block; margin-top: 5px; }
   </style>
 </head>
 <body>
@@ -90,10 +93,25 @@
     <main>
       <h2>Appliances & Utilities</h2>
       <ul>
-        <li>Turn off ice makers</li>
-        <li>Turn off the main water valve</li>
-        <li>Turn off the hot water heater</li>
-        <li>Set A/C to 74 degrees</li>
+        <li>
+          Turn off ice makers
+          <div class="instructions">How to turn off the refrigerator and undercounter ice makers...</div>
+          <div class="photos"><img src="images/FridgeMaker.JPEG"><img src="images/Ice_Maker.JPEG"></div>
+        </li>
+        <li>
+          Turn off the main water valve
+          <div class="instructions">How to turn off the main water valve...</div>
+          <div class="photos"><img src="images/Water_ON.JPEG"><img src="images/Water_OFF.JPEG"></div>
+        </li>
+        <li>
+          Turn off the hot water heater
+          <div class="instructions">How to turn off the hot water heater...</div>
+          <div class="photos"><img src="images/Water_Heater.JPEG"></div>
+        </li>
+        <li>
+          Set A/C to 74 degrees
+          <div class="photos"><img src="images/Thermostat.JPEG"></div>
+        </li>
         <li>Turn off lights</li>
         <li>Run all ceiling fans</li>
         <li>Empty Fridge and Freezer</li>
@@ -156,3 +174,4 @@
   </div>
 </body>
 </html>
+
