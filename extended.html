@@ -1,222 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extended Departure Checklist</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #e9ecef;
-            color: #343a40;
-        }
-        .content {
-            margin: 20px auto;
-            max-width: 800px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li a {
-            color: #ffffff;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        nav {
-            background-color: #007bff;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #0056b3;
-        }
-        h2 {
-            color: #0056b3;
-        }
-        .ice-maker-section img,
-        .water-valve-section img,
-        .hot-water-section img {
-            max-width: 300px;
-            display: inline-block;
-            margin: 10px;
-        }
-        .thermostat-img {
-            max-width: 250px;
-            height: auto;
-        }
-        .image-label {
-            display: block;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extended Departure Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #e9ecef;
+      color: #343a40;
+    }
+    .content {
+      margin: 20px auto;
+      max-width: 800px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav {
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #0056b3;
+    }
+    h2 {
+      color: #0056b3;
+    }
+    .print-button {
+      display: block;
+      margin: 10px auto 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .print-button:hover {
+      background-color: #0056b3;
+    }
+    @media print {
+      nav, .print-button, img, ol, p, h3 { display: none; }
+      body { background: white; }
+      h2 { color: black; }
+      ul { list-style-type: none; padding: 0; }
+      ul li::before { content: "☐ "; }
+    }
+  </style>
 </head>
 <body>
-<div class="content">
+  <div class="content">
     <header>
-        <h1>Extended Departure Checklist</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="24hour.html">24-Hour Checklist</a></li>
-                <li><a href="general.html">General Information</a></li>
-                <li><a href="rules.html">Rules & Guidelines</a></li>
-                <li><a href="emergency.html">Emergency Information</a></li>
-                <li><a href="extras.html">Extras & Tips</a></li>
-            </ul>
-        </nav>
+      <h1>Extended Departure Checklist</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="24hour.html">24-Hour Checklist</a></li>
+          <li><a href="general.html">General Information</a></li>
+          <li><a href="rules.html">Rules & Guidelines</a></li>
+          <li><a href="emergency.html">Emergency Information</a></li>
+          <li><a href="extras.html">Extras & Tips</a></li>
+        </ul>
+      </nav>
     </header>
 
+    <button class="print-button" onclick="window.print()">Print Checklist</button>
+
     <main>
-        <h2>Appliances & Utilities</h2>
-        <ul>
-            <li>
-                <strong>Turn off ice makers:</strong>
-                <div class="ice-maker-section">
-                    <h3>Refrigerator Ice Maker</h3>
-                    <p><strong>How to Turn Off the Ice Makers on This Samsung Refrigerator</strong></p>
-                    <ol>
-                        <li>Locate the control panel on the refrigerator door (see photo for reference).</li>
-                        <li>Press and hold the "Door Alarm" button until you hear a beep.</li>
-                        <li>Press the "Ice Maker" button repeatedly until both "Cubed Ice On" and "Ice Bites On" lights turn off.</li>
-                        <li>Once both lights are off, the ice makers are now turned off.</li>
-                        <li>To turn the ice makers back on, repeat the same steps until the desired ice options light up again.</li>
-                    </ol>
-                    <img src="images/FridgeMaker.JPEG" alt="Samsung Refrigerator Ice Maker Controls">
-                </div>
+      <h2>Appliances & Utilities</h2>
+      <ul>
+        <li>Turn off ice makers</li>
+        <li>Turn off the main water valve</li>
+        <li>Turn off the hot water heater</li>
+        <li>Set A/C to 74 degrees</li>
+        <li>Turn off lights</li>
+        <li>Run all ceiling fans</li>
+        <li>Empty Fridge and Freezer</li>
+        <li>Empty Dishwasher</li>
+      </ul>
 
-                <div class="ice-maker-section">
-                    <h3>Under Counter Ice Maker</h3>
-                    <p><strong>How to Turn Off the KitchenAid Undercounter Ice Maker</strong></p>
-                    <ol>
-                        <li>Push on the top of the clear front panel to open the access door.</li>
-                        <li>Inside, locate the control panel (see photo for reference).</li>
-                        <li>Press the "On/Off" button until the light turns off.</li>
-                        <li>Close the access door.</li>
-                        <li>The ice maker is now turned off. To turn it back on, repeat the steps and press the On/Off button again.</li>
-                    </ol>
-                    <img src="images/Ice_Maker.JPEG" alt="KitchenAid Undercounter Ice Maker Controls">
-                </div>
-            </li>
+      <h2>Household Items</h2>
+      <ul>
+        <li>Put towels and sheets in the laundry room</li>
+        <li>Take out all trash</li>
+      </ul>
 
-            <li>
-                <strong>Turn off the main water valve.</strong>
-                <div class="water-valve-section">
-                    <p><strong>How to Turn Off the Water (Laundry Room by the Hot Water Heater)</strong></p>
-                    <ol>
-                        <li>Locate the water shut-off valves in the laundry room by the hot water heater.</li>
-                        <li>First photo: Valves are in the ON position (handles in line with the pipes).</li>
-                        <li>Second photo: Valves are in the OFF position (handles turned perpendicular to the pipes).</li>
-                        <li>To turn off the water, rotate each yellow handle 90 degrees so it is perpendicular to the pipe.</li>
-                        <li>Confirm that all valves are turned so the handles are across the pipe, not in line with it.</li>
-                        <li>To turn water back on, rotate handles back in line with the pipes.</li>
-                    </ol>
-                    <div>
-                        <div style="display:inline-block; text-align:center;">
-                            <img src="images/Water_ON.JPEG" alt="Water Valve On">
-                            <span class="image-label">On</span>
-                        </div>
-                        <div style="display:inline-block; text-align:center;">
-                            <img src="images/Water_OFF.JPEG" alt="Water Valve Off">
-                            <span class="image-label">Off</span>
-                        </div>
-                    </div>
-                </div>
-            </li>
+      <h2>Doors & Security</h2>
+      <ul>
+        <li>Ensure all 3 sliding glass doors are locked</li>
+        <li>Secure windows by making sure they are locked</li>
+        <li>Turn off all lights</li>
+        <li>Set the security alarm (if we get one)</li>
+        <li>Close the Hurricane Shutters for any length June-Nov</li>
+        <li>Close the Hurricane Shutters if leaving for 3+ days not in Hurricane Season</li>
+      </ul>
 
-            <li>
-                <strong>Turn off the hot water heater.</strong>
-                <div class="hot-water-section">
-                    <p><strong>How to Turn Off the Hot Water Heater</strong></p>
-                    <ol>
-                        <li>Locate the Hot Water On/Off Switch in the laundry room by the hot water heater.</li>
-                        <li>The up position is ON and the down position is OFF.</li>
-                        <li>To turn off the hot water heater, flip the switch to the DOWN position.</li>
-                        <li>To turn it back on, flip the switch to the UP position.</li>
-                    </ol>
-                    <img src="images/Water_Heater.JPEG" alt="Hot Water Heater Switch">
-                </div>
-            </li>
+      <h2>Kitchen & Refrigerator</h2>
+      <ul>
+        <li>Remove perishable food from the refrigerator and freezer</li>
+        <li>Empty the dishwasher</li>
+        <li>Open dishwasher and washing machine doors</li>
+        <li>Unplug small appliances (e.g., coffee maker, toaster, blender)</li>
+      </ul>
 
-            <li>
-                <strong>Set A/C to 74 degrees.</strong><br>
-                <img src="images/Thermostat.JPEG" alt="Thermostat" class="thermostat-img">
-            </li>
+      <h2>Cleaning Tasks</h2>
+      <ul>
+        <li>Clean the microwave</li>
+        <li>Clean the stove, refrigerator, dishwasher, and washing machine</li>
+        <li>Run the food disposal for 30 seconds</li>
+        <li>Clean furniture</li>
+      </ul>
 
-            <li>Turn off lights</li>
-            <li>Run all ceiling fans</li>
-            <li>Empty Fridge and Freezer</li>
-            <li>Empty Dishwasher</li>
-        </ul>
+      <h2>Bathroom & Storage</h2>
+      <ul>
+        <li>Open shower doors to allow air circulation</li>
+        <li>Open closet and cabinet doors</li>
+      </ul>
 
-        <h2>Household Items</h2>
-        <ul>
-            <li>Put towels and sheets in the laundry room.</li>
-            <li>Take out all trash.</li>
-        </ul>
+      <h2>Additional Maintenance</h2>
+      <ul>
+        <li>Check smoke detectors to ensure they are operational</li>
+        <li>Check that no faucets are dripping or running</li>
+        <li>Store outdoor furniture or cushions indoors</li>
+      </ul>
 
-        <h2>Doors & Security</h2>
-        <ul>
-            <li>Ensure all 3 sliding glass doors are locked.</li>
-            <li>Secure windows by making sure they are locked.</li>
-            <li>Turn off all lights.</li>
-            <li>Set the security alarm (if we get one).</li>
-            <li>Close the Hurricane Shutters for any length June-Nov</li>
-            <li>Close the Hurricane Shutters if leaving for 3+ days not in Hurricane Season</li>
-            <img src="images/hurricane-shutters.jpg" alt="Hurricane shutters">
-        </ul>
-
-        <h2>Kitchen & Refrigerator</h2>
-        <ul>
-            <li>Remove perishable food from the refrigerator and freezer.</li>
-            <li>Empty the dishwasher.</li>
-            <li>Open dishwasher and washing machine doors.</li>
-            <li>Unplug small appliances (e.g., coffee maker, toaster, blender).</li>
-        </ul>
-
-        <h2>Cleaning Tasks</h2>
-        <ul>
-            <li>Clean the microwave</li>
-            <li>Clean the stove, refrigerator, dishwasher, and washing machine.</li>
-            <li>Run the food disposal for 30 seconds</li>
-            <li>Clean furniture.</li>
-        </ul>
-
-        <h2>Bathroom & Storage</h2>
-        <ul>
-            <li>Open shower doors to allow air circulation.</li>
-            <li>Open closet and cabinet doors.</li>
-        </ul>
-
-        <h2>Additional Maintenance</h2>
-        <ul>
-            <li>Check smoke detectors to ensure they are operational.</li>
-            <li>Check that no faucets are dripping or running.</li>
-            <li>Store outdoor furniture or cushions indoors.</li>
-        </ul>
-
-        <h2>Final Checks</h2>
-        <ul>
-            <li>Remove any personal items you don’t want left behind (e.g., toiletries, chargers).</li>
-            <li>Unplug electronics like TVs, lamps.</li>
-            <li>Do a walk-through of each room to ensure nothing has been forgotten.</li>
-            <li>Take a final photo of the condo to document its condition in case of disputes or issues.</li>
-        </ul>
+      <h2>Final Checks</h2>
+      <ul>
+        <li>Remove any personal items you don’t want left behind (e.g., toiletries, chargers)</li>
+        <li>Unplug electronics like TVs, lamps</li>
+        <li>Do a walk-through of each room to ensure nothing has been forgotten</li>
+        <li>Take a final photo of the condo to document its condition</li>
+      </ul>
     </main>
-</div>
+  </div>
 </body>
 </html>
