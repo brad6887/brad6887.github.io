@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #e9ecef;
+      color: #343a40;
+    }
+    .content {
+      margin: 20px auto;
+      max-width: 900px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    nav {
+      background-color: #007bff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      color: #0056b3;
+      text-align: center;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tab-button {
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tab-button.active {
+      background: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background: #f8f9fa;
+    }
+    .print-button {
+      display: block;
+      margin: 10px auto 20px auto;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @media print {
+      nav, .tabs, .print-button { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <header>
+      <h1>Maintenance Checklist</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="extended.html">Extended Departure</a></li>
+          <li><a href="24hour.html">24-Hour Checklist</a></li>
+          <li><a href="general.html">General Information</a></li>
+          <li><a href="rules.html">Rules & Guidelines</a></li>
+          <li><a href="emergency.html">Emergency Information</a></li>
+          <li><a href="extras.html">Extras & Tips</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-month="August">August</button>
+      <button class="tab-button" data-month="September">September</button>
+      <button class="tab-button" data-month="October">October</button>
+      <button class="tab-button" data-month="November">November</button>
+      <button class="tab-button" data-month="December">December</button>
+    </div>
+
+    <button class="print-button" onclick="window.print()">Print Checklist</button>
+
+    <div id="checklist-container"></div>
+
+    <h2>Full Maintenance Reference</h2>
+    <table id="reference-table">
+      <thead>
+        <tr>
+          <th>Item / Area</th>
+          <th>Task / Description</th>
+          <th>Frequency</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script>
+    const data = {
+      "August": [
+        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
+        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
+        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
+      ],
+      "September": [
+        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
+        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
+        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
+      ],
+      "October": [
+        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
+        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
+        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
+      ],
+      "November": [
+        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
+        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
+        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
+      ],
+      "December": [
+        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
+        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
+        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
+      ]
+    };
+
+    function loadMonth(month) {
+      const container = document.getElementById("checklist-container");
+      container.innerHTML = "";
+      const table = document.createElement("table");
+      table.innerHTML = `
+        <thead>
+          <tr><th>Done</th><th>Item</th><th>Task</th><th>Date Completed</th><th>Notes</th></tr>
+        </thead>
+        <tbody></tbody>`;
+
+      data[month].forEach((task, i) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><input type='checkbox' data-id='${month}-${i}-check'></td>
+          <td>${task.item}</td>
+          <td>${task.task}</td>
+          <td><input type='date' data-id='${month}-${i}-date'></td>
+          <td>${task.notes}</td>`;
+        table.querySelector("tbody").appendChild(row);
+      });
+      container.appendChild(table);
+      restoreState(month);
+    }
+
+    function restoreState(month) {
+      data[month].forEach((_, i) => {
+        const check = document.querySelector(`[data-id='${month}-${i}-check']`);
+        const date = document.querySelector(`[data-id='${month}-${i}-date']`);
+        check.checked = localStorage.getItem(`${month}-${i}-check`) === "true";
+        date.value = localStorage.getItem(`${month}-${i}-date`) || "";
+
+        check.addEventListener("change", () => {
+          localStorage.setItem(`${month}-${i}-check`, check.checked);
+        });
+        date.addEventListener("change", () => {
+          localStorage.setItem(`${month}-${i}-date", date.value);
+        });
+      });
+    }
+
+    document.querySelectorAll(".tab-button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        loadMonth(btn.dataset.month);
+      });
+    });
+
+    // Initial load
+    loadMonth("August");
+
+    // Populate reference table (you can replace with full condo log data)
+    const referenceData = [
+      { item: "AC Unit", task: "Replace air filters, inspect drainage, clean vents", frequency: "Every 3 months", notes: "Use MERV 8 filters" },
+      { item: "Beverage Cooler", task: "Clean condenser coils and check temp", frequency: "Every 6 months", notes: "" },
+      { item: "Beverage Fridge", task: "Check and clean door gasket", frequency: "Every 6 months", notes: "Ensure tight seal" }
+    ];
+
+    const refTableBody = document.querySelector("#reference-table tbody");
+    referenceData.forEach(r => {
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${r.item}</td><td>${r.task}</td><td>${r.frequency}</td><td>${r.notes}</td>`;
+      refTableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
