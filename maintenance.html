@@ -5,89 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maintenance Checklist</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #e9ecef;
-      color: #343a40;
-    }
-    .content {
-      margin: 20px auto;
-      max-width: 900px;
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: space-around;
-      padding: 0;
-      margin: 0;
-    }
-    nav ul li a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    nav {
-      background-color: #007bff;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    h1, h2 {
-      color: #0056b3;
-      text-align: center;
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .tab-button {
-      padding: 8px 16px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .tab-button.active {
-      background: #0056b3;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background: #f8f9fa;
-    }
-    .print-button {
-      display: block;
-      margin: 10px auto 20px auto;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    @media print {
-      nav, .tabs, .print-button { display: none; }
-    }
+    body {font-family: Arial, sans-serif;line-height: 1.6;margin: 0;padding: 0;background-color: #e9ecef;color: #343a40;}
+    .content {margin: 20px auto;max-width: 900px;background: #ffffff;padding: 20px;border-radius: 8px;box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+    nav ul {list-style-type: none;display: flex;justify-content: space-around;padding: 0;margin: 0;}
+    nav ul li a {color: #ffffff;font-weight: bold;text-decoration: none;}
+    nav {background-color: #007bff;padding: 10px;border-radius: 8px;margin-bottom: 20px;}
+    h1, h2 {color: #0056b3;text-align: center;}
+    .tabs {display: flex;justify-content: center;margin-bottom: 20px;flex-wrap: wrap;gap: 10px;}
+    .tab-button {padding: 8px 16px;background: #007bff;color: white;border: none;border-radius: 6px;cursor: pointer;}
+    .tab-button.active {background: #0056b3;}
+    table {width: 100%;border-collapse: collapse;margin-bottom: 30px;}
+    th, td {border: 1px solid #ccc;padding: 8px;text-align: left;}
+    th {background: #f8f9fa;}
+    .print-button {display: block;margin: 10px auto 20px auto;padding: 10px 20px;background-color: #007bff;color: white;border: none;border-radius: 6px;font-size: 16px;cursor: pointer;}
+    @media print {nav, .tabs, .print-button { display: none; }}
   </style>
 </head>
 <body>
@@ -134,7 +65,973 @@
   </div>
 
   <script>
-    const data = %s;
+    const data = {
+  "August": [
+    {
+      "item": "Beverage Fridge",
+      "task": "Check temperature setting and adjust if needed",
+      "notes": "Target 34\u201345\u00b0F"
+    },
+    {
+      "item": "Coffee Maker",
+      "task": "Descale with vinegar or coffee machine cleaner",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean door seals and edges",
+      "notes": "Use damp cloth and mild detergent"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter",
+      "notes": "Rinse under warm water; scrub if needed"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Run cleaning cycle with dishwasher cleaner",
+      "notes": "Use Affresh or vinegar"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Wipe control panel and exterior",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check for unusual noise or vibration",
+      "notes": "Investigate rattling or thumping"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean inside dryer drum",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean moisture sensors",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Dryer (if applicable)",
+      "task": "Clean lint trap, inspect vent duct",
+      "notes": ""
+    },
+    {
+      "item": "Fridge \u2013 Ice Maker",
+      "task": "Check ice production & clean bin",
+      "notes": ""
+    },
+    {
+      "item": "Garbage Disposal",
+      "task": "Run with ice and lemon peels",
+      "notes": "Sharpens and deodorizes"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Check for unusual noise or leaks",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Check for unusual noise or sparking",
+      "notes": "Stop use and inspect if any issues"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean exterior and control panel",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean grease filter",
+      "notes": "Wash in warm soapy water or dishwasher"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean interior and vents",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Inspect turntable and roller ring",
+      "notes": "Clean and check for smooth rotation"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean control panel",
+      "notes": "Wipe gently with damp cloth"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven door (interior and exterior)",
+      "notes": "Use mild soap or vinegar solution"
+    },
+    {
+      "item": "Range Hood Filter",
+      "task": "Clean grease filter",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Check for noise or temperature issues",
+      "notes": "Monitor for unusual sounds"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean ice and water dispenser",
+      "notes": "Wipe nozzle area and tray"
+    },
+    {
+      "item": "Toaster",
+      "task": "Remove crumbs and inspect heating elements",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean detergent drawer and compartments",
+      "notes": "Rinse under warm water"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run cleaning cycle with washer cleaner",
+      "notes": "Especially important if front-load"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run self-clean cycle (Drum Clean+)",
+      "notes": "Run empty with no detergent"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Wipe exterior and control panel",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Hurricane Shutters",
+      "task": "Cycle up and down to self lubricate",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter, spray arms, run vinegar cycle",
+      "notes": ""
+    },
+    {
+      "item": "Exhaust Fans",
+      "task": "Remove dust, test operation",
+      "notes": "Bathroom & kitchen"
+    },
+    {
+      "item": "Ice Maker (Standalone)",
+      "task": "Clean water line and ice tray",
+      "notes": ""
+    },
+    {
+      "item": "Oven / Stove",
+      "task": "Deep clean interior, check burners",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean drain pump filter",
+      "notes": "Remove lint and debris from filter"
+    },
+    {
+      "item": "Fridge \u2013 Water Filter",
+      "task": "Replace water filter",
+      "notes": "Use model XYZ-123 filter"
+    },
+    {
+      "item": "Microwave",
+      "task": "Replace charcoal filter",
+      "notes": "For recirculating mode only"
+    },
+    {
+      "item": "Showerhead",
+      "task": "Descale with vinegar soak",
+      "notes": ""
+    },
+    {
+      "item": "Hurricane Kit",
+      "task": "Check Expiration dates",
+      "notes": ""
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Inspect and clean drain system and pump",
+      "notes": ""
+    },
+    {
+      "item": "Under-sink Plumbing",
+      "task": "Check for leaks or corrosion",
+      "notes": ""
+    }
+  ],
+  "September": [
+    {
+      "item": "Beverage Fridge",
+      "task": "Check temperature setting and adjust if needed",
+      "notes": "Target 34\u201345\u00b0F"
+    },
+    {
+      "item": "Coffee Maker",
+      "task": "Descale with vinegar or coffee machine cleaner",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean door seals and edges",
+      "notes": "Use damp cloth and mild detergent"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter",
+      "notes": "Rinse under warm water; scrub if needed"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Run cleaning cycle with dishwasher cleaner",
+      "notes": "Use Affresh or vinegar"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Wipe control panel and exterior",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check for unusual noise or vibration",
+      "notes": "Investigate rattling or thumping"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean inside dryer drum",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean moisture sensors",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Dryer (if applicable)",
+      "task": "Clean lint trap, inspect vent duct",
+      "notes": ""
+    },
+    {
+      "item": "Fridge \u2013 Ice Maker",
+      "task": "Check ice production & clean bin",
+      "notes": ""
+    },
+    {
+      "item": "Garbage Disposal",
+      "task": "Run with ice and lemon peels",
+      "notes": "Sharpens and deodorizes"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Check for unusual noise or leaks",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Check for unusual noise or sparking",
+      "notes": "Stop use and inspect if any issues"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean exterior and control panel",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean grease filter",
+      "notes": "Wash in warm soapy water or dishwasher"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean interior and vents",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Inspect turntable and roller ring",
+      "notes": "Clean and check for smooth rotation"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean control panel",
+      "notes": "Wipe gently with damp cloth"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven door (interior and exterior)",
+      "notes": "Use mild soap or vinegar solution"
+    },
+    {
+      "item": "Range Hood Filter",
+      "task": "Clean grease filter",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Check for noise or temperature issues",
+      "notes": "Monitor for unusual sounds"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean ice and water dispenser",
+      "notes": "Wipe nozzle area and tray"
+    },
+    {
+      "item": "Toaster",
+      "task": "Remove crumbs and inspect heating elements",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean detergent drawer and compartments",
+      "notes": "Rinse under warm water"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run cleaning cycle with washer cleaner",
+      "notes": "Especially important if front-load"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run self-clean cycle (Drum Clean+)",
+      "notes": "Run empty with no detergent"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Wipe exterior and control panel",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Hurricane Shutters",
+      "task": "Cycle up and down to self lubricate",
+      "notes": ""
+    },
+    {
+      "item": "AC Unit",
+      "task": "Replace air filters, inspect drainage, clean vents",
+      "notes": "Use MERV 8 filters"
+    },
+    {
+      "item": "Beverage Cooler",
+      "task": "Clean condenser coils and check temp",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean spray arms",
+      "notes": "Rinse and clear clogs with toothpick"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Replace water filter",
+      "notes": "Use approved Whirlpool filter"
+    },
+    {
+      "item": "Outdoor Furniture",
+      "task": "Clean surfaces and inspect cushions or frame",
+      "notes": ""
+    },
+    {
+      "item": "Oven",
+      "task": "Inspect oven door gasket/seal",
+      "notes": "Replace if cracked or torn"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean air filter",
+      "notes": "Clean or replace if reusable"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Replace water filter",
+      "notes": "Use Samsung filter HAF-QIN"
+    },
+    {
+      "item": "Hurricane Kit",
+      "task": "Test Radio",
+      "notes": ""
+    },
+    {
+      "item": "Beverage Fridge",
+      "task": "Ensure proper leveling",
+      "notes": "Prevents door misalignment"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check power cord and plug",
+      "notes": "Inspect for damage"
+    },
+    {
+      "item": "Shutters",
+      "task": "Lubricate tracks, check for damage",
+      "notes": "Especially before hurricane season"
+    }
+  ],
+  "October": [
+    {
+      "item": "Beverage Fridge",
+      "task": "Check temperature setting and adjust if needed",
+      "notes": "Target 34\u201345\u00b0F"
+    },
+    {
+      "item": "Coffee Maker",
+      "task": "Descale with vinegar or coffee machine cleaner",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean door seals and edges",
+      "notes": "Use damp cloth and mild detergent"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter",
+      "notes": "Rinse under warm water; scrub if needed"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Run cleaning cycle with dishwasher cleaner",
+      "notes": "Use Affresh or vinegar"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Wipe control panel and exterior",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check for unusual noise or vibration",
+      "notes": "Investigate rattling or thumping"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean inside dryer drum",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean moisture sensors",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Dryer (if applicable)",
+      "task": "Clean lint trap, inspect vent duct",
+      "notes": ""
+    },
+    {
+      "item": "Fridge \u2013 Ice Maker",
+      "task": "Check ice production & clean bin",
+      "notes": ""
+    },
+    {
+      "item": "Garbage Disposal",
+      "task": "Run with ice and lemon peels",
+      "notes": "Sharpens and deodorizes"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Check for unusual noise or leaks",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Check for unusual noise or sparking",
+      "notes": "Stop use and inspect if any issues"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean exterior and control panel",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean grease filter",
+      "notes": "Wash in warm soapy water or dishwasher"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean interior and vents",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Inspect turntable and roller ring",
+      "notes": "Clean and check for smooth rotation"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean control panel",
+      "notes": "Wipe gently with damp cloth"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven door (interior and exterior)",
+      "notes": "Use mild soap or vinegar solution"
+    },
+    {
+      "item": "Range Hood Filter",
+      "task": "Clean grease filter",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Check for noise or temperature issues",
+      "notes": "Monitor for unusual sounds"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean ice and water dispenser",
+      "notes": "Wipe nozzle area and tray"
+    },
+    {
+      "item": "Toaster",
+      "task": "Remove crumbs and inspect heating elements",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean detergent drawer and compartments",
+      "notes": "Rinse under warm water"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run cleaning cycle with washer cleaner",
+      "notes": "Especially important if front-load"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run self-clean cycle (Drum Clean+)",
+      "notes": "Run empty with no detergent"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Wipe exterior and control panel",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Hurricane Shutters",
+      "task": "Cycle up and down to self lubricate",
+      "notes": ""
+    },
+    {
+      "item": "Beverage Fridge",
+      "task": "Check and clean door gasket",
+      "notes": "Ensure tight seal"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Inspect racks and tines for rust or wear",
+      "notes": "Replace if damaged"
+    },
+    {
+      "item": "Oven",
+      "task": "Check racks and guides for wear",
+      "notes": "Clean and check for rust or bends"
+    },
+    {
+      "item": "Oven",
+      "task": "Run self-cleaning cycle",
+      "notes": "Remove racks first; ventilate area"
+    },
+    {
+      "item": "Refrigerator Coils",
+      "task": "Vacuum behind fridge",
+      "notes": "Can improve efficiency"
+    },
+    {
+      "item": "Smoke Detectors",
+      "task": "Test and replace batteries",
+      "notes": ""
+    },
+    {
+      "item": "Hurricane Kit",
+      "task": "Update insurance policies, ID copies, emergency contact list",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean condenser coils",
+      "notes": "Vacuum behind unit"
+    }
+  ],
+  "November": [
+    {
+      "item": "Beverage Fridge",
+      "task": "Check temperature setting and adjust if needed",
+      "notes": "Target 34\u201345\u00b0F"
+    },
+    {
+      "item": "Coffee Maker",
+      "task": "Descale with vinegar or coffee machine cleaner",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean door seals and edges",
+      "notes": "Use damp cloth and mild detergent"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter",
+      "notes": "Rinse under warm water; scrub if needed"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Run cleaning cycle with dishwasher cleaner",
+      "notes": "Use Affresh or vinegar"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Wipe control panel and exterior",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check for unusual noise or vibration",
+      "notes": "Investigate rattling or thumping"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean inside dryer drum",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean moisture sensors",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Dryer (if applicable)",
+      "task": "Clean lint trap, inspect vent duct",
+      "notes": ""
+    },
+    {
+      "item": "Fridge \u2013 Ice Maker",
+      "task": "Check ice production & clean bin",
+      "notes": ""
+    },
+    {
+      "item": "Garbage Disposal",
+      "task": "Run with ice and lemon peels",
+      "notes": "Sharpens and deodorizes"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Check for unusual noise or leaks",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Check for unusual noise or sparking",
+      "notes": "Stop use and inspect if any issues"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean exterior and control panel",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean grease filter",
+      "notes": "Wash in warm soapy water or dishwasher"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean interior and vents",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Inspect turntable and roller ring",
+      "notes": "Clean and check for smooth rotation"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean control panel",
+      "notes": "Wipe gently with damp cloth"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven door (interior and exterior)",
+      "notes": "Use mild soap or vinegar solution"
+    },
+    {
+      "item": "Range Hood Filter",
+      "task": "Clean grease filter",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Check for noise or temperature issues",
+      "notes": "Monitor for unusual sounds"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean ice and water dispenser",
+      "notes": "Wipe nozzle area and tray"
+    },
+    {
+      "item": "Toaster",
+      "task": "Remove crumbs and inspect heating elements",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean detergent drawer and compartments",
+      "notes": "Rinse under warm water"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run cleaning cycle with washer cleaner",
+      "notes": "Especially important if front-load"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run self-clean cycle (Drum Clean+)",
+      "notes": "Run empty with no detergent"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Wipe exterior and control panel",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Hurricane Shutters",
+      "task": "Cycle up and down to self lubricate",
+      "notes": ""
+    },
+    {
+      "item": "Beverage Fridge",
+      "task": "Clean interior with mild soap and water",
+      "notes": "Wipe shelves and interior walls"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven interior",
+      "notes": "Use steam-clean or self-clean mode"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean door seals",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean interior",
+      "notes": "Use mild cleaner"
+    },
+    {
+      "item": "Faucets / Aerators",
+      "task": "Clean to ensure flow",
+      "notes": ""
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Clean condenser coils and front grille",
+      "notes": ""
+    },
+    {
+      "item": "Leather Couch",
+      "task": "Condition leather with appropriate cleaner",
+      "notes": "Use leather-safe conditioner"
+    },
+    {
+      "item": "Gun Safe",
+      "task": "Test locking mechanism, replace batteries",
+      "notes": "4 AAA batteries "
+    },
+    {
+      "item": "Water Heater",
+      "task": "Flush to remove sediment, check pressure relief valve",
+      "notes": ""
+    }
+  ],
+  "December": [
+    {
+      "item": "Beverage Fridge",
+      "task": "Check temperature setting and adjust if needed",
+      "notes": "Target 34\u201345\u00b0F"
+    },
+    {
+      "item": "Coffee Maker",
+      "task": "Descale with vinegar or coffee machine cleaner",
+      "notes": ""
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean door seals and edges",
+      "notes": "Use damp cloth and mild detergent"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Clean filter",
+      "notes": "Rinse under warm water; scrub if needed"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Run cleaning cycle with dishwasher cleaner",
+      "notes": "Use Affresh or vinegar"
+    },
+    {
+      "item": "Dishwasher",
+      "task": "Wipe control panel and exterior",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Dryer",
+      "task": "Check for unusual noise or vibration",
+      "notes": "Investigate rattling or thumping"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean inside dryer drum",
+      "notes": "Use mild detergent"
+    },
+    {
+      "item": "Dryer",
+      "task": "Clean moisture sensors",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Dryer (if applicable)",
+      "task": "Clean lint trap, inspect vent duct",
+      "notes": ""
+    },
+    {
+      "item": "Fridge \u2013 Ice Maker",
+      "task": "Check ice production & clean bin",
+      "notes": ""
+    },
+    {
+      "item": "Garbage Disposal",
+      "task": "Run with ice and lemon peels",
+      "notes": "Sharpens and deodorizes"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Check for unusual noise or leaks",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Check for unusual noise or sparking",
+      "notes": "Stop use and inspect if any issues"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean exterior and control panel",
+      "notes": "Do not spray cleaner directly"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean grease filter",
+      "notes": "Wash in warm soapy water or dishwasher"
+    },
+    {
+      "item": "Microwave",
+      "task": "Clean interior and vents",
+      "notes": ""
+    },
+    {
+      "item": "Microwave",
+      "task": "Inspect turntable and roller ring",
+      "notes": "Clean and check for smooth rotation"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean control panel",
+      "notes": "Wipe gently with damp cloth"
+    },
+    {
+      "item": "Oven",
+      "task": "Clean oven door (interior and exterior)",
+      "notes": "Use mild soap or vinegar solution"
+    },
+    {
+      "item": "Range Hood Filter",
+      "task": "Clean grease filter",
+      "notes": ""
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Check for noise or temperature issues",
+      "notes": "Monitor for unusual sounds"
+    },
+    {
+      "item": "Refrigerator",
+      "task": "Clean ice and water dispenser",
+      "notes": "Wipe nozzle area and tray"
+    },
+    {
+      "item": "Toaster",
+      "task": "Remove crumbs and inspect heating elements",
+      "notes": ""
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Clean detergent drawer and compartments",
+      "notes": "Rinse under warm water"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run cleaning cycle with washer cleaner",
+      "notes": "Especially important if front-load"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Run self-clean cycle (Drum Clean+)",
+      "notes": "Run empty with no detergent"
+    },
+    {
+      "item": "Washing Machine",
+      "task": "Wipe exterior and control panel",
+      "notes": "Use soft cloth and mild soap"
+    },
+    {
+      "item": "Hurricane Shutters",
+      "task": "Cycle up and down to self lubricate",
+      "notes": ""
+    },
+    {
+      "item": "Beverage Fridge",
+      "task": "Clean condenser coils",
+      "notes": "Use vacuum or coil brush"
+    },
+    {
+      "item": "Dryer",
+      "task": "Inspect door seal and hinges",
+      "notes": "Ensure seal and alignment"
+    },
+    {
+      "item": "Ice Maker",
+      "task": "Clean interior and sanitize with bleach solution",
+      "notes": "Use 1 tbsp bleach in 1 gal warm water"
+    },
+    {
+      "item": "Safe",
+      "task": "Test locking mechanism, replace batteries",
+      "notes": "Check manual for battery type"
+    },
+    {
+      "item": "Hurricane Kit",
+      "task": "Check flashlights ",
+      "notes": "D batteries, charge power pack"
+    },
+    {
+      "item": "Toilet",
+      "task": "Check fill valve for slow leaks",
+      "notes": ""
+    }
+  ]
+};
 
     function loadMonth(month) {
       const container = document.getElementById("checklist-container");
@@ -186,7 +1083,482 @@
 
     loadMonth("August");
 
-    const referenceData = %s;
+    const referenceData = [
+  {
+    "item": "AC Unit",
+    "task": "Replace air filters, inspect drainage, clean vents",
+    "frequency": "Every 3 months",
+    "notes": "Use MERV 8 filters"
+  },
+  {
+    "item": "Beverage Cooler",
+    "task": "Clean condenser coils and check temp",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Beverage Fridge",
+    "task": "Check and clean door gasket",
+    "frequency": "Every 6 months",
+    "notes": "Ensure tight seal"
+  },
+  {
+    "item": "Beverage Fridge",
+    "task": "Check temperature setting and adjust if needed",
+    "frequency": "Monthly",
+    "notes": "Target 34\u201345\u00b0F"
+  },
+  {
+    "item": "Beverage Fridge",
+    "task": "Clean condenser coils",
+    "frequency": "Every 6 months",
+    "notes": "Use vacuum or coil brush"
+  },
+  {
+    "item": "Beverage Fridge",
+    "task": "Clean interior with mild soap and water",
+    "frequency": "Every 3 months",
+    "notes": "Wipe shelves and interior walls"
+  },
+  {
+    "item": "Beverage Fridge",
+    "task": "Ensure proper leveling",
+    "frequency": "Annually",
+    "notes": "Prevents door misalignment"
+  },
+  {
+    "item": "Coffee Maker",
+    "task": "Descale with vinegar or coffee machine cleaner",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Clean door seals and edges",
+    "frequency": "Monthly",
+    "notes": "Use damp cloth and mild detergent"
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Clean filter",
+    "frequency": "Monthly",
+    "notes": "Rinse under warm water; scrub if needed"
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Clean filter, spray arms, run vinegar cycle",
+    "frequency": "Every 3 months",
+    "notes": ""
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Clean spray arms",
+    "frequency": "Every 6 months",
+    "notes": "Rinse and clear clogs with toothpick"
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Inspect racks and tines for rust or wear",
+    "frequency": "Every 6 months",
+    "notes": "Replace if damaged"
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Run cleaning cycle with dishwasher cleaner",
+    "frequency": "Monthly",
+    "notes": "Use Affresh or vinegar"
+  },
+  {
+    "item": "Dishwasher",
+    "task": "Wipe control panel and exterior",
+    "frequency": "Monthly",
+    "notes": "Do not spray cleaner directly"
+  },
+  {
+    "item": "Dryer",
+    "task": "Check for unusual noise or vibration",
+    "frequency": "Monthly",
+    "notes": "Investigate rattling or thumping"
+  },
+  {
+    "item": "Dryer",
+    "task": "Check power cord and plug",
+    "frequency": "Annually",
+    "notes": "Inspect for damage"
+  },
+  {
+    "item": "Dryer",
+    "task": "Clean inside dryer drum",
+    "frequency": "Monthly",
+    "notes": "Use mild detergent"
+  },
+  {
+    "item": "Dryer",
+    "task": "Clean moisture sensors",
+    "frequency": "Monthly",
+    "notes": "Use soft cloth and mild soap"
+  },
+  {
+    "item": "Dryer",
+    "task": "Inspect door seal and hinges",
+    "frequency": "Every 6 months",
+    "notes": "Ensure seal and alignment"
+  },
+  {
+    "item": "Dryer",
+    "task": "Inspect vent and exhaust hose for lint buildup",
+    "frequency": "Every 3  months",
+    "notes": "Vacuum hose and vent cap"
+  },
+  {
+    "item": "Dryer (if applicable)",
+    "task": "Clean lint trap, inspect vent duct",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Exhaust Fans",
+    "task": "Remove dust, test operation",
+    "frequency": "Quarterly",
+    "notes": "Bathroom & kitchen"
+  },
+  {
+    "item": "Faucets / Aerators",
+    "task": "Clean to ensure flow",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Fridge \u2013 Ice Maker",
+    "task": "Check ice production & clean bin",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Fridge \u2013 Water Filter",
+    "task": "Replace water filter",
+    "frequency": "Every 6 months",
+    "notes": "Use model XYZ-123 filter"
+  },
+  {
+    "item": "Garbage Disposal",
+    "task": "Run with ice and lemon peels",
+    "frequency": "Monthly",
+    "notes": "Sharpens and deodorizes"
+  },
+  {
+    "item": "Ice Maker",
+    "task": "Check for unusual noise or leaks",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Ice Maker",
+    "task": "Clean condenser coils and front grille",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Ice Maker",
+    "task": "Clean interior and sanitize with bleach solution",
+    "frequency": "Every 6 months",
+    "notes": "Use 1 tbsp bleach in 1 gal warm water"
+  },
+  {
+    "item": "Ice Maker",
+    "task": "Inspect and clean drain system and pump",
+    "frequency": "Annually",
+    "notes": ""
+  },
+  {
+    "item": "Ice Maker",
+    "task": "Replace water filter",
+    "frequency": "Every 6 months",
+    "notes": "Use approved Whirlpool filter"
+  },
+  {
+    "item": "Ice Maker (Standalone)",
+    "task": "Clean water line and ice tray",
+    "frequency": "Every 3 months",
+    "notes": ""
+  },
+  {
+    "item": "Leather Couch",
+    "task": "Condition leather with appropriate cleaner",
+    "frequency": "Every 6 months",
+    "notes": "Use leather-safe conditioner"
+  },
+  {
+    "item": "Microwave",
+    "task": "Check for unusual noise or sparking",
+    "frequency": "Monthly",
+    "notes": "Stop use and inspect if any issues"
+  },
+  {
+    "item": "Microwave",
+    "task": "Clean exterior and control panel",
+    "frequency": "Monthly",
+    "notes": "Do not spray cleaner directly"
+  },
+  {
+    "item": "Microwave",
+    "task": "Clean grease filter",
+    "frequency": "Monthly",
+    "notes": "Wash in warm soapy water or dishwasher"
+  },
+  {
+    "item": "Microwave",
+    "task": "Clean interior and door",
+    "frequency": "Weekly",
+    "notes": "Use mild detergent and soft cloth"
+  },
+  {
+    "item": "Microwave",
+    "task": "Clean interior and vents",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Microwave",
+    "task": "Inspect turntable and roller ring",
+    "frequency": "Monthly",
+    "notes": "Clean and check for smooth rotation"
+  },
+  {
+    "item": "Microwave",
+    "task": "Replace charcoal filter",
+    "frequency": "Every 6 months",
+    "notes": "For recirculating mode only"
+  },
+  {
+    "item": "Outdoor Furniture",
+    "task": "Clean surfaces and inspect cushions or frame",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Oven",
+    "task": "Check racks and guides for wear",
+    "frequency": "Every 6 months",
+    "notes": "Clean and check for rust or bends"
+  },
+  {
+    "item": "Oven",
+    "task": "Clean control panel",
+    "frequency": "Monthly",
+    "notes": "Wipe gently with damp cloth"
+  },
+  {
+    "item": "Oven",
+    "task": "Clean oven door (interior and exterior)",
+    "frequency": "Monthly",
+    "notes": "Use mild soap or vinegar solution"
+  },
+  {
+    "item": "Oven",
+    "task": "Clean oven interior",
+    "frequency": "Every 3 months",
+    "notes": "Use steam-clean or self-clean mode"
+  },
+  {
+    "item": "Oven",
+    "task": "Inspect oven door gasket/seal",
+    "frequency": "Every 6 months",
+    "notes": "Replace if cracked or torn"
+  },
+  {
+    "item": "Oven",
+    "task": "Run self-cleaning cycle",
+    "frequency": "Every 6 months",
+    "notes": "Remove racks first; ventilate area"
+  },
+  {
+    "item": "Oven / Stove",
+    "task": "Deep clean interior, check burners",
+    "frequency": "Every 3 months",
+    "notes": ""
+  },
+  {
+    "item": "Range Hood Filter",
+    "task": "Clean grease filter",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Check for noise or temperature issues",
+    "frequency": "Monthly",
+    "notes": "Monitor for unusual sounds"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Clean air filter",
+    "frequency": "Every 6 months",
+    "notes": "Clean or replace if reusable"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Clean condenser coils",
+    "frequency": "Annually",
+    "notes": "Vacuum behind unit"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Clean door seals",
+    "frequency": "Every 3 months",
+    "notes": "Use mild detergent"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Clean ice and water dispenser",
+    "frequency": "Monthly",
+    "notes": "Wipe nozzle area and tray"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Clean interior",
+    "frequency": "Every 3 months",
+    "notes": "Use mild cleaner"
+  },
+  {
+    "item": "Refrigerator",
+    "task": "Replace water filter",
+    "frequency": "Every 6 months",
+    "notes": "Use Samsung filter HAF-QIN"
+  },
+  {
+    "item": "Refrigerator Coils",
+    "task": "Vacuum behind fridge",
+    "frequency": "Every 6 months",
+    "notes": "Can improve efficiency"
+  },
+  {
+    "item": "Gun Safe",
+    "task": "Test locking mechanism, replace batteries",
+    "frequency": "Every 6 months",
+    "notes": "4 AAA batteries "
+  },
+  {
+    "item": "Safe",
+    "task": "Test locking mechanism, replace batteries",
+    "frequency": "Every 6 months",
+    "notes": "Check manual for battery type"
+  },
+  {
+    "item": "Showerhead",
+    "task": "Descale with vinegar soak",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Shutters",
+    "task": "Lubricate tracks, check for damage",
+    "frequency": "Annually",
+    "notes": "Especially before hurricane season"
+  },
+  {
+    "item": "Smoke Detectors",
+    "task": "Test and replace batteries",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Toaster",
+    "task": "Remove crumbs and inspect heating elements",
+    "frequency": "Monthly",
+    "notes": ""
+  },
+  {
+    "item": "Toilet",
+    "task": "Check fill valve for slow leaks",
+    "frequency": "Annually",
+    "notes": ""
+  },
+  {
+    "item": "Under-sink Plumbing",
+    "task": "Check for leaks or corrosion",
+    "frequency": "Annually",
+    "notes": ""
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Clean detergent drawer and compartments",
+    "frequency": "Monthly",
+    "notes": "Rinse under warm water"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Clean door seal/gasket",
+    "frequency": "Weekly",
+    "notes": "Wipe inside seal to remove moisture and debris"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Clean drain pump filter",
+    "frequency": "Every 3 months",
+    "notes": "Remove lint and debris from filter"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Leave door open after wash",
+    "frequency": "After every use",
+    "notes": "Prevents mold and mildew buildup"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Run cleaning cycle with washer cleaner",
+    "frequency": "Monthly",
+    "notes": "Especially important if front-load"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Run self-clean cycle (Drum Clean+)",
+    "frequency": "Monthly",
+    "notes": "Run empty with no detergent"
+  },
+  {
+    "item": "Washing Machine",
+    "task": "Wipe exterior and control panel",
+    "frequency": "Monthly",
+    "notes": "Use soft cloth and mild soap"
+  },
+  {
+    "item": "Water Heater",
+    "task": "Flush to remove sediment, check pressure relief valve",
+    "frequency": "Annually",
+    "notes": ""
+  },
+  {
+    "item": "Hurricane Kit",
+    "task": "Check flashlights ",
+    "frequency": "Every 6 months",
+    "notes": "D batteries, charge power pack"
+  },
+  {
+    "item": "Hurricane Kit",
+    "task": "Check Expiration dates",
+    "frequency": "Every 6 months",
+    "notes": ""
+  },
+  {
+    "item": "Hurricane Kit",
+    "task": "Test Radio",
+    "frequency": "Every 6 Months",
+    "notes": ""
+  },
+  {
+    "item": "Hurricane Kit",
+    "task": "Update insurance policies, ID copies, emergency contact list",
+    "frequency": "Every 6 Months",
+    "notes": ""
+  },
+  {
+    "item": "Hurricane Shutters",
+    "task": "Cycle up and down to self lubricate",
+    "frequency": "Monthly",
+    "notes": ""
+  }
+];
 
     const refTableBody = document.querySelector("#reference-table tbody");
     referenceData.forEach(r => {
