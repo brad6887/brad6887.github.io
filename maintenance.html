@@ -134,33 +134,7 @@
   </div>
 
   <script>
-    const data = {
-      "August": [
-        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
-        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
-        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
-      ],
-      "September": [
-        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
-        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
-        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
-      ],
-      "October": [
-        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
-        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
-        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
-      ],
-      "November": [
-        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
-        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
-        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
-      ],
-      "December": [
-        { item: "Beverage Fridge", task: "Check temperature setting and adjust if needed", notes: "Target 34–45°F" },
-        { item: "Coffee Maker", task: "Descale with vinegar or coffee machine cleaner", notes: "" },
-        { item: "Dishwasher", task: "Clean door seals and edges", notes: "Use damp cloth and mild detergent" }
-      ]
-    };
+    const data = %s;
 
     function loadMonth(month) {
       const container = document.getElementById("checklist-container");
@@ -197,7 +171,7 @@
           localStorage.setItem(`${month}-${i}-check`, check.checked);
         });
         date.addEventListener("change", () => {
-          localStorage.setItem(`${month}-${i}-date", date.value);
+          localStorage.setItem(`${month}-${i}-date`, date.value);
         });
       });
     }
@@ -210,15 +184,9 @@
       });
     });
 
-    // Initial load
     loadMonth("August");
 
-    // Populate reference table (you can replace with full condo log data)
-    const referenceData = [
-      { item: "AC Unit", task: "Replace air filters, inspect drainage, clean vents", frequency: "Every 3 months", notes: "Use MERV 8 filters" },
-      { item: "Beverage Cooler", task: "Clean condenser coils and check temp", frequency: "Every 6 months", notes: "" },
-      { item: "Beverage Fridge", task: "Check and clean door gasket", frequency: "Every 6 months", notes: "Ensure tight seal" }
-    ];
+    const referenceData = %s;
 
     const refTableBody = document.querySelector("#reference-table tbody");
     referenceData.forEach(r => {
