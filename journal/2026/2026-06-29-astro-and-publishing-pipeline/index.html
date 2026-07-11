@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Astro and Publishing Pipeline | Brad Cooke</title><meta name="description" content="Notes on integrating Astro and shaping the BradCooke.com publishing workflow."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Astro and Publishing Pipeline</h1><p><time datetime="2026-06-29T00:00:00.000Z">June 29, 2026</time></p><p>Notes on integrating Astro and shaping the BradCooke.com publishing workflow.</p><p><strong>Tags:</strong> Astro • BradCooke.com • Publishing</p><h1 id="abbey-root-journal">Abbey Root Journal</h1>
+<p>Date: 2026-06-29</p>
+<h1 id="astro-and-the-publishing-pipeline">Astro and the Publishing Pipeline</h1>
+<p>Today marked the beginning of the BradCooke.com publishing platform.</p>
+<p>Rather than immediately building a website, the focus was on defining the architecture that will support the site for years to come.</p>
+<h2 id="major-accomplishments">Major Accomplishments</h2>
+<h3 id="defined-the-publishing-architecture">Defined the Publishing Architecture</h3>
+<p>Established the separation between infrastructure, documentation, content, and presentation.</p>
+<p>text ansible/     Infrastructure as Code  docs/     Technical documentation  content/     Publishing source  site/     Astro website project</p>
+<p>This reinforces the Single Source of Truth philosophy used throughout Abbey Root.</p>
+<h3 id="established-the-content-philosophy">Established the Content Philosophy</h3>
+<p>Created documentation describing how content should flow through the system.</p>
+<p>Key principles include:</p>
+<ul>
+<li>Markdown is the source of truth.</li>
+<li>Generated artifacts are disposable.</li>
+<li>The website is an output, not the primary source.</li>
+<li>AI enhances content but does not replace the original Markdown.</li>
+</ul>
+<h3 id="hybrid-content-discovery">Hybrid Content Discovery</h3>
+<p>Decided on a hybrid publishing model.</p>
+<p>By default:</p>
+<ul>
+<li>Folder structure determines website organization.</li>
+<li>Metadata customizes behavior only when necessary.</li>
+</ul>
+<p>Example:</p>
+<p>text content/plants/lady-madonna.md</p>
+<p>naturally becomes:</p>
+<p>text /plants/lady-madonna/</p>
+<p>without requiring additional configuration.</p>
+<h3 id="created-the-first-publishing-prototype">Created the First Publishing Prototype</h3>
+<p>Developed the first proof-of-concept website builder.</p>
+<p>Current workflow:</p>
+<p>text content/       ↓ tools/build-website.sh       ↓ website/</p>
+<p>Although intentionally simple, it demonstrates the complete end-to-end publishing pipeline.</p>
+<h3 id="introduced-astro">Introduced Astro</h3>
+<p>Installed:</p>
+<ul>
+<li>Node.js 24 LTS</li>
+<li>npm</li>
+<li>Astro</li>
+</ul>
+<p>Created the initial Astro project on ubuntu-dev01 and verified the development server was running successfully.</p>
+<p>The initial Astro page was successfully viewed from another system on the network.</p>
+<h2 id="architectural-decisions">Architectural Decisions</h2>
+<p>Responsibilities are now divided between systems.</p>
+<h3 id="rocky-ansible01">rocky-ansible01</h3>
+<ul>
+<li>Git repository</li>
+<li>Ansible</li>
+<li>Documentation</li>
+<li>Content generation</li>
+<li>Repository management</li>
+</ul>
+<h3 id="ubuntu-dev01">ubuntu-dev01</h3>
+<ul>
+<li>Node.js</li>
+<li>npm</li>
+<li>Astro</li>
+<li>Website development</li>
+<li>Website preview and build</li>
+</ul>
+<h3 id="ai-worker01">ai-worker01</h3>
+<p>Future responsibilities include:</p>
+<ul>
+<li>AI-assisted editing</li>
+<li>Content enhancement</li>
+<li>Metadata generation</li>
+<li>Summaries</li>
+<li>Publishing assistance</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Modern static site generators are fundamentally different from manually authored HTML websites.</p>
+<p>Instead of writing HTML directly:</p>
+<p>text Markdown         ↓ Astro         ↓ HTML</p>
+<p>Astro generates traditional static HTML while providing reusable layouts, components, and automation.</p>
+<p>This preserves the simplicity of static websites while dramatically improving maintainability.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Integrate Astro with the external content/ directory.</li>
+<li>Learn Astro layouts and components.</li>
+<li>Replace the prototype HTML generator with an Astro-based build process.</li>
+<li>Continue treating Markdown as the canonical publishing source.</li>
+<li>Begin generating the first real BradCooke.com pages.</li>
+</ul>
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p>Today represents the transition from building infrastructure to building the publishing platform that will ultimately power BradCooke.com.</p>
+<p>The long-term vision remains:</p>
+<p>text Infrastructure         ↓ Generated Documentation         ↓ Markdown         ↓ AI Enhancement         ↓ Astro         ↓ BradCooke.com</p>
+<p>The architecture now has a solid foundation, allowing future work to focus on content, automation, and AI-assisted publishing rather than restructuring the project.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-06-28-abbey-root-status-and-content-pipeline/">← Previous: Abbey Root Status and Content Pipeline</a></p><p><a href="/journal/2026/2026-06-30-astro-content-collections/">Next: Astro Content Collections →</a></p></nav></article></main></body></html>

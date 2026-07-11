@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Project-Aware AI Context | Brad Cooke</title><meta name="description" content="TODO: Add a short summary."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Project-Aware AI Context</h1><p><time datetime="2026-07-05T00:00:00.000Z">July 5, 2026</time></p><p>TODO: Add a short summary.</p><p><strong>Tags:</strong> Abbey Root • AI • Architecture • Automation • Open WebUI</p><h2 id="summary">Summary</h2>
+<p>Today’s development focused on taking the first major step toward making Abbey AI aware of the Abbey Root project rather than functioning as a generic chatbot.</p>
+<p>The goal was to give AI access to the current state of the project so it can make recommendations based on documentation, recent work, and project priorities.</p>
+<p>This establishes the foundation for future AI-assisted development throughout the lab.</p>
+<hr>
+<h2 id="accomplishments">Accomplishments</h2>
+<h3 id="created-abbey-context">Created <code>abbey-context</code></h3>
+<p>Developed a new <code>abbey-context</code> tool responsible for generating focused context bundles for AI.</p>
+<p>Current supported modes include:</p>
+<ul>
+<li>brief</li>
+<li>next</li>
+<li>website</li>
+<li>full</li>
+</ul>
+<p>Each mode assembles only the information needed for a particular type of question.</p>
+<hr>
+<h3 id="refactored-abbey-ai">Refactored <code>abbey-ai</code></h3>
+<p>Refactored the <code>abbey-ai</code> command into smaller functions.</p>
+<p>Responsibilities are now separated into:</p>
+<ul>
+<li>information</li>
+<li>connectivity testing</li>
+<li>model listing</li>
+<li>context generation</li>
+<li>AI requests</li>
+</ul>
+<p>This provides a cleaner foundation for future enhancements.</p>
+<hr>
+<h3 id="project-aware-ai">Project-Aware AI</h3>
+<p>Integrated the context builder with <code>abbey ai ask</code>.</p>
+<p>Rather than sending only the user’s prompt, Abbey AI now includes project context generated from documentation and repository state.</p>
+<p>The AI can now answer questions using information such as:</p>
+<ul>
+<li>Project Status</li>
+<li>NEXT</li>
+<li>Roadmap</li>
+<li>Git history</li>
+<li>Current repository status</li>
+<li>Journal entries</li>
+</ul>
+<hr>
+<h3 id="context-architecture">Context Architecture</h3>
+<p>Designed the long-term architecture for AI context generation.</p>
+<p>Rather than maintaining a single large knowledge file, context is generated dynamically for specific tasks.</p>
+<p>This approach will allow future routing based on question type while minimizing unnecessary context sent to the model.</p>
+<hr>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Sending too much project context significantly increases response time on CPU-based local models.</p>
+<p>A focused context produces much better performance while still giving the model the information it needs.</p>
+<p>The architecture should favor small, purpose-built context bundles over a single monolithic knowledge snapshot.</p>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Improve the <code>brief</code> context mode.</li>
+<li>Add additional context types for infrastructure and AI development.</li>
+<li>Create shared libraries for Open WebUI interactions.</li>
+<li>Continue refactoring the Abbey toolkit into reusable components.</li>
+<li>Review and consolidate project documentation during Documentation Day.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-04-ai-worker-toolkit/">← Previous: AI Worker Toolkit</a></p><p><a href="/journal/2026/2026-07-05-building-the-documentation-framework/">Next: Building the Documentation Framework →</a></p></nav></article></main></body></html>

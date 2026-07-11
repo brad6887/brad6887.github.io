@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Astro Content Collections | Brad Cooke</title><meta name="description" content="Notes on using Astro content collections to organize pages, posts, projects, and journal entries."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Astro Content Collections</h1><p><time datetime="2026-06-30T00:00:00.000Z">June 30, 2026</time></p><p>Notes on using Astro content collections to organize pages, posts, projects, and journal entries.</p><p><strong>Tags:</strong> Astro • Content Collections • Metadata</p><h1 id="astro-content-collections-and-the-first-publishing-pipeline">Astro Content Collections and the First Publishing Pipeline</h1>
+<p>Today marked an important shift in the Abbey Root project. Rather than simply learning Astro, I began integrating it into the long-term publishing architecture for BradCooke.com.</p>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>Learn the fundamentals of Astro.</li>
+<li>Preserve the Single Source of Truth philosophy.</li>
+<li>Begin building a content-driven website instead of a page-driven website.</li>
+</ul>
+<h2 id="accomplishments">Accomplishments</h2>
+<h3 id="learned-astro-fundamentals">Learned Astro Fundamentals</h3>
+<p>Built the first Astro pages and learned the core concepts:</p>
+<ul>
+<li>Pages</li>
+<li>Layouts</li>
+<li>Components</li>
+<li>Routing</li>
+<li>Front matter</li>
+<li>Hot reload during development</li>
+</ul>
+<p>Created a reusable Layout.astro and Nav.astro component to eliminate duplicated page structure.</p>
+<h3 id="configured-content-collections">Configured Content Collections</h3>
+<p>Configured Astro Content Collections to use the repository’s external content/ directory instead of storing content inside the Astro project.</p>
+<p>This allows Markdown to remain the authoritative source while Astro becomes the rendering engine.</p>
+<p>Added schema validation requiring publishable pages to include metadata such as:</p>
+<ul>
+<li>title</li>
+<li>description</li>
+</ul>
+<p>This ensures content is validated during the build process rather than allowing incomplete pages to be published.</p>
+<h3 id="first-markdown-driven-pages">First Markdown-Driven Pages</h3>
+<p>Converted the following pages to render directly from Markdown:</p>
+<ul>
+<li>About</li>
+<li>Projects</li>
+</ul>
+<p>The page flow is now:</p>
+<p>text content/pages/about.md         ↓ Astro Content Collection         ↓ getEntry()         ↓ render()         ↓ Layout         ↓ Generated HTML</p>
+<p>This successfully separates content from presentation.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>One useful lesson came from troubleshooting the initial implementation.</p>
+<p>The first issue was caused by the Astro development server using a stale content index after changing the content collection configuration. Restarting the development server rebuilt the content graph and resolved the problem.</p>
+<p>The second issue resulted from an Astro 7 API change. The previous page.render() method has been replaced with the newer render(page) helper.</p>
+<p>Both issues reinforced the value of debugging one layer at a time rather than guessing.</p>
+<h2 id="architectural-direction">Architectural Direction</h2>
+<p>Today’s work confirmed the desired long-term architecture:</p>
+<p>text Markdown         ↓ Content Collections         ↓ Astro         ↓ Generated Static Website</p>
+<p>The website should consume content rather than contain content.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Replace the individual page wrappers with a single dynamic route.</li>
+<li>Generate pages automatically from Markdown.</li>
+<li>Begin generating navigation from content.</li>
+<li>Continue evolving the publishing pipeline toward automated BradCooke.com deployments.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-06-29-astro-and-publishing-pipeline/">← Previous: Astro and Publishing Pipeline</a></p><p><a href="/journal/2026/2026-07-01-developer-toolkit-foundation/">Next: Developer Toolkit Foundation →</a></p></nav></article></main></body></html>

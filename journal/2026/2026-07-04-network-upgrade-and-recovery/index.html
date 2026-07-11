@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Network Upgrade and Recovery | Brad Cooke</title><meta name="description" content="Installing the 2.5 Gb switch, recovering from a failed Ethernet adapter, and improving lab network resilience."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Network Upgrade and Recovery</h1><p><time datetime="2026-07-04T00:00:00.000Z">July 4, 2026</time></p><p>Installing the 2.5 Gb switch, recovering from a failed Ethernet adapter, and improving lab network resilience.</p><p><strong>Tags:</strong> Abbey Root • Networking • Troubleshooting • Proxmox</p><h1 id="2026-07-04---network-upgrade-and-recovery">2026-07-04 - Network Upgrade and Recovery</h1>
+<h2 id="summary">Summary</h2>
+<p>Today’s goal was to upgrade the Abbey Root lab network by installing a new 2.5 Gb switch. What began as a straightforward hardware upgrade quickly turned into an unexpected troubleshooting exercise after the Proxmox host lost network connectivity.</p>
+<p>Although the original USB Ethernet adapter was accidentally damaged during the hardware move, the issue ultimately resulted in a successful upgrade to 2.5 Gb networking and several valuable operational lessons.</p>
+<hr>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Install new TRENDnet 8-port 2.5 Gb switch.</li>
+<li>Upgrade the Proxmox host to 2.5 Gb networking.</li>
+<li>Improve overall lab network performance.</li>
+<li>Continue organizing the lab infrastructure.</li>
+</ul>
+<hr>
+<h2 id="accomplishments">Accomplishments</h2>
+<h3 id="installed-25-gb-switch">Installed 2.5 Gb Switch</h3>
+<p>Installed the TRENDnet 8-port unmanaged 2.5 Gb switch.</p>
+<p>Verified:</p>
+<ul>
+<li>Switch connected to the AT&amp;T BGW320 gateway.</li>
+<li>Switch connected to the gateway’s 5 Gb Ethernet port.</li>
+<li>All active devices negotiated successfully.</li>
+</ul>
+<h3 id="hardware-failure">Hardware Failure</h3>
+<p>While reorganizing the lab, the original USB-C Ethernet adapter used by the Proxmox host was dropped and the USB-C connector was bent.</p>
+<p>Symptoms included:</p>
+<ul>
+<li>No network connectivity.</li>
+<li>No link when connected to either the new switch or the AT&amp;T gateway.</li>
+<li>Proxmox host became unreachable.</li>
+</ul>
+<p>Fortunately, the failure was isolated to the USB Ethernet adapter.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>Systematically verified:</p>
+<ul>
+<li>Proxmox networking configuration.</li>
+<li>Linux bridge configuration.</li>
+<li>USB Ethernet hardware.</li>
+<li>Intel AX201 Wi-Fi hardware.</li>
+<li>Wi-Fi driver and firmware.</li>
+<li>iPhone USB tethering.</li>
+<li>Physical network connectivity.</li>
+<li>Switch port negotiation.</li>
+</ul>
+<p>Although Wi-Fi and USB tethering were investigated as temporary recovery options, neither proved to be a practical solution without additional software.</p>
+<h3 id="replacement-adapter">Replacement Adapter</h3>
+<p>Purchased a replacement USB-C 2.5 Gb Ethernet adapter.</p>
+<p>Verified:</p>
+<ul>
+<li>Linux detected the new adapter immediately.</li>
+<li>Successfully negotiated a 2.5 Gb full-duplex link with the TRENDnet switch.</li>
+</ul>
+<h3 id="network-recovery">Network Recovery</h3>
+<p>Updated the Proxmox bridge configuration to use the new network interface.</p>
+<p>During recovery, an incorrect interface name was entered into <code>/etc/network/interfaces</code>.</p>
+<p>The difference was subtle:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Incorrect:</span></span>
+<span class="line"><span>enxbc1ff7c0de2d</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Correct:</span></span>
+<span class="line"><span>enx6c1ff7c0de2d</span></span></code></pre>
+<p>The typo prevented the bridge from attaching to the physical interface.</p>
+<p>After correcting the interface name:</p>
+<ul>
+<li>Bridge initialized successfully.</li>
+<li>Gateway connectivity restored.</li>
+<li>Proxmox management interface became available.</li>
+<li>Virtual machines regained network connectivity.</li>
+</ul>
+<hr>
+<h2 id="final-result">Final Result</h2>
+<p>Successfully restored the lab with:</p>
+<ul>
+<li>2.5 Gb switch installed</li>
+<li>2.5 Gb Proxmox network connection</li>
+<li>All virtual machines operational</li>
+<li>Full connectivity restored</li>
+</ul>
+<hr>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<h3 id="verify-the-physical-layer-first">Verify the Physical Layer First</h3>
+<p>Link lights and <code>ethtool</code> quickly confirmed whether hardware was functioning correctly.</p>
+<h3 id="use-ethtool">Use <code>ethtool</code></h3>
+<p><code>ethtool</code> proved invaluable for confirming:</p>
+<ul>
+<li>Link status</li>
+<li>Negotiated speed</li>
+<li>Duplex</li>
+<li>Driver functionality</li>
+</ul>
+<h3 id="copy-and-paste-long-identifiers">Copy and Paste Long Identifiers</h3>
+<p>Long interface names are easy to misread.</p>
+<p>Typing:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>enxbc...</span></span></code></pre>
+<p>instead of:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>enx6c...</span></span></code></pre>
+<p>cost significant troubleshooting time.</p>
+<p>Future workflow should prefer copy/paste whenever practical.</p>
+<h3 id="small-typos-can-cause-large-problems">Small Typos Can Cause Large Problems</h3>
+<p>A single incorrect character prevented the Linux bridge from functioning correctly.</p>
+<p>Configuration files should always be verified carefully after editing.</p>
+<h3 id="keep-spare-hardware">Keep Spare Hardware</h3>
+<p>A spare USB Ethernet adapter would have reduced recovery time considerably.</p>
+<p>Future lab inventory should include:</p>
+<ul>
+<li>Spare USB Ethernet adapter</li>
+<li>Spare Ethernet cables</li>
+<li>Spare power adapters where practical</li>
+</ul>
+<hr>
+<h2 id="ideas">Ideas</h2>
+<p>Today’s troubleshooting inspired several future improvements for the Abbey toolkit.</p>
+<p>Potential <code>abbey doctor</code> network checks:</p>
+<ul>
+<li>Verify bridge interfaces exist.</li>
+<li>Detect missing bridge ports.</li>
+<li>Report negotiated link speed.</li>
+<li>Verify gateway connectivity.</li>
+<li>Verify Internet connectivity.</li>
+<li>Warn when configured interfaces no longer exist.</li>
+</ul>
+<p>These checks could identify common configuration mistakes before they become major problems.</p>
+<hr>
+<h2 id="reflection">Reflection</h2>
+<p>Although the day started as a simple hardware upgrade, it became one of the most educational troubleshooting sessions since beginning Abbey Root.</p>
+<p>The experience reinforced an important philosophy of the project:</p>
+<p>Build things.
+Break things.
+Understand why they broke.
+Improve the process.
+Document what was learned.</p>
+<p>The lab ultimately emerged stronger than before, with a faster network connection, improved documentation ideas, and several enhancements planned for future automation.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-03-completing-the-journal-platform-and-abbey-doctor/">← Previous: Completing the Journal Platform and Abbey Doctor</a></p><p><a href="/journal/2026/2026-07-04-closet-organization/">Next: Closet Organization →</a></p></nav></article></main></body></html>

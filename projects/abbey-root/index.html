@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey Root | Brad Cooke</title><meta name="description" content="Home Linux lab for automation, Infrastructure-as-Code, AI-assisted development, and BradCooke.com."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><section class="project-header"><p class="project-back"><a href="/projects/">← Back to Projects</a></p><h1>Abbey Root</h1><p class="project-description">Home Linux lab for automation, Infrastructure-as-Code, AI-assisted development, and BradCooke.com.</p><dl class="project-meta"><dt>Status</dt><dd>Active</dd><dt>Started</dt><dd>June 19, 2026</dd><dt>Updated</dt><dd>July 1, 2026</dd><dt>Stack</dt><dd>Linux • Ansible • Docker • Proxmox • AI</dd></dl></section><h1 id="abbey-root">Abbey Root</h1>
+<p>Abbey Root is my home Linux lab for learning, experimentation, automation, and AI-assisted development.</p>
+<p>The goal is not to build the perfect lab. The goal is to build practical skills by creating real systems, documenting what I learn, and automating the pieces that repeat.</p>
+<p>Metadata First</p>
+<p>Whenever practical, describe information once as structured metadata.</p>
+<p>Generate documentation, interfaces, and automation from that metadata rather than maintaining multiple independent copies.</p>
+<h2 id="current-environment">Current Environment</h2>
+<p>The lab currently runs on Proxmox and includes several Linux virtual machines with dedicated roles.</p>
+<h3 id="rocky-ansible01">rocky-ansible01</h3>
+<p><code>rocky-ansible01</code> is the automation control node.</p>
+<p>It manages:</p>
+<ul>
+<li>Ansible inventory</li>
+<li>Roles</li>
+<li>Playbooks</li>
+<li>Group variables</li>
+<li>Host variables</li>
+<li>Vault configuration</li>
+<li>Generated documentation</li>
+<li>Lab automation workflows</li>
+</ul>
+<h3 id="ubuntu-dev01">ubuntu-dev01</h3>
+<p><code>ubuntu-dev01</code> is the main infrastructure and development host.</p>
+<p>It runs Docker-based services including:</p>
+<ul>
+<li>Homepage</li>
+<li>Portainer</li>
+<li>Uptime Kuma</li>
+<li>Nginx Proxy Manager</li>
+<li>nginx-labtest</li>
+</ul>
+<p>It also hosts the BradCooke.com development workflow.</p>
+<h3 id="ai-worker01">ai-worker01</h3>
+<p><code>ai-worker01</code> is the dedicated AI experimentation host.</p>
+<p>Its purpose is to keep AI-related workloads separate from core infrastructure services while giving me a safe place to experiment with self-hosted tools, containers, models, and AI-assisted development workflows.</p>
+<p>Current and planned uses include:</p>
+<ul>
+<li>Running Open WebUI</li>
+<li>Testing self-hosted AI services</li>
+<li>Experimenting with containerized AI tools</li>
+<li>Supporting BradCooke.com content and development workflows</li>
+<li>Learning how AI can assist with documentation, automation, and coding</li>
+</ul>
+<h2 id="automation">Automation</h2>
+<p>Abbey Root is managed through Ansible wherever practical.</p>
+<p>Current automation includes:</p>
+<ul>
+<li>Common system configuration</li>
+<li>Docker installation</li>
+<li>MOTD and login banner management</li>
+<li>Timezone and NTP configuration</li>
+<li>Homepage deployment</li>
+<li>Lab test container deployment</li>
+<li>Generated documentation</li>
+<li>Developer toolkit commands</li>
+</ul>
+<h2 id="developer-toolkit">Developer Toolkit</h2>
+<p>Abbey Root includes a small command-line toolkit to make common project tasks easier.</p>
+<p>The toolkit now includes:</p>
+<ul>
+<li>Standardized Abbey command headers</li>
+<li>Metadata-driven <code>abbey-help</code></li>
+<li>Generated command documentation</li>
+<li>A reusable tool template</li>
+<li><code>abbey-new-tool</code> for creating new commands</li>
+</ul>
+<p>This keeps the toolkit self-documenting and reduces duplicated command lists.</p>
+<h2 id="website-goal">Website Goal</h2>
+<p>BradCooke.com is being rebuilt as part of Abbey Root.</p>
+<p>The site is intended to become:</p>
+<ul>
+<li>A personal technical portfolio</li>
+<li>A project journal</li>
+<li>A place to document experiments</li>
+<li>A record of lessons learned</li>
+<li>A practical output of the home lab</li>
+</ul>
+<h2 id="the-four-members-of-the-lab">The Four Members of the Lab</h2>
+<p>Each VM in Abbey Root has a clearly defined purpose. Rather than collecting virtual machines, each system exists to own a specific responsibility within the environment.</p>
+<p>Together they form the core of the lab.</p>
+<h3 id="rocky-ansible01-1">rocky-ansible01</h3>
+<p><code>rocky-ansible01</code> brings the lab together through Ansible, Git, inventory, playbooks, and generated documentation.</p>
+<p>It is the automation control node and the place where infrastructure starts becoming reproducible.</p>
+<h3 id="ubuntu-dev01-1">ubuntu-dev01</h3>
+<p><code>ubuntu-dev01</code> is the main development and infrastructure host.</p>
+<p>It runs Docker services, supports BradCooke.com development, and acts as the place I keep coming back to while building the public-facing side of the project.</p>
+<h3 id="ai-worker01-1">ai-worker01</h3>
+<p><code>ai-worker01</code> is the AI experimentation node.</p>
+<p>It is where new ideas start to rise: Open WebUI, self-hosted AI tools, documentation assistance, content workflows, and future automation experiments.</p>
+<h3 id="security-vm">Security VM</h3>
+<p>A dedicated security VM is planned for safe, isolated security learning.</p>
+<p>Its purpose will be to help validate the lab through scanning, testing, hardening, log analysis, and defensive security practice.</p>
+<p>As Abbey Root continues to evolve, each system will grow alongside the project while remaining focused on a single responsibility. The goal is not to collect servers, but to build a small, cohesive platform where every component has a purpose.</p>
+<p>The name Abbey Root is a small nod to Abbey Road, filtered through Linux, root access, and the idea of getting closer to how systems really work.</p>
+<h2 id="guiding-principles">Guiding Principles</h2>
+<p>Abbey Root follows a few simple principles:</p>
+<ul>
+<li>Learn by building</li>
+<li>Automate repeated work</li>
+<li>Prefer templates and Infrastructure-as-Code</li>
+<li>Document progress</li>
+<li>Use multiple Linux distributions</li>
+<li>Keep important services separate from experiments</li>
+<li>Treat servers as reproducible</li>
+<li>Use AI as a learning and development assistant</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Near-term goals include:</p>
+<ul>
+<li>Publish the first real version of BradCooke.com</li>
+<li>Continue developing Astro layouts and reusable components</li>
+<li>Improve Docker health reporting in <code>abbey-status</code></li>
+<li>Automate the <code>ai-worker01</code> shell environment through Ansible</li>
+<li>Expand AI-assisted workflows using <code>ai-worker01</code></li>
+<li>Continue improving generated documentation</li>
+</ul>
+</main></body></html>

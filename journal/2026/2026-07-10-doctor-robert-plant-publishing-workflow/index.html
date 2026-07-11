@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Doctor Robert Plant Publishing Workflow | Brad Cooke</title><meta name="description" content="Completed the first end-to-end Plant Model publishing workflow by generating and publishing Doctor Robert from a canonical workspace."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Doctor Robert Plant Publishing Workflow</h1><p><time datetime="2026-07-10T00:00:00.000Z">July 10, 2026</time></p><p>Completed the first end-to-end Plant Model publishing workflow by generating and publishing Doctor Robert from a canonical workspace.</p><p><strong>Tags:</strong> Abbey Root • BradCooke.com • Plant Model • Orchid Rescue</p><h1 id="doctor-robert-plant-publishing-workflow">Doctor Robert Plant Publishing Workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>Completed the first end-to-end publishing workflow for the Abbey Root Plant Model using Doctor Robert as the reference implementation.</p>
+<p>The new workflow generates Astro content from the canonical plant workspace under <code>working/plants/</code>, copies only selected public photographs into the website, and leaves working notes, source documents, metadata sidecars, and unselected images outside the published site.</p>
+<p>Doctor Robert is now published on BradCooke.com using the Plant Model as the single source of truth.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added <code>abbey plant publish &lt;slug&gt;</code> to the Abbey developer toolkit.</li>
+<li>Preserved <code>abbey plant validate &lt;slug&gt;</code> as a required pre-publishing check.</li>
+<li>Generated <code>content/plants/doctor-robert.md</code> from:
+<ul>
+<li><code>facts.yaml</code></li>
+<li><code>story.md</code></li>
+<li><code>history.md</code></li>
+</ul>
+</li>
+<li>Generated Astro front matter from canonical plant metadata.</li>
+<li>Removed duplicate top-level headings while assembling the published Markdown.</li>
+<li>Published only the configured hero and current-condition photographs.</li>
+<li>Renamed published assets to stable filenames:
+<ul>
+<li><code>hero.jpeg</code></li>
+<li><code>current.png</code></li>
+</ul>
+</li>
+<li>Kept inventory files, source PDFs, XMP sidecars, photo metadata, and unselected photographs private.</li>
+<li>Added <code>heroImage</code> and <code>currentImage</code> fields to the Astro plant content schema.</li>
+<li>Updated the plant detail page to display:
+<ul>
+<li>Hero image</li>
+<li>Plant status</li>
+<li>Species</li>
+<li>Acquisition date</li>
+<li>Story and recovery history</li>
+<li>Current-condition image</li>
+<li>Last updated date</li>
+</ul>
+</li>
+<li>Successfully built all Astro pages with <code>abbey site build</code>.</li>
+<li>Verified that the generated Doctor Robert page contains the published history and both selected images.</li>
+<li>Visually reviewed the page through the Abbey development server.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>The existing Astro plant collection and dynamic route were flexible enough to support the Plant Model without replacing the website architecture.</li>
+<li>Publishing should remain an explicit step separate from <code>abbey site build</code>.</li>
+<li>Source filenames should not determine public website filenames.</li>
+<li>The working plant directory can contain much more material than the published page without exposing private or unnecessary files.</li>
+<li>Markdown source documents should remain readable on their own, while the publisher handles small transformations such as removing duplicate page titles.</li>
+<li>Building a real plant profile exposed useful publishing requirements without requiring major changes to the Plant Model.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Capture this implementation in a session update.</li>
+<li>Review the generated changes before committing.</li>
+<li>Update the Doctor Robert inventory checklist during the next documentation update.</li>
+<li>Fix the duplicate BradCooke.com priority in <code>docs/planning/NEXT.md</code> during the next documentation update.</li>
+<li>Use the proven workflow for the next plant profile before expanding the Plant Model or publishing automation further.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-10-plant-model-and-validation-workflow/">← Previous: Plant model and validation workflow</a></p><p><a href="/journal/2026/2026-07-11-plant-timeline-image-presentation/">Next: plant-timeline-image-presentation →</a></p></nav></article></main></body></html>

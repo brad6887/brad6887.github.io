@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey Root Status and Content Pipeline | Brad Cooke</title><meta name="description" content="Progress update covering Abbey Root status work and the early content pipeline."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey Root Status and Content Pipeline</h1><p><time datetime="2026-06-28T00:00:00.000Z">June 28, 2026</time></p><p>Progress update covering Abbey Root status work and the early content pipeline.</p><p><strong>Tags:</strong> Abbey Root • Documentation • Content</p><h1 id="abbey-root-status-utility-and-content-pipeline">Abbey Root Status Utility and Content Pipeline</h1>
+<p>Date: 2026-06-28</p>
+<h2 id="summary">Summary</h2>
+<p>Today I added the first version of <code>abbey-status</code>, a command-line status utility for the Abbey Root lab.</p>
+<p>I also started the BradCooke.com content source structure inside the repository.</p>
+<h2 id="what-changed">What Changed</h2>
+<ul>
+<li>Created <code>tools/abbey-status</code></li>
+<li>Updated <code>abbey-help</code></li>
+<li>Added <code>abbey-status</code> to the typical workflow</li>
+<li>Verified Ansible inventory connectivity</li>
+<li>Added the top-level <code>content/</code> directory</li>
+<li>Added initial content documentation</li>
+<li>Created the Abbey Root content area</li>
+</ul>
+<h2 id="why-it-matters">Why It Matters</h2>
+<p><code>abbey-status</code> gives the project a simple operational check that can be run at the start of a work session.</p>
+<p>The <code>content/</code> directory begins the transition from only building infrastructure to using the infrastructure to produce website content.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Ansible commands need to run from the <code>ansible/</code> directory so they pick up <code>ansible.cfg</code>.</li>
+<li><code>printf</code> is useful for producing clean command-line help output.</li>
+<li>Small helper tools make the lab easier to use and maintain.</li>
+<li>The website content pipeline should start with Markdown before choosing a site generator.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Improve <code>abbey-status</code> output formatting</li>
+<li>Add Docker container checks</li>
+<li>Add more Abbey Root journal entries</li>
+<li>Begin converting lab progress into BradCooke.com content</li>
+<li>Decide on the first website generator experiment</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-06-25-metadata-first-documentation/">← Previous: Metadata-First Documentation</a></p><p><a href="/journal/2026/2026-06-29-astro-and-publishing-pipeline/">Next: Astro and Publishing Pipeline →</a></p></nav></article></main></body></html>

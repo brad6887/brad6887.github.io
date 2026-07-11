@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Website Styling Refactor | Brad Cooke</title><meta name="description" content="Website Refactor to use modualr CSS architecture"><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Website Styling Refactor</h1><p><time datetime="2026-07-06T00:00:00.000Z">July 6, 2026</time></p><p>Website Refactor to use modualr CSS architecture</p><p><strong>Tags:</strong> Abbey Root • website • astro • css • styling • frontend • refactor</p><h1 id="website-styling-refactor">Website Styling Refactor</h1>
+<h2 id="summary">Summary</h2>
+<p>Refactored the Abbey Root website to use a modular CSS architecture. Styling is now organized into dedicated stylesheet files instead of being embedded within Astro components, providing a cleaner separation of presentation and application logic. The session also introduced a shared design foundation with automatic light/dark mode support and initial mobile-responsive improvements.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Created a dedicated <code>site/src/styles/</code> directory.</li>
+<li>Added <code>global.css</code> for shared typography, colors, and global styling.</li>
+<li>Added <code>navigation.css</code> for site navigation styles.</li>
+<li>Added <code>layout.css</code> for page layout styling.</li>
+<li>Added <code>project.css</code> for project pages and project cards.</li>
+<li>Updated <code>Layout.astro</code> to import the shared stylesheets.</li>
+<li>Removed embedded <code>&lt;style&gt;</code> blocks from Astro components and layouts.</li>
+<li>Added automatic light/dark mode support using <code>prefers-color-scheme</code>.</li>
+<li>Improved mobile responsiveness for navigation and project metadata.</li>
+<li>Verified the website builds successfully after the refactor.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Centralizing styles makes Astro components easier to read and maintain.</li>
+<li>CSS custom properties provide a simple foundation for consistent theming.</li>
+<li>Validating with a production build after structural refactoring helps catch issues such as leftover embedded CSS before they become larger problems.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Review the site on desktop, tablet, and mobile screen sizes to identify additional responsive improvements.</li>
+<li>Consider adding a user-selectable light/dark mode toggle in addition to automatic system preference detection.</li>
+<li>Continue refining typography, spacing, and component styling as additional pages are developed.</li>
+<li>Establish a consistent visual design system for future website enhancements.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-05-abbey-session-learns-the-workflow/">← Previous: “Abbey Session Learns the Workflow”</a></p><p><a href="/journal/2026/2026-07-07-architecture-framework-introduced/">Next: Architecture Framework Introduced →</a></p></nav></article></main></body></html>

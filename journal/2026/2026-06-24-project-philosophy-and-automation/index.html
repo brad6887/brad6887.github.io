@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Project Philosophy and Automation | Brad Cooke</title><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Project Philosophy and Automation</h1><p><time datetime="2026-06-24T00:00:00.000Z">June 24, 2026</time></p><p><strong>Tags:</strong> Automation • Ansible • Documentation • Homepage • Infrastructure</p><h1 id="abbey-root">Abbey Root</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Create a home Linux lab for learning, experimentation, automation, and AI-assisted development.</p>
+<p>The lab exists to build practical skills by creating real projects rather than collecting idle virtual machines.</p>
+<p>The long-term goal is to evolve the environment into a reproducible Infrastructure-as-Code platform managed through Git, Ansible, templates, and automated deployments.</p>
+<hr>
+<h2 id="long-term-goals">Long-Term Goals</h2>
+<ul>
+<li>Learn Linux administration and troubleshooting.</li>
+<li>Gain experience with multiple Linux distributions.</li>
+<li>Learn Proxmox virtualization and templates.</li>
+<li>Learn Docker and containerized applications.</li>
+<li>Learn Ansible and infrastructure automation.</li>
+<li>Explore AI tools and self-hosted AI technologies.</li>
+<li>Build and maintain BradCooke.com using AI-assisted workflows.</li>
+<li>Practice Git and GitHub workflows.</li>
+<li>Learn networking, monitoring, backup, and security concepts.</li>
+<li>Create a reusable environment for future experiments.</li>
+<li>Document progress and lessons learned.</li>
+<li>Manage the lab through Infrastructure-as-Code.</li>
+</ul>
+<hr>
+<h2 id="guiding-principles">Guiding Principles</h2>
+<h3 id="learn-by-building">Learn by Building</h3>
+<p>Prefer working projects over theory.</p>
+<p>Build systems, break them, fix them, and understand why they work.</p>
+<hr>
+<h3 id="keep-it-reproducible">Keep It Reproducible</h3>
+<p>Document configurations and automate wherever practical.</p>
+<p>Prefer Ansible, Git, templates, and Infrastructure-as-Code over manual changes.</p>
+<hr>
+<h3 id="use-multiple-distributions">Use Multiple Distributions</h3>
+<p>Gain experience across different Linux ecosystems.</p>
+<p>Examples:</p>
+<ul>
+<li>Ubuntu</li>
+<li>Debian</li>
+<li>Rocky Linux</li>
+<li>AlmaLinux</li>
+<li>Fedora</li>
+<li>Kali Linux</li>
+</ul>
+<hr>
+<h3 id="favor-open-source">Favor Open Source</h3>
+<p>Prefer open-source and self-hosted solutions whenever practical.</p>
+<hr>
+<h3 id="experiment-safely">Experiment Safely</h3>
+<p>Treat the lab as a playground.</p>
+<p>Mistakes are expected and encouraged.</p>
+<hr>
+<h3 id="rebuild-rather-than-repair">Rebuild Rather Than Repair</h3>
+<p>When practical, recreate systems from templates and automation rather than manually repairing them.</p>
+<hr>
+<h3 id="document-progress">Document Progress</h3>
+<p>Maintain notes on:</p>
+<ul>
+<li>Goals</li>
+<li>Accomplishments</li>
+<li>Problems encountered</li>
+<li>Lessons learned</li>
+<li>Future ideas</li>
+</ul>
+<hr>
+<h3 id="use-ai-as-a-tool">Use AI as a Tool</h3>
+<p>Use AI to:</p>
+<ul>
+<li>Explain concepts.</li>
+<li>Write scripts.</li>
+<li>Generate documentation.</li>
+<li>Assist with coding.</li>
+<li>Create and maintain BradCooke.com.</li>
+<li>Help troubleshoot problems.</li>
+<li>Accelerate learning.</li>
+</ul>
+<p>AI should enhance understanding rather than replace it.</p>
+<hr>
+<h2 id="website-goal">Website Goal</h2>
+<p>Use the lab to rebuild and maintain BradCooke.com.</p>
+<p>The site should:</p>
+<ul>
+<li>Be stored in GitHub.</li>
+<li>Be developed primarily from Linux systems.</li>
+<li>Use AI assistance for content and code generation.</li>
+<li>Serve as a portfolio and project journal.</li>
+<li>Document experiments, accomplishments, and lessons learned.</li>
+<li>Evolve continuously rather than attempting a perfect initial design.</li>
+</ul>
+<hr>
+<h2 id="security-goal">Security Goal</h2>
+<p>Use Kali Linux and isolated lab systems to learn security concepts in a safe and ethical manner.</p>
+<p>Areas of study include:</p>
+<ul>
+<li>Network scanning</li>
+<li>Vulnerability assessment</li>
+<li>Password security</li>
+<li>Linux hardening</li>
+<li>Container security</li>
+<li>Log analysis</li>
+<li>Monitoring and intrusion detection</li>
+<li>Security best practices</li>
+</ul>
+<p>Testing should always be limited to systems owned by or intentionally created within the lab.</p>
+<hr>
+<h2 id="infrastructure-philosophy">Infrastructure Philosophy</h2>
+<ul>
+<li>Prefer templates and automation over manual builds.</li>
+<li>Use Docker before creating additional virtual machines when appropriate.</li>
+<li>Keep resource usage reasonable.</li>
+<li>Separate experimentation from important services.</li>
+<li>Maintain backups of important configurations.</li>
+<li>Use Git for documentation and configuration files.</li>
+<li>Favor simple solutions over unnecessary complexity.</li>
+<li>Manage systems declaratively whenever practical.</li>
+<li>Treat servers as disposable and reproducible.</li>
+</ul>
+<hr>
+<h2 id="current-platform">Current Platform</h2>
+<h3 id="hypervisor">Hypervisor</h3>
+<ul>
+<li>Proxmox</li>
+</ul>
+<h3 id="source-control">Source Control</h3>
+<ul>
+<li>Git</li>
+<li>GitHub</li>
+</ul>
+<p>Repository:</p>
+<ul>
+<li>abbey-root</li>
+</ul>
+<h3 id="virtual-machines">Virtual Machines</h3>
+<h4 id="ubuntu-dev01">ubuntu-dev01</h4>
+<p>Purpose:</p>
+<ul>
+<li>Infrastructure services</li>
+<li>Docker host</li>
+</ul>
+<p>Containers:</p>
+<ul>
+<li>Homepage</li>
+<li>Portainer</li>
+<li>Uptime Kuma</li>
+<li>Nginx Proxy Manager</li>
+<li>nginx-labtest</li>
+</ul>
+<hr>
+<h4 id="ai-worker01">ai-worker01</h4>
+<p>Purpose:</p>
+<ul>
+<li>AI experimentation</li>
+<li>Docker host</li>
+</ul>
+<p>Containers:</p>
+<ul>
+<li>Open WebUI</li>
+<li>Portainer Agent</li>
+</ul>
+<hr>
+<h4 id="rocky-ansible01">rocky-ansible01</h4>
+<p>Purpose:</p>
+<ul>
+<li>Automation control node</li>
+</ul>
+<p>Responsibilities:</p>
+<ul>
+<li>Git repository</li>
+<li>Ansible inventory</li>
+<li>Roles</li>
+<li>Playbooks</li>
+<li>Group variables</li>
+<li>Host variables</li>
+<li>Vault management</li>
+</ul>
+<hr>
+<h2 id="current-automation">Current Automation</h2>
+<h3 id="roles">Roles</h3>
+<ul>
+<li>common</li>
+<li>docker</li>
+<li>motd</li>
+<li>issue</li>
+<li>time</li>
+<li>homepage</li>
+<li>labtest</li>
+</ul>
+<h3 id="playbooks">Playbooks</h3>
+<ul>
+<li>site.yml</li>
+<li>update.yml</li>
+<li>facts.yml</li>
+<li>docker.yml</li>
+</ul>
+<h3 id="helper-scripts">Helper Scripts</h3>
+<ul>
+<li>ansible-site.sh</li>
+<li>ansible-update.sh</li>
+<li>ansible-facts.sh</li>
+<li>ansible-docker.sh</li>
+</ul>
+<hr>
+<h2 id="homepage">Homepage</h2>
+<p>Managed by Ansible:</p>
+<ul>
+<li>services.yaml</li>
+<li>docker.yaml</li>
+<li>settings.yaml</li>
+<li>widgets.yaml</li>
+<li>bookmarks.yaml</li>
+<li>docker-compose.yml</li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>Server inventory auto-generated from Ansible inventory</li>
+<li>Homepage deployment managed through Ansible handlers</li>
+<li>Service entries managed through host variables and templates</li>
+</ul>
+<hr>
+<h2 id="infrastructure">Infrastructure</h2>
+<ul>
+<li>Standardized timezone: America/Chicago</li>
+<li>NTP synchronization enabled on all hosts</li>
+<li>Passwordless SSH between Ansible controller and managed hosts</li>
+<li>Ansible Vault configured</li>
+<li>Git repository integrated with automation workflow</li>
+</ul>
+<hr>
+<h2 id="areas-of-study">Areas of Study</h2>
+<ul>
+<li>Linux administration</li>
+<li>Proxmox</li>
+<li>Docker</li>
+<li>Ansible</li>
+<li>Git and GitHub</li>
+<li>Networking</li>
+<li>Bash scripting</li>
+<li>Python</li>
+<li>Monitoring</li>
+<li>Backup and recovery</li>
+<li>Security</li>
+<li>AI technologies</li>
+<li>Self-hosted applications</li>
+<li>Web development</li>
+<li>Automation</li>
+<li>Infrastructure-as-Code</li>
+<li>Troubleshooting</li>
+</ul>
+<hr>
+<h2 id="success-criteria">Success Criteria</h2>
+<p>Success is measured by:</p>
+<ul>
+<li>Knowledge gained.</li>
+<li>Systems built.</li>
+<li>Problems solved.</li>
+<li>Documentation created.</li>
+<li>Automation developed.</li>
+<li>Websites maintained.</li>
+<li>Lessons learned.</li>
+<li>Ability to rebuild systems quickly.</li>
+<li>Reduction of manual configuration.</li>
+</ul>
+<hr>
+<h2 id="mindset">Mindset</h2>
+<p>The purpose of Abbey Root is not to create the perfect environment.</p>
+<p>Progress is more important than perfection.</p>
+<p>Break things.</p>
+<p>Fix things.</p>
+<p>Document what was learned.</p>
+<p>Automate what is repeated.</p>
+<p>Rebuild rather than repair when practical.</p>
+<p>Build useful projects instead of collecting idle virtual machines.</p>
+<p>Keep the lab fun and treat it as a long-term investment in skills and knowledge.</p>
+<p>The journey matters more than the destination.</p>
+<p>“sudo make me a sandwich.”</p>
+<hr>
+<h2 id="completed-2026-06-24">Completed 2026-06-24</h2>
+<h3 id="ansible">Ansible</h3>
+<ul>
+<li>Learned Jinja templates</li>
+<li>Learned handlers</li>
+<li>Learned host_vars and group_vars</li>
+<li>Created motd role</li>
+<li>Created issue role</li>
+<li>Created time role</li>
+</ul>
+<h3 id="homepage-1">Homepage</h3>
+<ul>
+<li>services.yaml managed by Ansible</li>
+<li>docker.yaml managed by Ansible</li>
+<li>settings.yaml managed by Ansible</li>
+<li>widgets.yaml managed by Ansible</li>
+<li>bookmarks.yaml managed by Ansible</li>
+<li>Server inventory auto-generated from Ansible inventory</li>
+<li>Homepage docker-compose.yml generated from Ansible</li>
+<li>Homepage deployment managed by Ansible handlers</li>
+</ul>
+<h3 id="infrastructure-1">Infrastructure</h3>
+<ul>
+<li>Standardized timezone to America/Chicago</li>
+<li>Enabled NTP synchronization on all hosts</li>
+</ul>
+<h3 id="containers">Containers</h3>
+<ul>
+<li>Deployed nginx-labtest through Ansible</li>
+<li>Validated Docker Compose deployment workflow</li>
+<li>Validated Homepage automation workflow</li>
+</ul>
+<h3 id="automation">Automation</h3>
+<ul>
+<li>Generated Homepage server inventory from Ansible inventory</li>
+<li>Generated Homepage Docker Compose configuration from variables</li>
+<li>Deployed Homepage through Ansible-managed Docker Compose</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-06-23-rocky-ansible-foundation/">← Previous: Rocky Ansible Foundation</a></p><p><a href="/journal/2026/2026-06-25-metadata-first-documentation/">Next: Metadata-First Documentation →</a></p></nav></article></main></body></html>

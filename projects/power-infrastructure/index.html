@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Power Infrastructure | Brad Cooke</title><meta name="description" content="Enterprise infrastructure automation focused on AIX, Linux, IBM Power Systems, backup workflows, and operational documentation."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><section class="project-header"><p class="project-back"><a href="/projects/">← Back to Projects</a></p><h1>Power Infrastructure</h1><p class="project-description">Enterprise infrastructure automation focused on AIX, Linux, IBM Power Systems, backup workflows, and operational documentation.</p><dl class="project-meta"><dt>Status</dt><dd>Active Development</dd><dt>Started</dt><dd>June 29, 2026</dd><dt>Updated</dt><dd>July 1, 2026</dd><dt>Stack</dt><dd>AIX • Linux • Ansible • IBM Power • Automation • Documentation</dd></dl></section><h1 id="power-infrastructure">Power Infrastructure</h1>
+<p>Power Infrastructure is a professional automation and documentation project focused on improving how enterprise infrastructure work is planned, executed, validated, and documented.</p>
+<p>The project grew from day-to-day operational needs: repeatable server tasks, user administration, backup validation, infrastructure reporting, and the need for better documentation around complex systems.</p>
+<h2 id="purpose">Purpose</h2>
+<p>The goal of this project is to turn recurring infrastructure work into repeatable, reviewable, and documented workflows.</p>
+<p>Rather than relying on manual notes or one-off commands, the project uses structured documentation, Ansible playbooks, roles, helper commands, and status files to create a more consistent operating model.</p>
+<h2 id="areas-of-focus">Areas of Focus</h2>
+<p>Current areas of focus include:</p>
+<ul>
+<li>AIX administration</li>
+<li>Linux administration</li>
+<li>IBM Power Systems operations</li>
+<li>Ansible automation</li>
+<li>Backup validation</li>
+<li>User administration workflows</li>
+<li>Operational documentation</li>
+<li>Project planning and backlog management</li>
+<li>Repeatable command-line tooling</li>
+</ul>
+<h2 id="automation">Automation</h2>
+<p>The project uses Ansible to make common infrastructure tasks more consistent and easier to validate.</p>
+<p>Current and planned automation includes:</p>
+<ul>
+<li>User account preparation</li>
+<li>User account reporting</li>
+<li>User removal workflows</li>
+<li>SSH key handling</li>
+<li>Backup agent validation</li>
+<li>Backup session verification</li>
+<li>Operational prechecks</li>
+<li>Generated reports</li>
+<li>Documentation updates</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>Documentation is a major part of the project.</p>
+<p>The goal is not only to perform infrastructure work, but to leave behind a clear record of:</p>
+<ul>
+<li>What changed</li>
+<li>Why it changed</li>
+<li>How it was validated</li>
+<li>What still needs work</li>
+<li>What should happen next</li>
+</ul>
+<p>This makes it easier to resume work later, hand off tasks, review decisions, and reduce reliance on memory.</p>
+<h2 id="developer-toolkit">Developer Toolkit</h2>
+<p>The project includes command-line helpers to make common project tasks easier.</p>
+<p>The toolkit is intended to support a consistent workflow:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>check status</span></span>
+<span class="line"><span>run the appropriate playbook</span></span>
+<span class="line"><span>validate the result</span></span>
+<span class="line"><span>update documentation</span></span>
+<span class="line"><span>commit the work</span></span></code></pre>
+<p>The long-term goal is for the project itself to make the next recommended action easier to identify.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>This project reinforces several lessons that also shape Abbey Root:</p>
+<ul>
+<li>Automation is most useful when it is tied to real operational work.</li>
+<li>Documentation should be updated as part of the workflow, not after the fact.</li>
+<li>Repeatable tasks should become playbooks, roles, or helper commands.</li>
+<li>Status files and planning documents reduce context loss between sessions.</li>
+<li>A good toolkit helps standardize both the technical work and the thinking around it.</li>
+</ul>
+<h2 id="relationship-to-abbey-root">Relationship to Abbey Root</h2>
+<p>Power Infrastructure and Abbey Root are separate projects, but they influence each other.</p>
+<p>Abbey Root provides a safe home lab for experimenting with patterns, tooling, documentation, and automation ideas.</p>
+<p>Power Infrastructure applies similar thinking to professional infrastructure workflows, especially around enterprise systems, AIX, Linux, backup validation, and operational repeatability.</p>
+<h2 id="current-status">Current Status</h2>
+<p>Power Infrastructure is actively evolving.</p>
+<p>Recent focus areas include:</p>
+<ul>
+<li>Standardizing project documentation</li>
+<li>Improving user administration workflows</li>
+<li>Building Ansible roles for repeatable tasks</li>
+<li>Validating backup-related automation</li>
+<li>Creating helper tools for project consistency</li>
+<li>Defining a cleaner roadmap and backlog</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Planned improvements include:</p>
+<ul>
+<li>Continue improving user administration automation</li>
+<li>Add reporting around completed work</li>
+<li>Improve backup validation workflows</li>
+<li>Consolidate and refine documentation</li>
+<li>Expand reusable Ansible roles</li>
+<li>Improve command-line project tooling</li>
+</ul>
+</main></body></html>

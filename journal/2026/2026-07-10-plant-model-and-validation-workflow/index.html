@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Plant model and validation workflow | Brad Cooke</title><meta name="description" content="Defined the reusable plant content model and added Abbey validation for plant workspaces."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Plant model and validation workflow</h1><p><time datetime="2026-07-10T00:00:00.000Z">July 10, 2026</time></p><p>Defined the reusable plant content model and added Abbey validation for plant workspaces.</p><p><strong>Tags:</strong> Abbey Root • BradCooke.com • Orchid Rescue • Content Model • Automation</p><h1 id="plant-model-and-validation-workflow">Plant model and validation workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>Established a reusable content model for documenting plants in Abbey Root and implemented the first supporting Abbey command.</p>
+<p>Doctor Robert served as the reference implementation for defining how plant facts, history, narrative, inventory, photographs, and source material should be organized. The resulting Plant Model separates machine-readable metadata from human-readable documentation while preserving original source material and photo provenance.</p>
+<p>The session also introduced <code>abbey plant validate</code>, which checks a plant workspace against the model and reports missing files, invalid YAML, incomplete metadata, broken photo references, and directory mismatches.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Created <code>docs/reference/PLANT_MODEL.md</code> as the canonical Plant Model specification.</li>
+<li>Defined <code>facts.yaml</code> as the machine-readable source of truth for plant metadata.</li>
+<li>Finalized the standard plant workspace structure under <code>working/plants/&lt;slug&gt;/</code>.</li>
+<li>Created a reusable plant template under <code>working/plants/_template/</code>.</li>
+<li>Added templates for:
+<ul>
+<li><code>facts.yaml</code></li>
+<li><code>history.md</code></li>
+<li><code>story.md</code></li>
+<li><code>inventory.md</code></li>
+<li><code>photo-metadata.md</code></li>
+<li><code>README.md</code></li>
+</ul>
+</li>
+<li>Documented the photo metadata philosophy and provenance rules.</li>
+<li>Added the <code>abbey plant</code> command family.</li>
+<li>Implemented <code>abbey plant validate &lt;slug&gt;</code>.</li>
+<li>Validated Doctor Robert successfully against the Plant Model.</li>
+<li>Confirmed that the incomplete template fails validation as expected.</li>
+<li>Added the <code>plant</code> command and its <code>validate</code> subcommand to CLI metadata.</li>
+<li>Regenerated the Abbey CLI reference from <code>config/cli/cli.yml</code>.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Modeling information before building automation produces simpler and more reliable tooling.</li>
+<li>A reference implementation and a reusable template serve different purposes and should remain separate.</li>
+<li>Machine-readable facts, current inventory, detailed history, and public narrative each need distinct authoritative files.</li>
+<li>Validation should report inconsistencies without silently modifying source material.</li>
+<li>Human observations should remain human-owned while automation manages structure, consistency, and state.</li>
+<li>Metadata and source provenance are essential parts of long-term project documentation.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Complete the current inventory for Doctor Robert.</li>
+<li>Review Doctor Robert against every section of the Plant Model.</li>
+<li>Add Git identity checks to <code>abbey doctor</code>.</li>
+<li>Consider adding <code>abbey plant new</code> after the manual template workflow has been validated.</li>
+<li>Prototype how BradCooke.com will consume plant workspaces.</li>
+<li>Define AI Worker’s role in summarizing, validating, and assembling plant content.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-08-abbey-framework-foundation/">← Previous: Abbey Framework Foundation</a></p><p><a href="/journal/2026/2026-07-10-doctor-robert-plant-publishing-workflow/">Next: Doctor Robert Plant Publishing Workflow →</a></p></nav></article></main></body></html>

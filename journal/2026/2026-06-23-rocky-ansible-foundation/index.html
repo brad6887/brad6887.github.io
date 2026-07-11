@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rocky Ansible Foundation | Brad Cooke</title><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Rocky Ansible Foundation</h1><p><time datetime="2026-06-23T00:00:00.000Z">June 23, 2026</time></p><p><strong>Tags:</strong> Ansible • Linux • Automation • Infrastructure • Git</p><h1 id="abbey-root-status---2026-06-23">Abbey Root Status - 2026-06-23</h1>
+<h2 id="completed">Completed</h2>
+<ul>
+<li>Created rocky-ansible01 from Rocky Linux template.</li>
+<li>Fixed hostname.</li>
+<li>Resolved duplicate IPv4 address issue.</li>
+<li>Disabled IPv6 on ens18 using NetworkManager.</li>
+<li>Regenerated machine-id.</li>
+<li>Removed rocky-test VM.</li>
+<li>Took Proxmox snapshot of rocky-ansible01.</li>
+<li>Added rocky-ansible01 to Homepage.</li>
+<li>Added GitHub SSH key for rocky-ansible01.</li>
+<li>Cloned abbey-root repository.</li>
+<li>Installed Ansible.</li>
+<li>Created Ansible inventory.</li>
+<li>Verified Ansible ping to:
+<ul>
+<li>rocky-ansible01</li>
+<li>ubuntu-dev01</li>
+<li>ai-worker01</li>
+</ul>
+</li>
+<li>Added playbooks:
+<ul>
+<li>facts.yml</li>
+<li>update.yml</li>
+<li>common.yml</li>
+</ul>
+</li>
+<li>Added Ansible README.</li>
+</ul>
+<h2 id="current-hosts">Current Hosts</h2>
+<table>
+<thead>
+<tr>
+<th>Host</th>
+<th style="text-align: right">IP</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ubuntu-dev01</td>
+<td style="text-align: right">192.168.1.86</td>
+<td>Infrastructure / Docker</td>
+</tr>
+<tr>
+<td>ai-worker01</td>
+<td style="text-align: right">192.168.1.87</td>
+<td>AI services</td>
+</tr>
+<tr>
+<td>rocky-ansible01</td>
+<td style="text-align: right">192.168.1.88</td>
+<td>Ansible control node</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next">Next</h2>
+<ul>
+<li>Add Uptime Kuma monitors for rocky-ansible01.</li>
+<li>Add Ansible playbook for Docker host checks.</li>
+<li>Begin documenting container services.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-06-24-project-philosophy-and-automation/">Next: Project Philosophy and Automation →</a></p></nav></article></main></body></html>
