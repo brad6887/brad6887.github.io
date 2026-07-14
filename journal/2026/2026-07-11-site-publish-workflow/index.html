@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Site Publish Workflow | Brad Cooke</title><meta name="description" content="Implemented the first end-to-end production publishing workflow for BradCooke.com."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Site Publish Workflow</h1><p><time datetime="2026-07-12T00:00:00.000Z">July 12, 2026</time></p><p>Implemented the first end-to-end production publishing workflow for BradCooke.com.</p><p><strong>Tags:</strong> Abbey Root • BradCooke.com • Astro • GitHub Pages • Automation</p><h1 id="site-publish-workflow">Site Publish Workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>Implemented the first complete production publishing workflow for BradCooke.com.</p>
+<p>Publishing the website previously required manually switching between the Abbey Root source repository and the separate GitHub Pages production repository. Those manual steps have now been encapsulated in a new <code>abbey site publish</code> command.</p>
+<p>The workflow validates both repositories, builds the Astro site, previews the production changes, preserves the custom domain configuration, copies the generated site into the production repository, and guides the user through committing and publishing the changes.</p>
+<p>A safe <code>--dry-run</code> mode was also introduced, allowing the entire workflow to be previewed without modifying production.</p>
+<p>The workflow was immediately validated by publishing the new Museum of Dumb Ideas section and the first OmeletYouFinish.com exhibit.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Implemented <code>abbey site publish</code>.</li>
+<li>Added <code>abbey site publish --dry-run</code>.</li>
+<li>Automated publication from the Astro source repository to the GitHub Pages repository.</li>
+<li>Automatically preserved the production <code>CNAME</code> file.</li>
+<li>Added validation to ensure both repositories are clean before publishing.</li>
+<li>Added an <code>rsync</code> preview before production changes are made.</li>
+<li>Added confirmation before modifying the production repository.</li>
+<li>Added confirmation before committing and pushing.</li>
+<li>Updated the CLI metadata and regenerated the CLI reference documentation.</li>
+<li>Successfully published the Museum of Dumb Ideas using the new workflow.</li>
+<li>Configured OmeletYouFinish.com to permanently redirect to its exhibit on BradCooke.com.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Publishing is a distinct workflow from building and deserves its own Abbey command.</li>
+<li>Keeping the Astro source repository separate from the generated GitHub Pages repository provides a clean separation between source and production artifacts.</li>
+<li>A <code>--dry-run</code> mode greatly increases confidence before publishing.</li>
+<li>Interactive confirmation steps strike a good balance between automation and protecting production.</li>
+<li>The publishing workflow reinforced one of Abbey Root’s core principles: once a manual process has been repeated enough times, it should become an Abbey command.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Reduce the verbosity of the publish preview so it highlights only meaningful changes.</li>
+<li>Add automatic verification of the live site after publication.</li>
+<li>Implement <code>abbey site deploy-check</code> as a reusable pre-publication validation command.</li>
+<li>Continue refining the BradCooke.com publishing workflow as additional site sections are added.</li>
+<li>Use the new publishing workflow for all future BradCooke.com updates.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-12-abbey-review-workflow-validation/">← Previous: Abbey Review Workflow Validation</a></p><p><a href="/journal/2026/2026-07-14-remote-access-foundation/">Next: Remote Access Foundation →</a></p></nav></article></main></body></html>

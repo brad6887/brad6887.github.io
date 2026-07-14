@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Remote Access Foundation | Brad Cooke</title><meta name="description" content="Established the foundation for secure remote access to the Abbey Root lab using Tailscale and integrated remote access validation into Abbey Doctor."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Remote Access Foundation</h1><p><time datetime="2026-07-14T00:00:00.000Z">July 14, 2026</time></p><p>Established the foundation for secure remote access to the Abbey Root lab using Tailscale and integrated remote access validation into Abbey Doctor.</p><p><strong>Tags:</strong> Abbey Root • Remote Access • Tailscale</p><h1 id="remote-access-foundation">Remote Access Foundation</h1>
+<h2 id="summary">Summary</h2>
+<p>This session established the architectural foundation for secure remote access to the Abbey Root lab. Rather than simply installing software, the focus was on defining a long-term remote access strategy that supports future collaboration, operator onboarding, and reproducible infrastructure management.</p>
+<p>Tailscale was adopted as the standard remote access solution, allowing secure connectivity without exposing management interfaces directly to the Internet. A new architecture document was created to document the design, and Abbey Doctor was extended to validate remote access readiness.</p>
+<p>During implementation, an existing assumption in the host reachability check was discovered. The check relied on inventory hostnames rather than the configured <code>ansible_host</code> addresses, causing false failures when local name resolution was unavailable. The validation logic was updated to use the inventory as the authoritative source of connectivity information.</p>
+<p>The session also clarified an important architectural distinction within Abbey Root. While <code>ubuntu-dev01</code> now serves as the Remote Access &amp; Operations Node, <code>rocky-ansible01</code> continues to function as the dedicated Ansible Control Node. Preserving that distinction avoids introducing unnecessary infrastructure changes while providing a clear path for future evaluation.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Adopted Tailscale as the Abbey Root remote access standard.</li>
+<li>Successfully established secure remote connectivity to <code>ubuntu-dev01</code>.</li>
+<li>Created <code>docs/architecture/REMOTE_ACCESS.md</code>.</li>
+<li>Added a Remote Access section to <code>abbey doctor</code>.</li>
+<li>Added validation for:
+<ul>
+<li>Tailscale installation</li>
+<li><code>tailscaled</code> service status</li>
+<li>Tailnet connectivity</li>
+<li>Assigned Tailscale IP address</li>
+<li>SSH availability (including Ubuntu socket activation)</li>
+</ul>
+</li>
+<li>Enhanced the Host Reachability check to use <code>ansible_host</code> values from the Ansible inventory.</li>
+<li>Eliminated false host reachability failures caused by missing local DNS resolution.</li>
+<li>Added architecture diagrams as a future Abbey backlog item.</li>
+<li>Validated the updated <code>abbey doctor</code> workflow with no failures.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Architecture decisions should precede implementation whenever practical.</li>
+<li>Ubuntu’s default OpenSSH configuration uses socket activation, so health checks should validate the SSH socket in addition to the service.</li>
+<li>The Ansible inventory should remain the single source of truth for host connectivity information.</li>
+<li>Abbey currently has two operational control planes:
+<ul>
+<li><code>ubuntu-dev01</code> for remote operations and day-to-day administration.</li>
+<li><code>rocky-ansible01</code> for Ansible automation.</li>
+</ul>
+</li>
+<li>Separating these responsibilities keeps the architecture simple while allowing future consolidation if it becomes beneficial.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Continue refining <code>REMOTE_ACCESS.md</code>.</li>
+<li>Create lightweight architecture diagrams for the remote access design.</li>
+<li>Develop a Remote Operator Guide for first-time users.</li>
+<li>Validate remote access from an external network such as the office or a mobile hotspot.</li>
+<li>Evaluate whether the Ansible Control Node should eventually be consolidated onto <code>ubuntu-dev01</code>.</li>
+<li>Begin designing an <code>abbey operator add</code> workflow for onboarding additional operators such as Zack.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-11-site-publish-workflow/">← Previous: Site Publish Workflow</a></p></nav></article></main></body></html>
