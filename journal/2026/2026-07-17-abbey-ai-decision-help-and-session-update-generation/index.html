@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey AI decision help and session update generation | Brad Cooke</title><meta name="description" content="Added metadata-driven AI decision help and automated session update generation to streamline recurring Abbey workflows."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey AI decision help and session update generation</h1><p><time datetime="2026-07-17T00:00:00.000Z">July 17, 2026</time></p><p>Added metadata-driven AI decision help and automated session update generation to streamline recurring Abbey workflows.</p><p><strong>Tags:</strong> Abbey Root</p><h1 id="abbey-ai-decision-help-and-session-update-generation">Abbey AI decision help and session update generation</h1>
+<h2 id="summary">Summary</h2>
+<p>This session focused on eliminating repetitive workflow friction within Abbey Root.</p>
+<p>The first enhancement made <code>abbey ai decide</code> self-documenting by generating its help output directly from decision metadata, allowing users to discover available AI decisions without inspecting the repository.</p>
+<p>The second enhancement introduced <code>abbey session update</code>, a new workflow command that creates standardized session update documents from a validated template. This removes the need to manually copy previous updates and helps keep engineering documentation consistent across sessions.</p>
+<p>Both features were implemented with comprehensive regression tests and integrated into the existing Abbey CLI.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added metadata-driven help for <code>abbey ai decide</code>.</li>
+<li>Generated decision listings directly from <code>decision.json</code> metadata.</li>
+<li>Supported <code>abbey ai decide</code>, <code>help</code>, <code>-h</code>, and <code>--help</code> consistently.</li>
+<li>Safely ignored invalid or incomplete decision definitions.</li>
+<li>Added comprehensive regression coverage for AI decision help.</li>
+<li>Implemented <code>abbey session update</code>.</li>
+<li>Added automatic title generation from session slugs.</li>
+<li>Added optional <code>--title</code> support.</li>
+<li>Added overwrite protection for existing session updates.</li>
+<li>Generated standardized session update templates that follow Abbey project conventions.</li>
+<li>Updated CLI metadata to include the new workflow command.</li>
+<li>Added full regression coverage for session update generation.</li>
+<li>Marked the completed AI help enhancement in the project backlog.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Metadata should remain the single source of truth whenever possible, including for user-facing help.</li>
+<li>Small workflow improvements often remove more long-term friction than larger one-off features.</li>
+<li>Repository standards become significantly easier to follow when they are implemented as commands instead of documentation alone.</li>
+<li>Regression tests make it much easier to continue evolving CLI workflows with confidence.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Continue evaluating <code>abbey session update</code> through daily use and refine it where practical.</li>
+<li>Consider additional session workflow automation, such as validation or template customization.</li>
+<li>Continue expanding the Abbey AI decision framework with additional reusable engineering decisions.</li>
+<li>Look for other repetitive documentation tasks that can become first-class Abbey commands.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-17-abbey-next-session-update-freshness-layer/">← Previous: Abbey Next Learns From Recent Sessions</a></p></nav></article></main></body></html>
