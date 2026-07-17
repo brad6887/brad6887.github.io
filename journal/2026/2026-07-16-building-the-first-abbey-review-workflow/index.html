@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Building the First Abbey Review Workflow | Brad Cooke</title><meta name="description" content="Added a deterministic pre-commit reviewer that helps complete Abbey sessions in the correct order."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Building the First Abbey Review Workflow</h1><p><time datetime="2026-07-16T00:00:00.000Z">July 16, 2026</time></p><p>Added a deterministic pre-commit reviewer that helps complete Abbey sessions in the correct order.</p><p><strong>Tags:</strong> Abbey Root • Workflow • Automation • Developer Toolkit</p><h1 id="building-the-first-abbey-review-workflow">Building the First Abbey Review Workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>Abbey Root now has an initial <code>abbey review</code> command for reviewing the current development session before commit.</p>
+<p>The command summarizes repository changes, checks whether the session update and journal entry are present, recommends planning documents that may need attention, suggests a commit message, and identifies the next Abbey workflow step.</p>
+<p>The first version is intentionally deterministic and read-only. It does not depend on AI and does not modify authoritative planning documents.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>
+<p>Created the top-level <code>abbey review</code> command.</p>
+</li>
+<li>
+<p>Added the command to the Abbey dispatcher.</p>
+</li>
+<li>
+<p>Added CLI metadata so the command appears in generated help.</p>
+</li>
+<li>
+<p>Reported staged, unstaged, and untracked changes separately.</p>
+</li>
+<li>
+<p>Added changed-file reporting.</p>
+</li>
+<li>
+<p>Added session update and journal detection.</p>
+</li>
+<li>
+<p>Added rule-based planning review recommendations.</p>
+</li>
+<li>
+<p>Preserved <code>NEXT.md</code> as a human-directed priority document.</p>
+</li>
+<li>
+<p>Added a categorized work summary.</p>
+</li>
+<li>
+<p>Added deterministic commit message suggestions.</p>
+</li>
+<li>
+<p>Added next-step recommendations based on current repository state.</p>
+</li>
+<li>
+<p>Corrected the workflow order so validation is recommended before documentation.</p>
+</li>
+<li>
+<p>Validated shell syntax, CLI help, metadata integration, and live command behavior.</p>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>The most important lesson from the first live run was that a workflow assistant must understand sequence.</p>
+<p>The initial implementation saw missing documentation and recommended creating it immediately. That skipped the validation stage.</p>
+<p>The command was corrected to recommend the next incomplete Abbey workflow step rather than simply reacting to the most obvious missing file.</p>
+<p>The session also clarified an important boundary: reviewing planning documents is not the same as reconciling them. The current command recommends attention but leaves authoritative edits under human control.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>
+<p>Use <code>abbey review</code> during normal development sessions.</p>
+</li>
+<li>
+<p>Refine its recommendations based on actual friction.</p>
+</li>
+<li>
+<p>Improve validation-state detection.</p>
+</li>
+<li>
+<p>Improve planning-document recommendations.</p>
+</li>
+<li>
+<p>Consider optional AI assistance only after the deterministic workflow has proven stable.</p>
+</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-16-homepage-recovery-and-ansible-architecture-review-md/">← Previous: Homepage Recovery and Ansible Architecture Review</a></p><p><a href="/journal/2026/2026-07-16-ai-decision-engine-and-model-evaluation/">Next: AI Decision Engine and Model Evaluation →</a></p></nav></article></main></body></html>

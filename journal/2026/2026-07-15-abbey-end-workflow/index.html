@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey End Workflow | Brad Cooke</title><meta name="description" content="Added the final workflow command that certifies an Abbey Root engineering session has been properly completed."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey End Workflow</h1><p><time datetime="2026-07-15T00:00:00.000Z">July 15, 2026</time></p><p>Added the final workflow command that certifies an Abbey Root engineering session has been properly completed.</p><p><strong>Tags:</strong> Abbey Root • Abbey Framework • Session Workflow • Developer Toolkit</p><h1 id="abbey-end-workflow">Abbey End Workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>This session completed another major milestone in the Abbey engineering workflow by introducing <code>abbey end</code>, the command responsible for certifying that a development session has been properly concluded.</p>
+<p>Rather than attempting to automate documentation, commits, or planning updates, the first implementation deliberately focuses on reporting verifiable facts about the repository. The command evaluates the latest committed state, ensuring that the repository is clean, required session documentation exists, Abbey Doctor reports no failures, and the branch is in an expected state before declaring the session complete.</p>
+<p>The result complements the existing workflow by providing a natural conclusion to every Abbey session while preserving the philosophy that engineering decisions remain deliberate and reproducible.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added the new top-level <code>abbey end</code> command.</li>
+<li>Integrated the command into the metadata-driven CLI.</li>
+<li>Generated updated CLI documentation.</li>
+<li>Implemented repository certification for:
+<ul>
+<li>Git repository state</li>
+<li>Current branch</li>
+<li>Working tree cleanliness</li>
+<li>Latest commit</li>
+<li>Session update presence</li>
+<li>Journal entry presence</li>
+<li>Abbey Doctor validation</li>
+<li>Upstream branch status</li>
+</ul>
+</li>
+<li>Added repository-wide ignores for macOS Finder metadata files.</li>
+<li>Validated representative incomplete-session behavior.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Session review and session completion are distinct phases of the engineering workflow.</li>
+<li>The final certification should evaluate the committed repository state rather than the current working directory.</li>
+<li>Read-only commands establish trust and are easier to evolve through practical experience.</li>
+<li>Small, deterministic workflow commands create a stronger engineering platform than highly automated commands built from speculation.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Use <code>abbey end</code> at the conclusion of every Abbey session.</li>
+<li>Refine the command through real-world usage before adding additional automation.</li>
+<li>Continue developing <code>abbey review</code> as the pre-commit workflow companion.</li>
+<li>Investigate generating AI session guidance automatically within <code>abbey session context</code> so repository-specific workflow preferences travel with the project.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-15-edge01-becomes-abbeys-internal-dns-server/">← Previous: Edge01 Becomes Abbey&#39;s Internal DNS Server</a></p><p><a href="/journal/2026/2026-07-16-homepage-recovery-and-ansible-architecture-review-md/">Next: Homepage Recovery and Ansible Architecture Review →</a></p></nav></article></main></body></html>

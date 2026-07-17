@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey Next Deterministic Recommendation Engine | Brad Cooke</title><meta name="description" content="Designed and validated the first deterministic project-aware recommendation engine for Abbey Root and identified the next architectural direction."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey Next Deterministic Recommendation Engine</h1><p><time datetime="2026-07-16T00:00:00.000Z">July 16, 2026</time></p><p>Designed and validated the first deterministic project-aware recommendation engine for Abbey Root and identified the next architectural direction.</p><p><strong>Tags:</strong> Abbey Root • Developer Toolkit • Recommendation Engine • Workflow</p><h1 id="abbey-next-deterministic-recommendation-engine">Abbey Next Deterministic Recommendation Engine</h1>
+<h2 id="summary">Summary</h2>
+<p>Implemented the first working version of <code>abbey next</code>, establishing a deterministic recommendation engine that combines project planning documents with current repository state to recommend the next focused engineering session.</p>
+<p>The implementation introduced a dedicated recommendation engine, comprehensive regression testing, and an explainable recommendation workflow while revealing that unreconciled session updates should become the next major information source.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Created <code>abbey next</code> as a first-class Abbey command.</li>
+<li>Added Recommendation Engine architecture and algorithm documentation.</li>
+<li>Built a deterministic recommendation engine separated from the shell interface.</li>
+<li>Integrated planning documents and Git working-tree awareness.</li>
+<li>Implemented active-session detection so current work is completed before unrelated work is recommended.</li>
+<li>Added structured recommendation output including objectives, supporting evidence, and suggested first steps.</li>
+<li>Created a regression test suite covering recommendation selection and failure scenarios.</li>
+<li>Added tests for active work, completed work promotion, and missing planning documents.</li>
+<li>Reconciled planning documents so <code>abbey init</code> remains future work instead of an immediate priority.</li>
+<li>Identified repetitive CLI discovery as a candidate for future <code>abbey session context</code> automation.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>The project demonstrated that recommendation quality depends more on modeling project state than on increasingly sophisticated text matching. Current work, planning documents, and session history each provide different kinds of evidence that should be combined intentionally rather than inferred through keyword overlap.</p>
+<p>Another important discovery was the distinction between authority and freshness. Planning documents represent the authoritative project direction, while unreconciled session updates contain the newest information until planning is reconciled. Future versions of <code>abbey next</code> should treat unreconciled session updates as a freshness layer rather than relying exclusively on planning documents.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Incorporate unreconciled session updates into recommendation generation.</li>
+<li>Detect recently completed work from session updates.</li>
+<li>Promote follow-up work identified during recent sessions.</li>
+<li>Report conflicts between planning documents and unreconciled session updates.</li>
+<li>Continue replacing heuristic text matching with structured project-state information.</li>
+<li>Expand regression coverage as additional recommendation behaviors are implemented.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-16-ai-decision-engine-and-model-evaluation/">← Previous: AI Decision Engine and Model Evaluation</a></p><p><a href="/journal/2026/2026-07-17-abbey-next-session-update-freshness-layer/">Next: Abbey Next Learns From Recent Sessions →</a></p></nav></article></main></body></html>

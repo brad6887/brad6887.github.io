@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI Decision Engine and Model Evaluation | Brad Cooke</title><meta name="description" content="Built a metadata-driven AI decision framework with reusable decision definitions, model comparison, and structured execution history."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>AI Decision Engine and Model Evaluation</h1><p><time datetime="2026-07-16T00:00:00.000Z">July 16, 2026</time></p><p>Built a metadata-driven AI decision framework with reusable decision definitions, model comparison, and structured execution history.</p><p><strong>Tags:</strong> Abbey Root • AI • Ollama • GPT-OSS • Qwen • Abbey Framework</p><h1 id="ai-decision-engine-and-model-evaluation">AI Decision Engine and Model Evaluation</h1>
+<h2 id="summary">Summary</h2>
+<p>Today marked a major shift in the direction of Abbey AI. What began as an effort to ask local AI models practical engineering questions evolved into a reusable decision framework capable of evaluating structured engineering decisions across multiple models.</p>
+<p>Rather than embedding prompts directly into the CLI, AI reasoning is now described through metadata-driven decision definitions consisting of a decision description, prompt, and response schema. The execution engine reads these definitions, submits them to Ollama, validates the structured response, records the results, and enables comparison across different models.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Built the <code>abbey ai decide</code> framework.</li>
+<li>Created metadata-driven decision definitions using:
+<ul>
+<li><code>decision.json</code></li>
+<li><code>prompt.md</code></li>
+<li><code>schema.json</code></li>
+</ul>
+</li>
+<li>Added configurable models, context sizes, and temperatures.</li>
+<li>Connected directly to the Ollama API running on <code>ai-worker01</code>.</li>
+<li>Added support for model overrides.</li>
+<li>Implemented <code>abbey ai models</code> to discover installed local models.</li>
+<li>Added structured execution history with runtime and token statistics.</li>
+<li>Implemented <code>abbey ai history</code>.</li>
+<li>Implemented <code>abbey ai compare</code>.</li>
+<li>Generalized the decision renderer to support multiple decision schemas.</li>
+<li>Validated the architecture by creating a second decision without modifying the execution engine.</li>
+</ul>
+<h2 id="decision-validation">Decision Validation</h2>
+<p>Two independent engineering decisions were evaluated across multiple models.</p>
+<h3 id="time-saver">Time Saver</h3>
+<p>Both GPT-OSS and Qwen independently selected <code>abbey-review</code> as the project most likely to save recurring engineering time.</p>
+<p>Although they reached the same conclusion, each model emphasized different supporting evidence and implementation priorities.</p>
+<h3 id="next-project">Next Project</h3>
+<p>The second decision intentionally produced different recommendations.</p>
+<p>GPT-OSS prioritized continuing execution of the current BradCooke.com objectives by recommending implementation of the Contact page.</p>
+<p>Qwen instead prioritized designing <code>abbey init</code>, emphasizing long-term framework leverage and project bootstrapping.</p>
+<p>The disagreement demonstrated that different models genuinely prioritize the same planning information differently, providing insight into engineering tradeoffs rather than simply producing identical answers.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>The most important realization from today’s work was that the true value lies not in asking AI questions, but in defining reusable engineering decisions.</p>
+<p>Once decision definitions became metadata-driven, the execution engine no longer needed to know anything about individual decisions. New capabilities could be added simply by creating new decision definitions rather than modifying code.</p>
+<p>Structured history also transformed AI output from disposable conversation into reproducible engineering artifacts that can be reviewed, compared, benchmarked, and improved over time.</p>
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p>This session established the first version of the Abbey AI Decision Framework.</p>
+<p>Future work will focus on evaluating decisions across every installed local model, identifying areas of agreement and disagreement, and eventually allowing higher-level Abbey AI agents to consume reusable decision definitions rather than embedding reasoning directly into agent workflows.</p>
+<p>The long-term vision is for Abbey Root to treat AI reasoning the same way it treats infrastructure, documentation, and automation: as structured, reproducible engineering artifacts managed under version control.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-16-building-the-first-abbey-review-workflow/">← Previous: Building the First Abbey Review Workflow</a></p><p><a href="/journal/2026/2026-07-16-abbey-next-deterministic-recommendation-engine/">Next: Abbey Next Deterministic Recommendation Engine →</a></p></nav></article></main></body></html>
