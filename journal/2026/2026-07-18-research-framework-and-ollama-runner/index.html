@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Research Framework and Ollama Runner | Brad Cooke</title><meta name="description" content="Built a reusable Ollama-backed research runner and established Abbey's raw-output, normalization, validation, and review architecture."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Research Framework and Ollama Runner</h1><p><time datetime="2026-07-18T00:00:00.000Z">July 18, 2026</time></p><p>Built a reusable Ollama-backed research runner and established Abbey&#39;s raw-output, normalization, validation, and review architecture.</p><p><strong>Tags:</strong> Abbey Root • AI • Research • Ollama • Voice Analysis</p><h1 id="research-framework-and-ollama-runner">Research Framework and Ollama Runner</h1>
+<h2 id="summary">Summary</h2>
+<p>What looked like a small voice-analysis side quest turned into the beginning of a reusable research platform.</p>
+<p>Abbey can now combine a research prompt with one or more input documents, send the complete package to an Ollama model, preserve the raw Markdown response, and report useful runtime and token information.</p>
+<p>The larger result was architectural rather than model-specific. The experiment established that the model should be responsible for analysis, while Abbey should be responsible for preservation, normalization, validation, provenance, and workflow.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added the <code>abbey research run</code> command.</li>
+<li>Added support for multiple research inputs.</li>
+<li>Added prompt and input validation.</li>
+<li>Added output overwrite protection.</li>
+<li>Added explicit Ollama context and output-token limits.</li>
+<li>Added runtime and token reporting.</li>
+<li>Added regression coverage for the research runner.</li>
+<li>Added a validator for observation headings, citations, provenance, and prohibited claims.</li>
+<li>Documented the general research framework and methodology.</li>
+<li>Captured Experiment 001 with its prompt, inputs, raw model result, and lessons.</li>
+<li>Migrated evidence documents from a temporary transfer directory into canonical research locations.</li>
+<li>Corrected the recurring narrative filename.</li>
+<li>Removed generated evidence that did not correspond to the established observation sequence.</li>
+<li>Confirmed that all remaining evidence numbers are unique and aligned.</li>
+<li>Ignored generated research working files and Python bytecode.</li>
+</ul>
+<h2 id="research-workflow">Research Workflow</h2>
+<p>The experiment established the following pipeline:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Prompt and inputs</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>LLM analysis</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Raw artifact</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Normalization</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Validation</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Human review</span></span></code></pre>
+<p>The model owns interpretation and analysis.</p>
+<p>Abbey owns preservation, normalization, validation, provenance, and workflow.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>The main lesson was that formatting is not an AI responsibility.</p>
+<p>The first model output contained useful observations but also Unicode punctuation, malformed headings, and an unsupported citation. Tightening the prompt improved some behavior but eventually produced truncation and still did not guarantee valid structure.</p>
+<p>Raw model output should remain unchanged as experimental evidence. Deterministic cleanup belongs after generation rather than inside increasingly complicated prompt instructions.</p>
+<p>Another useful lesson came from Git. Evidence documents share enough structure that similarity-based rename detection can confidently report the wrong source and destination. Reviewing migrations with <code>--no-renames</code> exposed what was actually happening.</p>
+<p>Plausible evidence is also not necessarily valid evidence. Several generated files sounded reasonable but did not match the established observation numbering. One claimed example did not actually demonstrate the stylistic feature it was meant to support. Those files were removed instead of being promoted merely because they looked finished.</p>
+<p>Temporary directories can also become accidental sources of truth. Moving the research material into canonical locations clarified which documents Abbey should preserve and maintain.</p>
+<h2 id="validation">Validation</h2>
+<p>The following validation completed successfully:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Abbey Research:        9 passed, 0 failed</span></span>
+<span class="line"><span>Abbey AI:             22 passed, 0 failed</span></span>
+<span class="line"><span>Abbey Next:           16 passed, 0 failed</span></span>
+<span class="line"><span>Abbey Session Update: 18 passed, 0 failed</span></span>
+<span class="line"><span>Abbey Doctor:         23 OK, 3 warnings, 0 failures</span></span></code></pre>
+<p>The doctor warnings were expected host-specific backup checks on <code>ubuntu-dev01</code>.</p>
+<p>Additional validation confirmed:</p>
+<ul>
+<li>Shell syntax is valid.</li>
+<li>Python syntax is valid.</li>
+<li>Research command help works through both command paths.</li>
+<li>No duplicate evidence identifiers remain.</li>
+<li>Every removed transfer evidence file has a canonical replacement.</li>
+<li>No staged whitespace errors remain.</li>
+<li>No unstaged or untracked files remain after capture.</li>
+</ul>
+<h2 id="impact">Impact</h2>
+<p>Abbey now has the beginning of a general research platform rather than a voice-analysis-specific script.</p>
+<p>The same runner and workflow can support future research involving:</p>
+<ul>
+<li>software evaluation</li>
+<li>AI model comparison</li>
+<li>product research</li>
+<li>writing analysis</li>
+<li>infrastructure decisions</li>
+<li>other document-grounded investigations</li>
+</ul>
+<p>The voice-analysis experiment remains the first use case, but it no longer defines the architecture.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Design and implement a deterministic research Markdown normalizer.</li>
+<li>Define which normalization operations are universally safe.</li>
+<li>Add regression tests proving normalization does not change semantic content.</li>
+<li>Decide how <code>abbey research</code> should orchestrate generation, normalization, and validation without coupling the runner to voice analysis.</li>
+<li>Run the normalized Experiment 001 artifact through the validator.</li>
+<li>Review whether the observation validator should evolve into a configurable validation framework.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-17-abbey-ai-decision-help-and-session-update-generation/">← Previous: Abbey AI decision help and session update generation</a></p><p><a href="/journal/2026/2026-07-18-abbey-research-normalization-and-validation-workflow/">Next: abbey-research-normalization-and-validation-workflow →</a></p></nav></article></main></body></html>
