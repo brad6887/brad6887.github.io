@@ -1,0 +1,65 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Planning Freshness and Session Review Guidance | Brad Cooke</title><meta name="description" content="Improved Abbey's reconciliation guidance and defined the difference between planning documents being updated and deliberately reviewed."><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Planning Freshness and Session Review Guidance</h1><p><time datetime="2026-07-20T00:00:00.000Z">July 20, 2026</time></p><p>Improved Abbey&#39;s reconciliation guidance and defined the difference between planning documents being updated and deliberately reviewed.</p><p><strong>Tags:</strong> Abbey Root • Session Workflow • Planning • Documentation</p><h1 id="planning-freshness-and-session-review-guidance">Planning Freshness and Session Review Guidance</h1>
+<h2 id="summary">Summary</h2>
+<p>Improved Abbey’s session-reconciliation workflow so planning documents retain accurate freshness information when Codex applies recommended changes.</p>
+<p>The session also completed the remaining historical reconciliation work and defined separate meanings for when a planning document was last updated and when its priorities were last reviewed by a human.</p>
+<h2 id="work-completed">Work Completed</h2>
+<p>Updated the read-only <code>abbey session review</code> prompt so that a recommended substantive change to a planning document also requires updating an existing <code>Last Updated:</code> field.</p>
+<p>The new rule explicitly prevents:</p>
+<ul>
+<li>Updating dates in otherwise unchanged files.</li>
+<li>Creating date-only edits.</li>
+<li>Inventing freshness fields for documents that do not use them.</li>
+</ul>
+<p>Added regression coverage for the new guidance and validated it through a real historical session reconciliation.</p>
+<p>The real review correctly required <code>PROJECT_STATUS.md</code> to receive <code>Last Updated: 2026-07-20</code> alongside substantive changes. It did not recommend date changes for unrelated or unchanged files.</p>
+<p>Completed the final historical session reconciliation by:</p>
+<ul>
+<li>Marking the historical reconciliation completion update as reviewed.</li>
+<li>Updating <code>PROJECT_STATUS.md</code> to reflect that historical reconciliation is complete.</li>
+<li>Removing completed reconciliation work from <code>NEXT.md</code>.</li>
+<li>Revising the existing backlog entry to retain only unfinished review refinement.</li>
+</ul>
+<p>After applying those changes, <code>abbey session review</code> reported no remaining unreviewed historical session updates.</p>
+<h2 id="planning-freshness">Planning Freshness</h2>
+<p>The session established two distinct planning concepts.</p>
+<h3 id="last-updated">Last Updated</h3>
+<p><code>Last Updated:</code> records when a document’s substantive content changed.</p>
+<p><code>PROJECT_STATUS.md</code> uses this field because it describes factual project state and completed capabilities.</p>
+<h3 id="last-reviewed">Last Reviewed</h3>
+<p><code>Last Reviewed:</code> records when a human deliberately confirmed that a document still reflects current intent, even if its wording did not change.</p>
+<p><code>NEXT.md</code> now uses this field because it remains a human-directed priority document.</p>
+<p>Document-level freshness metadata was not added to <code>BACKLOG.md</code>, <code>ROADMAP.md</code>, or <code>IDEAS.md</code>. These documents are intentionally long-lived, and a recent edit to one item should not make their entire contents appear current.</p>
+<h2 id="design-direction">Design Direction</h2>
+<p>Future <code>abbey next</code> behavior may warn when <code>NEXT.md</code> has not been reviewed within a defined period.</p>
+<p>Age alone should not cause Abbey to:</p>
+<ul>
+<li>Discard <code>NEXT.md</code>.</li>
+<li>Reduce its authority.</li>
+<li>Change recommendation scores.</li>
+<li>Override human direction.</li>
+</ul>
+<p>Freshness reporting should make uncertainty visible and prompt human review rather than silently changing project priorities.</p>
+<h2 id="workflow-validation">Workflow Validation</h2>
+<p>Validated the work with:</p>
+<ul>
+<li>Shell syntax validation for <code>tools/bin/abbey-session</code>.</li>
+<li>Nine passing session-review prompt regression checks.</li>
+<li><code>git diff --check</code>.</li>
+<li>A complete real-world <code>abbey session review</code> reconciliation cycle.</li>
+<li>A read-only noninteractive Codex review inside the Linux sandbox.</li>
+<li><code>abbey doctor</code>, which reported no failures.</li>
+</ul>
+<p>The noninteractive Codex workflow initially failed because the host did not have a system Bubblewrap installation. Installing the Ubuntu <code>bubblewrap</code> package restored reliable sandboxed <code>codex exec</code> operation.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>Read-only review tools can preserve metadata integrity through precise implementation guidance without modifying authoritative files themselves.</p>
+<p>The last time a document changed and the last time a human confirmed it are different facts. Treating them as one timestamp produces misleading freshness signals.</p>
+<p>Practical workflow use continues to expose more valuable Abbey improvements than speculative framework design. The missing date maintenance became visible only after real historical reconciliation changed planning content without changing its recorded date.</p>
+<p><code>abbey review</code> also revealed that it currently treats any changed session-update file as current session documentation, even when that file belongs to an earlier reconciliation. That behavior remains an observation for future practical evaluation.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Implement stale-<code>NEXT.md</code> warning behavior in a separate focused session.</li>
+<li>Evaluate whether <code>abbey review</code> should distinguish current-session documentation from historical session updates changed during reconciliation.</li>
+<li>Continue refining Abbey’s review workflows only where practical usage demonstrates a need.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-20-voice-analysis-artifact-framework/">← Previous: Expanded Voice Analysis project</a></p><p><a href="/journal/2026/2026-07-20-historical-session-reconciliation-completion/">Next: Historical Session Reconciliation Completion →</a></p></nav></article></main></body></html>
