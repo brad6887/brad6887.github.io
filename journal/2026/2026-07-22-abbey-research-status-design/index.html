@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey Research Status Design | Brad Cooke</title><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey Research Status Design</h1><p><time datetime="2026-07-22T00:00:00.000Z">July 22, 2026</time></p><p><strong>Tags:</strong> abbey-research • architecture • voice-analysis • metadata • workflow</p><h1 id="abbey-research-status-design">Abbey Research Status Design</h1>
+<h2 id="summary">Summary</h2>
+<p>The Abbey Research workflow reached the point where additional manual Voice Analysis migrations were no longer the most useful next step.</p>
+<p>Three complete artifact chains now exist:</p>
+<ul>
+<li>Deadpan Delivery</li>
+<li>Concise Expression</li>
+<li>Recurring Narrative Elements</li>
+</ul>
+<p>Each chain follows the formal research lifecycle:</p>
+<p>Corpus</p>
+<p>↓</p>
+<p>Experiment</p>
+<p>↓</p>
+<p>Observation</p>
+<p>↓</p>
+<p>Evidence</p>
+<p>↓</p>
+<p>Hypothesis</p>
+<p>↓</p>
+<p>Validation</p>
+<p>These examples provided enough practical evidence to begin designing deterministic research tooling.</p>
+<h2 id="work-completed">Work Completed</h2>
+<p>Created:</p>
+<ul>
+<li><code>docs/architecture/ABBEY_RESEARCH_STATUS.md</code></li>
+</ul>
+<p>Updated:</p>
+<ul>
+<li><code>docs/planning/NEXT.md</code></li>
+<li><code>docs/planning/PROJECT_STATUS.md</code></li>
+<li><code>docs/planning/BACKLOG.md</code></li>
+</ul>
+<p>The planning documents now identify deterministic research status reporting as the current Abbey Research objective.</p>
+<h2 id="why-status-comes-first">Why Status Comes First</h2>
+<p>The manual migrations showed that artifact creation is not the difficult part of the research process.</p>
+<p>The difficult work is deciding:</p>
+<ul>
+<li>What qualifies as an observation.</li>
+<li>Which examples constitute meaningful evidence.</li>
+<li>Whether a hypothesis is too broad.</li>
+<li>Whether validation has actually challenged the hypothesis.</li>
+<li>How much confidence the evidence justifies.</li>
+</ul>
+<p>Those decisions should remain human-guided.</p>
+<p>The first useful automation should therefore improve visibility and structural validation rather than generate research conclusions.</p>
+<p>The proposed command is:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey research status</span></span></code></pre>
+<p>Its role is to report the state of formal research artifacts without interpreting their content.</p>
+<h2 id="artifact-discovery">Artifact Discovery</h2>
+<p>The design uses frontmatter as the authoritative source for artifact discovery.</p>
+<p>Formal artifacts are expected beneath:</p>
+<ul>
+<li><code>docs/research/*/corpus/</code></li>
+<li><code>docs/research/*/experiments/</code></li>
+<li><code>docs/research/*/observations/</code></li>
+<li><code>docs/research/*/evidence/</code></li>
+<li><code>docs/research/*/hypotheses/</code></li>
+<li><code>docs/research/*/validation/</code></li>
+</ul>
+<p>A file is considered a formal artifact only when it contains required metadata such as:</p>
+<ul>
+<li><code>artifact_id</code></li>
+<li><code>artifact_type</code></li>
+<li><code>title</code></li>
+<li><code>version</code></li>
+<li><code>status</code></li>
+</ul>
+<p>This prevents general research documents such as <code>README.md</code>, <code>EVIDENCE.md</code>, and <code>HYPOTHESES.md</code> from being mistaken for formal artifacts.</p>
+<h2 id="relationship-model">Relationship Model</h2>
+<p>The existing artifacts demonstrated that Abbey can construct the research dependency graph from frontmatter.</p>
+<p>Research context is declared through:</p>
+<ul>
+<li><code>source.corpus</code></li>
+<li><code>source.experiment</code></li>
+</ul>
+<p>Direct dependencies are declared through:</p>
+<ul>
+<li><code>source.parent_artifacts</code></li>
+</ul>
+<p>The complete artifact index can therefore be used to resolve relationships deterministically.</p>
+<p>The design does not assume every chain is strictly linear.</p>
+<p>For example, a hypothesis may depend on both an observation and evidence, while a validation may depend on both a hypothesis and supporting evidence.</p>
+<p>The command may display a simplified chain while retaining all relationships internally.</p>
+<h2 id="provenance-and-legacy-references">Provenance and Legacy References</h2>
+<p>The Voice Analysis migration preserved references to earlier informal experiment artifacts.</p>
+<p>Examples include:</p>
+<ul>
+<li><code>OBSERVATION004-deadpan-delivery</code></li>
+<li><code>EVIDENCE004-deadpan-delivery</code></li>
+</ul>
+<p>These currently appear beside formal artifact identifiers under <code>parent_artifacts</code>.</p>
+<p>The design treats unresolved historical references conservatively:</p>
+<ul>
+<li>A reference that matches a known formal <code>artifact_id</code> becomes a formal dependency.</li>
+<li>A reference that does not resolve is reported as provenance information.</li>
+<li>A missing required formal parent is reported separately.</li>
+</ul>
+<p>This avoids treating intentional historical references as broken while still enforcing the formal lifecycle.</p>
+<p>A future metadata revision may introduce a separate field for legacy artifacts, but the first implementation will not require immediate migration.</p>
+<h2 id="research-states">Research States</h2>
+<p>The architecture defines several deterministic states.</p>
+<h3 id="complete">Complete</h3>
+<p>A valid chain includes the expected corpus, experiment, observation, evidence, hypothesis, and validation relationships.</p>
+<h3 id="incomplete">Incomplete</h3>
+<p>Valid work exists, but later lifecycle artifacts have not yet been created.</p>
+<p>Incomplete work may simply represent normal research in progress.</p>
+<h3 id="broken">Broken</h3>
+<p>A required formal reference does not resolve.</p>
+<h3 id="orphaned">Orphaned</h3>
+<p>An artifact is not connected to its expected research context or lifecycle.</p>
+<h3 id="duplicate">Duplicate</h3>
+<p>More than one file declares the same artifact identifier.</p>
+<h3 id="invalid">Invalid</h3>
+<p>Required metadata is missing, malformed, unsupported, or inconsistent.</p>
+<h3 id="provenance-only">Provenance Only</h3>
+<p>A reference identifies historical research material but does not resolve to a formal artifact.</p>
+<h2 id="command-behavior">Command Behavior</h2>
+<p>The proposed command will remain:</p>
+<ul>
+<li>Deterministic</li>
+<li>Read-only</li>
+<li>Metadata-driven</li>
+<li>Project-aware</li>
+<li>Reusable across research projects</li>
+</ul>
+<p>It will not:</p>
+<ul>
+<li>Generate observations.</li>
+<li>Interpret evidence.</li>
+<li>Create hypotheses.</li>
+<li>Assign confidence.</li>
+<li>Modify artifact status.</li>
+<li>Edit repository files.</li>
+</ul>
+<p>The command should report:</p>
+<ul>
+<li>Discovered research projects.</li>
+<li>Artifact counts by type.</li>
+<li>Formal artifact chains.</li>
+<li>Complete and incomplete states.</li>
+<li>Provenance references.</li>
+<li>Broken relationships.</li>
+<li>Duplicate identifiers.</li>
+<li>Invalid artifacts.</li>
+<li>A final summary.</li>
+</ul>
+<h2 id="planning-cleanup">Planning Cleanup</h2>
+<p>The previous <code>NEXT.md</code> still described the completed corpus-foundation phase.</p>
+<p>It was replaced with a current plan centered on research-status design.</p>
+<p>The updated planning now records:</p>
+<ul>
+<li>Completion of CORPUS-001.</li>
+<li>Completion of EXP-001.</li>
+<li>Completion of three formal artifact chains.</li>
+<li>The current research-status design phase.</li>
+<li>Future validation, scaffolding, Voice Analysis expansion, and Voice Model phases.</li>
+</ul>
+<p>The backlog also received a limited cleanup.</p>
+<p>Actionable entries were normalized as checkboxes, heading levels were corrected, and Abbey Research work was grouped into:</p>
+<ul>
+<li>Status and Visibility</li>
+<li>Validation and Workflow</li>
+<li>Provenance and Methodology</li>
+</ul>
+<h2 id="recommendation-engine-finding">Recommendation Engine Finding</h2>
+<p>The session also exposed a practical limitation in <code>abbey next</code>.</p>
+<p>The command correctly parsed the human-directed objective from <code>NEXT.md</code>, but broad token matching caused several loosely related research items to receive the same score.</p>
+<p>Examples included:</p>
+<ul>
+<li>Research status reporting</li>
+<li>Research Markdown normalization</li>
+<li>Research provenance metadata</li>
+<li>Artifact export work</li>
+</ul>
+<p>Because the scores were tied, backlog order determined the displayed recommendation.</p>
+<p>This confirmed the value of the existing backlog item to replace broad token matching with stronger project-state relationships.</p>
+<p>The result did not change the authority of <code>NEXT.md</code>.</p>
+<p>The human-selected objective remained the basis for the session.</p>
+<h2 id="design-principle">Design Principle</h2>
+<p>The most important principle established during this work is:</p>
+<blockquote>
+<p>Humans record observations and make research judgments; automation manages structure, relationships, and state.</p>
+</blockquote>
+<p>This keeps Abbey Research useful without allowing automation to quietly become the researcher.</p>
+<h2 id="outcome">Outcome</h2>
+<p>The design phase for <code>abbey research status</code> is complete.</p>
+<p>The architecture is based on actual formal artifacts rather than a theoretical workflow.</p>
+<p>The next implementation can begin from:</p>
+<ul>
+<li>Proven artifact metadata.</li>
+<li>Three complete real-world chains.</li>
+<li>Defined relationship rules.</li>
+<li>Defined chain states.</li>
+<li>Defined command boundaries.</li>
+<li>A documented validation strategy.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Implement the first deterministic <code>abbey research status</code> command.</p>
+<p>The next session should focus on:</p>
+<ul>
+<li>CLI registration.</li>
+<li>Artifact discovery.</li>
+<li>YAML frontmatter parsing.</li>
+<li>Artifact indexing.</li>
+<li>Relationship resolution.</li>
+<li>Status output for the three existing Voice Analysis chains.</li>
+<li>Synthetic test fixtures for invalid, incomplete, duplicate, and broken states.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-21-voice-analysis-artifact-migration-workflow-review/">← Previous: Voice Analysis Artifact Migration Workflow Review</a></p></nav></article></main></body></html>
