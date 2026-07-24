@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Abbey Research Artifact Creation Design | Brad Cooke</title><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Abbey Research Artifact Creation Design</h1><p><time datetime="2026-07-23T00:00:00.000Z">July 23, 2026</time></p><p><strong>Tags:</strong> abbey-research • voice-analysis • architecture • provenance • validation</p><h1 id="abbey-research-artifact-creation-design">Abbey Research Artifact Creation Design</h1>
+<h2 id="summary">Summary</h2>
+<p>The three completed Voice Analysis artifact chains were never intended to establish a manual conversion queue.</p>
+<p>They were prototypes that demonstrated the desired canonical lifecycle:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>OBS → EVID → HYP → VAL</span></span></code></pre>
+<p>The useful next step is to turn the lessons from those prototypes into a controlled creation process.</p>
+<h2 id="work-completed">Work Completed</h2>
+<p>Designed an Abbey Research workflow that separates:</p>
+<ul>
+<li>Candidate generation.</li>
+<li>Structural normalization.</li>
+<li>Deterministic sanitization.</li>
+<li>Metadata and citation validation.</li>
+<li>Human research review.</li>
+<li>Canonical promotion.</li>
+</ul>
+<p>The design gives each research attempt a persistent run workspace containing its source fingerprints, model and prompt provenance, raw output, normalized output, candidate, validation results, and review record.</p>
+<h2 id="why-the-separation-matters">Why the Separation Matters</h2>
+<p>AI output is useful for proposing research artifacts, but it should not become canonical merely because its Markdown is well formed.</p>
+<p>The workflow therefore treats a candidate and an accepted artifact as different things.</p>
+<p>Only explicit promotion may write to canonical research directories.</p>
+<h2 id="human-authority">Human Authority</h2>
+<p>Abbey can verify whether:</p>
+<ul>
+<li>A source identifier exists.</li>
+<li>A date and quotation match the corpus.</li>
+<li>Metadata is complete.</li>
+<li>Parent artifacts resolve.</li>
+<li>Scores and totals are internally consistent.</li>
+</ul>
+<p>Abbey cannot deterministically decide whether:</p>
+<ul>
+<li>Evidence is representative.</li>
+<li>A score is persuasive.</li>
+<li>A hypothesis is the best explanation.</li>
+<li>Confidence is justified.</li>
+<li>A validation outcome should be accepted.</li>
+</ul>
+<p>Those remain human review decisions.</p>
+<h2 id="initial-implementation">Initial Implementation</h2>
+<p>The first implementation should orchestrate the existing observation workflow:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey research create --type observation</span></span></code></pre>
+<p>This vertical slice will prove run manifests, provenance, immutable raw output, safe working paths, and review-ready candidates before Abbey adds canonical promotion or downstream artifact stages.</p>
+<p>Validation also found that the current <code>abbey research run</code> command fails on the Mac when no optional input files are supplied because its empty array is expanded under <code>set -u</code>. The first implementation phase must repair this portability issue before using the command as an orchestration primitive.</p>
+<h2 id="lesson">Lesson</h2>
+<p>The completed chains are most valuable as executable expectations.</p>
+<p>Their purpose is not to encourage more hand-built artifacts. Their purpose is to teach Abbey how to create future artifacts safely, consistently, and transparently.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-23-bounded-facebook-voice-model/">← Previous: Bounded Facebook Voice Model</a></p><p><a href="/journal/2026/2026-07-24-fact-locked-voice-application-cli/">Next: Fact-Locked Voice Application CLI →</a></p></nav></article></main></body></html>

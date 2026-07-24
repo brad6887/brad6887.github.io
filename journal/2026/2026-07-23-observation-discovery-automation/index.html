@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Observation Discovery Automation | Brad Cooke</title><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Observation Discovery Automation</h1><p><time datetime="2026-07-23T00:00:00.000Z">July 23, 2026</time></p><p><strong>Tags:</strong> abbey-root • research • voice-analysis • automation</p><h1 id="observation-discovery-automation">Observation Discovery Automation</h1>
+<p>The first full-corpus observation run proved the research method, but Codex
+still had to orchestrate the model calls, validate individual files, and
+assemble the candidate list. The repository contained the parts, not the
+whole process.</p>
+<p>Abbey now owns that repeatable process through:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>abbey research discover</span></span></code></pre>
+<p>The command reads a deterministic batch manifest and processes every batch.
+It saves the model’s raw response, attaches exact citation text from the
+frozen corpus, validates the normalized result, and stops safely if a batch
+cannot pass. Completed valid batches can be reused with <code>--resume</code>.</p>
+<p>After all batches pass, the command produces a single candidate index and a
+review scaffold containing one pending item for every candidate.</p>
+<p>This preserves an important boundary. Execution, source hydration, validation,
+aggregation, and scaffolding are deterministic platform responsibilities.
+Clustering, deciding whether a finding describes voice or merely topic, and
+promoting a candidate remain human-review responsibilities.</p>
+<p>The new workflow was replayed against the completed Facebook discovery without
+calling the model. It validated all 11 batches and reproduced an index of 33
+candidates with 92 exact citations. It also produced 33 pending review items.</p>
+<p>The research regression suite now has 40 passing checks, including a synthetic
+end-to-end validation-only fixture.</p>
+<p>The discovery run can now be repeated from repository commands rather than
+being reconstructed from a Codex conversation.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-23-quoted-language-evidence/">← Previous: Quoted Language Evidence</a></p><p><a href="/journal/2026/2026-07-23-mobile-upload-location-metadata-filter/">Next: Mobile Upload Location Metadata Filter →</a></p></nav></article></main></body></html>
