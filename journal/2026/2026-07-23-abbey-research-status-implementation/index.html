@@ -33,9 +33,9 @@
 <span class="line"><span>Hypotheses:   3</span></span>
 <span class="line"><span>Validations:  3</span></span></code></pre>
 <p>It then resolved the three complete research chains:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>OBS-001 -&gt; EVID-001 -&gt; HYP-001 -&gt; VAL-001</span></span>
-<span class="line"><span>OBS-002 -&gt; EVID-002 -&gt; HYP-002 -&gt; VAL-002</span></span>
-<span class="line"><span>OBS-003 -&gt; EVID-003 -&gt; HYP-003 -&gt; VAL-003</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>OBS-001 -> EVID-001 -> HYP-001 -> VAL-001</span></span>
+<span class="line"><span>OBS-002 -> EVID-002 -> HYP-002 -> VAL-002</span></span>
+<span class="line"><span>OBS-003 -> EVID-003 -> HYP-003 -> VAL-003</span></span></code></pre>
 <p>That gives the current project:</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Complete chains:      3</span></span>
 <span class="line"><span>Incomplete chains:    0</span></span>
@@ -45,12 +45,12 @@
 <span class="line"><span>EVIDENCE004-deadpan-delivery</span></span></code></pre>
 <p>These identifiers do not match the newer formal artifact IDs, but they are still useful provenance. The implementation reports them as informational references instead of assuming they are broken relationships.</p>
 <p>The current report includes six legacy provenance references:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>EVID-001 -&gt; EVIDENCE004-deadpan-delivery</span></span>
-<span class="line"><span>EVID-002 -&gt; EVIDENCE003-preference-for-concise-writing</span></span>
-<span class="line"><span>EVID-003 -&gt; EVIDENCE005-recurring-narrative-elements</span></span>
-<span class="line"><span>OBS-001 -&gt; OBSERVATION004-deadpan-delivery</span></span>
-<span class="line"><span>OBS-002 -&gt; OBSERVATION003-preference-for-concise-writing</span></span>
-<span class="line"><span>OBS-003 -&gt; OBSERVATION005-recurring-narrative-elements</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>EVID-001 -> EVIDENCE004-deadpan-delivery</span></span>
+<span class="line"><span>EVID-002 -> EVIDENCE003-preference-for-concise-writing</span></span>
+<span class="line"><span>EVID-003 -> EVIDENCE005-recurring-narrative-elements</span></span>
+<span class="line"><span>OBS-001 -> OBSERVATION004-deadpan-delivery</span></span>
+<span class="line"><span>OBS-002 -> OBSERVATION003-preference-for-concise-writing</span></span>
+<span class="line"><span>OBS-003 -> OBSERVATION005-recurring-narrative-elements</span></span></code></pre>
 <p>That conservative behavior feels right for the first implementation. Abbey should not declare old references broken just because they do not yet follow the latest ID convention.</p>
 <p>The command is deterministic and read-only. It does not modify research documents, generate replacement indexes, change planning files, or call an AI model.</p>
 <p>I also expanded the existing research regression suite.</p>

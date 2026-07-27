@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Session-Aware Slug Workflow | Brad Cooke</title><meta name="description" content="Removed duplicate slug entry from the normal Abbey session-capture workflow."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Session-Aware Slug Workflow</h1><p><time datetime="2026-07-26T00:00:00.000Z">July 26, 2026</time></p><p>Removed duplicate slug entry from the normal Abbey session-capture workflow.</p><p><strong>Tags:</strong> Abbey Root • Abbey Framework • Developer Toolkit • Session Workflow • Automation</p><h1 id="session-aware-slug-workflow">Session-Aware Slug Workflow</h1>
+<h2 id="summary">Summary</h2>
+<p>Abbey sessions can now start from a human-readable title. The toolkit derives
+one slug, uses it for both the session update and journal, and stores it in the
+session record.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added title-derived slugs to session update and capture.</li>
+<li>Added an explicit <code>--slug</code> override for intentional filename control.</li>
+<li>Preserved existing positional-slug commands.</li>
+<li>Ensured session and journal filenames always share the resolved slug.</li>
+<li>Added focused regression coverage across all three commands.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Existing session metadata is enough to preserve session identity; a separate
+mutable state file would create unnecessary coordination.</li>
+<li>Deriving a value once and passing it through related commands is safer than
+repeating equivalent transformation logic.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Evaluate broader session-aware state only when practical workflow use exposes
+another repeated handoff that the session update cannot represent.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-25-abbey-ai-risk-reducer-decision/">← Previous: Abbey AI Risk-Reducer Decision</a></p><p><a href="/journal/2026/2026-07-26-guided-session-capture-workflow/">Next: Guided Session Capture Workflow →</a></p></nav></article></main></body></html>
