@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Reproducible Managed Git Configuration | Brad Cooke</title><meta name="description" content="Abbey now defines and audits one predictable Git setup for every managed server."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Reproducible Managed Git Configuration</h1><p><time datetime="2026-07-29T00:00:00.000Z">July 29, 2026</time></p><p>Abbey now defines and audits one predictable Git setup for every managed server.</p><p><strong>Tags:</strong> Abbey Root</p><h1 id="reproducible-managed-git-configuration">Reproducible Managed Git Configuration</h1>
+<h2 id="summary">Summary</h2>
+<p>Git behavior across Abbey-managed servers is now defined by Ansible instead of
+being repaired repository by repository. The policy uses the correct identity,
+SSH GitHub transport, automatic pruning, and fast-forward-only pulls.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Added an Ansible-owned global Git configuration.</li>
+<li>Added explicit Abbey Root and Bread Pitt SSH remotes.</li>
+<li>Added <code>abbey git audit</code> and previewable <code>abbey git sync</code>.</li>
+<li>Removed the old rebase/autostash policy and aligned the shell pull alias.</li>
+<li>Protected repository contents and history from the synchronization workflow.</li>
+<li>Used the first Ubuntu canary to repair check-mode repository previews before
+any live normalization.</li>
+<li>Used the Rocky canary to make optional, absent repository checkouts safe.</li>
+<li>Added GitHub’s published ED25519 host key after the remaining-host audit
+identified missing non-interactive trust on Edge and Sensor.</li>
+<li>Fingerprint-verified and registered the Edge and Sensor public keys with
+GitHub.</li>
+<li>Completed a clean inventory-wide audit across all five managed hosts.</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>Configuration drift can originate in automation as easily as in manual
+commands; the old common role was reinstalling incomplete Git defaults.</li>
+<li>Global policy and repository normalization should be separate so host setup
+remains reproducible without making normal repository changes implicitly.</li>
+<li>Private-key distribution is not an acceptable shortcut for GitHub access;
+authentication should be audited explicitly.</li>
+<li>Ansible command tasks need separate read and preview operations to make check
+mode trustworthy.</li>
+<li>Skipped loop results are data too; optional repositories must not be treated
+like failed command executions.</li>
+<li>Non-interactive SSH needs managed host identity trust as well as a registered
+user key.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Run the Git audit whenever a managed host or repository is added.</li>
+<li>Continue using per-host public keys rather than distributing private
+credentials.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-28-abbey-research-observation-candidate-workflow/">← Previous: Abbey Research Observation Candidate Workflow</a></p><p><a href="/journal/2026/2026-07-29-project-aware-external-session-certification/">Next: Project-Aware External Session Certification →</a></p></nav></article></main></body></html>
