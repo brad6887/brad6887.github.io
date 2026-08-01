@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Keeping the Orchids, Removing the Coordinates | Brad Cooke</title><meta name="description" content="Abbey now creates smaller, privacy-safe public plant images while preserving the original photographs and their metadata."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Keeping the Orchids, Removing the Coordinates</h1><p><time datetime="2026-08-01T00:00:00.000Z">August 1, 2026</time></p><p>Abbey now creates smaller, privacy-safe public plant images while preserving the original photographs and their metadata.</p><p><strong>Tags:</strong> abbey • plants • publishing • privacy • images</p><h1 id="keeping-the-orchids-removing-the-coordinates">Keeping the Orchids, Removing the Coordinates</h1>
+<p>Today I discovered that the plant photos being published to the website were
+still carrying all the metadata from the original files.</p>
+<p>That included useful historical information, but it also included things that
+definitely did not belong on a public website: precise GPS coordinates, phone
+details, capture timestamps, Apple metadata, embedded thumbnails, and device
+identifiers.</p>
+<p>The originals should keep all of that information. They are the canonical
+historical record, and I do not want the publishing process modifying them.</p>
+<p>The public copies are a different story.</p>
+<p>I started with one new photo of Martha My Dear and worked through the process
+manually. The original was hashed, inspected, and left untouched. A separate
+public version was created that:</p>
+<ul>
+<li>applied the correct orientation</li>
+<li>converted the image to sRGB</li>
+<li>resized it to a maximum of 2400 pixels</li>
+<li>removed all embedded metadata</li>
+<li>reduced the file from about 3.8 MB to about 603 KB</li>
+</ul>
+<p>The result looked slightly less vibrant than the original Display P3 image, but
+it still looked good enough for the website.</p>
+<p>Once the manual process worked, I turned it into a reusable Abbey image helper
+and added it to <code>abbey plant publish</code>.</p>
+<p>Plant publishing now creates sanitized derivatives instead of copying original
+photos directly into the public website. It verifies that the original file did
+not change and rejects the public copy if potentially private metadata remains.</p>
+<p>Each publish run also creates a non-public manifest under
+<code>generated/plant-publication/</code>. The manifest records the source and derivative
+hashes, dimensions, transformation settings, tool versions, and publication
+role without copying the private metadata itself.</p>
+<p>After the new workflow was working, I audited the existing public plant image
+collection.</p>
+<p>The audit inspected 216 images and found 154 older public copies containing
+camera or private metadata across nine plant profiles:</p>
+<ul>
+<li>Bungalow Bill</li>
+<li>Doctor Robert</li>
+<li>Helter Skelter</li>
+<li>Honey Pie</li>
+<li>Lady Madonna</li>
+<li>Mother Nature’s Son</li>
+<li>Phal McCartney</li>
+<li>Revolution</li>
+<li>Something</li>
+</ul>
+<p>All nine profiles were republished through the new workflow. Martha My Dear had
+already been handled during the proof of concept.</p>
+<p>Before republishing, I recorded hashes for every canonical source photograph.
+Every original passed the post-publication integrity check.</p>
+<p>The final audit confirmed:</p>
+<ul>
+<li>all 216 public plant images were inspected</li>
+<li>no audited private metadata remained</li>
+<li>no public image exceeded 2400 pixels</li>
+<li>every publication manifest matched its source and derivative files</li>
+<li>all canonical originals remained unchanged</li>
+</ul>
+<p>The new public-image helper passed eight regression tests. The plant workflow
+passed all 72 tests, and the Astro production build completed successfully with
+142 pages.</p>
+<p>The plant photos on the website are now smaller, correctly oriented, and safe
+to publish while the complete originals remain preserved in the canonical
+plant workspaces.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-08-01-something-orchid-publication/">← Previous: Something Orchid Publication</a></p></nav></article></main></body></html>
