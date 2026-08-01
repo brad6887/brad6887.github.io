@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Plant Index Image Selection | Brad Cooke</title><meta name="description" content="Plant index thumbnails can now be selected independently from hero and current-condition photographs."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Plant Index Image Selection</h1><p><time datetime="2026-07-31T00:00:00.000Z">July 31, 2026</time></p><p>Plant index thumbnails can now be selected independently from hero and current-condition photographs.</p><p><strong>Tags:</strong> Abbey Root • Abbey Framework • Developer Toolkit • Plant Model • BradCooke.com</p><h1 id="plant-index-image-selection">Plant Index Image Selection</h1>
+<p>Until today, the photograph shown on the Orchid Rescue index was not really an
+index photograph.</p>
+<p>The index used the plant’s current image when one was available and fell back to
+the hero image otherwise. That worked, but it meant a photograph chosen to
+document the plant’s current condition also had to work as a small 4:3
+thumbnail.</p>
+<p>Those are not always the same job.</p>
+<p>A current photograph should accurately show how the plant looks now. An index
+photograph should look good when cropped into a small card on the Orchid Rescue
+page.</p>
+<p>The Plant Model now treats them as separate roles.</p>
+<p>The new command is:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey plant index &#x3C;slug></span></span></code></pre>
+<p>It uses the same numbered image-selection workflow as:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey plant hero &#x3C;slug></span></span></code></pre>
+<p>The selected image is stored in the plant’s canonical <code>facts.yaml</code> file as:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>photos:</span></span>
+<span class="line"><span>  index: photos/example.jpg</span></span></code></pre>
+<p>Publishing copies that source photograph to a stable public path:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/images/plants/&#x3C;slug>/index.jpg</span></span></code></pre>
+<p>The generated plant content records it as <code>indexImage</code>, and the Orchid Rescue
+page now checks image roles in this order:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>indexImage</span></span>
+<span class="line"><span>currentImage</span></span>
+<span class="line"><span>heroImage</span></span></code></pre>
+<p>That fallback order means existing plants keep working even when no dedicated
+index photograph has been selected.</p>
+<p>As part of the change, <code>photos.index: null</code> was added to the plant template and
+all existing plant workspaces. This establishes the field without forcing every
+plant to choose an index image immediately.</p>
+<p>Martha My Dear was the first real end-to-end test.</p>
+<p>I selected photo 5 with:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey plant index martha-my-dear</span></span></code></pre>
+<p>Her canonical image roles now include:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>hero: photos/Martha - 1.JPG</span></span>
+<span class="line"><span>current: photos/Martha - 5.JPG</span></span>
+<span class="line"><span>index: "photos/Martha - 5.JPG"</span></span></code></pre>
+<p>In this case, the current and index roles happen to use the same photograph.
+That briefly made the distinction confusing because the website looked the
+same.</p>
+<p>The important difference is where the photographs are used.</p>
+<p>The current image appears on Martha’s individual plant page as her latest
+documented condition.</p>
+<p>The index image appears on the main Orchid Rescue page as Martha’s thumbnail.</p>
+<p>They may currently point to the same source file, but either role can now be
+changed without changing the other.</p>
+<p>Publishing Martha created:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/images/plants/martha-my-dear/index.jpg</span></span></code></pre>
+<p>The source photograph and published index image had the same SHA-256 hash:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>8fe1f86e832ba49d91d7218d8b3773aaba572755a8a91262f195ceb5f5468568</span></span></code></pre>
+<p>The generated frontmatter contained:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>indexImage: /images/plants/martha-my-dear/index.jpg</span></span></code></pre>
+<p>The final built Orchid Rescue page also referenced that exact index path rather
+than falling back to the current image.</p>
+<p>Regression coverage was expanded along with the feature.</p>
+<p>The image-selection suite now confirms that selecting an index photograph:</p>
+<ul>
+<li>updates <code>photos.index</code></li>
+<li>leaves <code>photos.hero</code> unchanged</li>
+<li>leaves <code>photos.current</code> unchanged</li>
+<li>works through the Plant Model wrapper in an external Abbey project</li>
+</ul>
+<p>The Plant Model suite now confirms that:</p>
+<ul>
+<li>an unset index image remains valid</li>
+<li>a configured index image must exist</li>
+<li>publishing creates the stable public index file</li>
+<li>the published file matches the configured source</li>
+<li>generated frontmatter contains <code>indexImage</code></li>
+</ul>
+<p>Final validation included:</p>
+<ul>
+<li>54 image-selection assertions passed</li>
+<li>67 Plant Model assertions passed</li>
+<li>29 external-project portability assertions passed</li>
+<li>deterministic CLI documentation passed</li>
+<li><code>git diff --check</code> passed</li>
+<li>the Astro production build completed with 140 pages</li>
+<li>the local preview server restarted successfully</li>
+</ul>
+<p>This was a good example of the generic image-role framework paying off almost
+immediately.</p>
+<p>The image-selection logic did not need to be rebuilt. The new feature was
+mostly a matter of defining another role and carrying it through validation,
+publishing, generated metadata, and the website.</p>
+<p>The Orchid Rescue index can now use the photograph that works best as a
+thumbnail without changing the visual record of the plant’s current condition.</p>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-31-portable-image-role-selection/">← Previous: Portable Image Role Selection</a></p><p><a href="/journal/2026/2026-07-31-martha-my-dear-plant-publication/">Next: Martha My Dear Plant Publication →</a></p></nav></article></main></body></html>

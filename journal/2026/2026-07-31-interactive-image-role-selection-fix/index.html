@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Interactive Image Role Selection Fix | Brad Cooke</title><meta name="description" content="Validated the portable image-role workflow through real use and fixed interactive selection cancelling immediately."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Interactive Image Role Selection Fix</h1><p><time datetime="2026-07-31T00:00:00.000Z">July 31, 2026</time></p><p>Validated the portable image-role workflow through real use and fixed interactive selection cancelling immediately.</p><p><strong>Tags:</strong> Abbey Root • Abbey Framework • Developer Toolkit • Plant Model</p><h1 id="interactive-image-role-selection-fix">Interactive Image Role Selection Fix</h1>
+<h2 id="summary">Summary</h2>
+<p>The new portable image-role command worked through its non-interactive options,
+but its first normal interactive test exposed a problem.</p>
+<p>Running:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey plant hero martha-my-dear</span></span></code></pre>
+<p>listed the available photographs and then immediately cancelled instead of
+waiting for a numbered selection.</p>
+<p>The embedded Python program was being passed through standard input with
+<code>python3 -</code>. The program later tried to use that same standard input for
+<code>input()</code>, but the Python source heredoc had already consumed it.</p>
+<p>The selector now reads its embedded Python program from file descriptor 3,
+leaving standard input available for the person running the command.</p>
+<h2 id="accomplishments">Accomplishments</h2>
+<ul>
+<li>Reproduced the interactive cancellation through normal command use.</li>
+<li>Identified the conflict between the Python source heredoc and user input.</li>
+<li>Changed <code>abbey-image</code> to load its Python program from <code>/dev/fd/3</code>.</li>
+<li>Confirmed interactive selection now waits for input.</li>
+<li>Confirmed numbered selection and confirmation work normally.</li>
+<li>Added a regression test that selects an image interactively without using
+<code>--select</code>.</li>
+<li>Increased the image-selection regression suite from 46 to 49 passing
+assertions.</li>
+<li>Selected Martha My Dear photo 4 through the real workflow.</li>
+<li>Confirmed the canonical <code>facts.yaml</code> value updated correctly.</li>
+<li>Confirmed Plant Model validation passed.</li>
+<li>Published the selected image to the stable public hero path.</li>
+<li>Verified the source image and public hero had matching SHA-256 hashes.</li>
+<li>Completed a successful Astro production build containing 138 pages.</li>
+<li>Restarted the local preview server and confirmed the visible hero change.</li>
+<li>Restored the temporary Martha My Dear test changes.</li>
+</ul>
+<h2 id="impact">Impact</h2>
+<p>Interactive image-role selection now works through the intended command:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbey plant hero &#x3C;slug></span></span></code></pre>
+<p>The user can choose a numbered image and confirm the change without supplying
+non-interactive command-line options.</p>
+<p>Because the correction is in the generic image-role selector, future configured
+image roles receive the same fixed behavior.</p>
+<p>The real test also validated the complete publishing chain from canonical
+metadata through the built website.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>End-to-end testing found a defect that the initial fixture tests missed.</p>
+<p>The earlier tests covered cancellation and non-interactive selection, but they
+did not prove that a person could enter a number at the prompt. Interactive
+commands need at least one test that follows the same standard-input path used
+during normal operation.</p>
+<p>An embedded program should not consume standard input when it also needs to
+prompt the user. Giving the program source its own file descriptor keeps those
+two input streams separate.</p>
+<p>The stable public hero filename also means a browser may continue displaying a
+cached image after publishing. Restarting the preview server or performing a
+hard refresh makes the replacement visible.</p>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Complete Abbey review and validation for the fix.</li>
+<li>Commit and merge the regression-backed correction.</li>
+<li>Continue using the selector during normal plant publishing.</li>
+<li>Reconsider visual contact sheets only after more filename-based use.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-07-31-lab-wide-dns-client-rollout/">← Previous: Lab-Wide DNS Client Rollout</a></p><p><a href="/journal/2026/2026-08-01-something-orchid-publication/">Next: Something Orchid Publication →</a></p></nav></article></main></body></html>
