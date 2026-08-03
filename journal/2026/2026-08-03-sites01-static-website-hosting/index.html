@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Sites01 Static Website Hosting | Brad Cooke</title><meta name="description" content="Journal of provisioning and validating the Abbey Root static website host."><script defer src="https://analytics.bradcooke.com/script.js" data-website-id="285ce86c-dfd8-41d9-8f8b-3b718027334a" data-domains="bradcooke.com,www.bradcooke.com"></script><style>:root{color-scheme:light dark;--color-background:#fff;--color-text:#1f2933;--color-muted:#52606d;--color-border:#d9e2ec;--color-surface:#f8fafc;--color-link:#1d4ed8}@media (prefers-color-scheme:dark){:root{--color-background:#111827;--color-text:#e5e7eb;--color-muted:#9ca3af;--color-border:#374151;--color-surface:#1f2937;--color-link:#93c5fd}}body{background:var(--color-background);color:var(--color-text);margin:0;font-family:system-ui,sans-serif;line-height:1.6}a{color:var(--color-link)}.site-header{border-bottom:1px solid var(--color-border);margin-bottom:2rem}.site-nav{justify-content:space-between;gap:1rem;max-width:900px;margin:0 auto;padding:1rem;display:flex}.site-brand{font-weight:700}.site-links{gap:1rem;display:flex}@media (width<=600px){.site-nav{flex-direction:column}.site-links{flex-wrap:wrap}}main{max-width:900px;margin:0 auto;padding:0 1rem 3rem}.project-card,.project-header{border:1px solid var(--color-border);background:var(--color-surface);border-radius:.75rem}.project-card{margin:1.5rem 0;padding:1.25rem}.project-card h3{margin-top:0}.project-card dl,.project-meta{grid-template-columns:max-content 1fr;gap:.5rem 1rem;display:grid}.project-card dt,.project-meta dt{font-weight:700}.project-card dd,.project-meta dd{margin:0}.project-header{margin-bottom:2rem;padding:1.5rem}.project-back{margin-top:0;margin-bottom:1rem}.project-header h1{margin-bottom:.5rem}.project-description{color:var(--color-muted);margin-bottom:1.5rem;font-size:1.1rem}.project-meta{margin:0}@media (width<=600px){.project-card dl,.project-meta{grid-template-columns:1fr;gap:.25rem}.project-card dt,.project-meta dt{margin-top:.75rem}}
+</style></head><body><header class="site-header"><nav class="site-nav"><a class="site-brand" href="/">Brad Cooke</a><div class="site-links"><a href="/about/">About</a><a href="/projects/">Projects</a><a href="/contact/">Contact</a><a href="/journal/">Journal</a><a href="/orchid-rescue/">Orchid Rescue</a><a href="/museum/">Museum</a></div></nav></header><main><p><a href="/journal/">← Back to Journal</a></p><article><h1>Sites01 Static Website Hosting</h1><p><time datetime="2026-08-03T00:00:00.000Z">August 3, 2026</time></p><p>Journal of provisioning and validating the Abbey Root static website host.</p><p><strong>Tags:</strong> journal • infrastructure • ansible • nginx • proxmox</p><h1 id="sites01-static-website-hosting">Sites01 Static Website Hosting</h1>
+<p>Today I built the first dedicated static website host for the Abbey Root lab.</p>
+<p>The immediate reason for the server is abbeyroot.com, but the larger purpose is to create one reusable hosting platform for the collection of static sites.</p>
+<p>Abbey Root will be the first site, followed later by Bread Pitt and the other standalone domains.</p>
+<h2 id="review">Review</h2>
+<p>The first step was checking the actual environment instead of relying on older architecture assumptions.</p>
+<p>The repository showed that:</p>
+<ul>
+<li>rocky-ansible01 is the Ansible control node.</li>
+<li>edge01 currently provides internal DNS.</li>
+<li>Nginx Proxy Manager currently runs on ubuntu-dev01.</li>
+<li>The global Ansible baseline already manages common packages, internal DNS, time synchronization, MOTD, and login banners.</li>
+<li>There was no existing native static-site role.</li>
+</ul>
+<p>That corrected the earlier assumption that public ingress was already running on edge01.</p>
+<p>Rather than expand the session into moving Nginx Proxy Manager, I kept the work focused on provisioning the static host.</p>
+<p>Public ingress can continue through ubuntu-dev01 until a separate migration is designed and validated.</p>
+<h2 id="define">Define</h2>
+<p>The host design was kept intentionally small:</p>
+<ul>
+<li>Rocky Linux</li>
+<li>2 vCPU</li>
+<li>2 GB RAM</li>
+<li>32 GB disk</li>
+<li>native nginx</li>
+<li>no Docker</li>
+<li>one dedicated deployment identity</li>
+<li>one release tree per domain</li>
+<li>atomic current symlink</li>
+<li>build elsewhere and deploy finished static artifacts</li>
+</ul>
+<p>The definition of done was a reproducible host that could serve an internal abbeyroot.com placeholder and pass Ansible, DNS, firewall, SELinux, nginx, and HTTP validation.</p>
+<h2 id="build">Build</h2>
+<h3 id="vm-provisioning">VM Provisioning</h3>
+<p>I cloned Proxmox template VM 100 into VM 105 and named it sites01.</p>
+<p>The template already had the desired resource allocation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>CPU:    2 vCPU</span></span>
+<span class="line"><span>Memory: 2 GB</span></span>
+<span class="line"><span>Disk:   32 GB</span></span>
+<span class="line"><span>NIC:    VirtIO on vmbr0</span></span>
+<span class="line"><span>Agent:  QEMU guest agent enabled</span></span></code></pre>
+<p>The clone received MAC address:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>BC:24:11:02:02:84</span></span></code></pre>
+<p>I booted it with the virtual network disconnected so that a cloned static address could not conflict with an existing machine.</p>
+<p>Inside the console, I changed the hostname to sites01 and regenerated /etc/machine-id.</p>
+<p>The older /var/lib/dbus/machine-id path did not exist on this Rocky image, so only the systemd machine ID under /etc needed to be regenerated.</p>
+<h3 id="network-access">Network Access</h3>
+<p>The first candidate address, 192.168.1.89, was already in use.</p>
+<p>A ping returned replies and the neighbor table identified an active MAC address, so the candidate was rejected.</p>
+<p>Router administration was unavailable because the gateway access code was not working.</p>
+<p>Rather than guess at an unused static address, I changed the VM network profile to DHCP.</p>
+<p>I was away from home and could not directly reach the Proxmox web interface.</p>
+<p>The QEMU guest agent was active, but guest command execution was disabled:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Agent error: Command guest-exec has been disabled</span></span></code></pre>
+<p>I tunneled the Proxmox interface through ubuntu-dev01, opened the VM console remotely, reconnected the NIC, and activated the DHCP connection.</p>
+<p>The VM received:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>192.168.1.84</span></span></code></pre>
+<p>I successfully connected over SSH and authorized the rocky-ansible01 SSH key.</p>
+<p>The address remains DHCP-assigned and needs a permanent router reservation.</p>
+<h3 id="inventory-and-baseline">Inventory and Baseline</h3>
+<p>I added a new Ansible inventory group:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>web:</span></span>
+<span class="line"><span>  hosts:</span></span>
+<span class="line"><span>    sites01:</span></span>
+<span class="line"><span>      ansible_host: 192.168.1.84</span></span>
+<span class="line"><span>      ansible_user: bcooke</span></span></code></pre>
+<p>The host variables describe sites01 as a static website and production web-content host.</p>
+<p>Ansible connectivity passed:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sites01 | SUCCESS</span></span>
+<span class="line"><span>ping: pong</span></span></code></pre>
+<p>The standard site playbook applied only the shared host roles because sites01 is not part of the Docker or application groups.</p>
+<p>The baseline configured:</p>
+<ul>
+<li>common tools,</li>
+<li>Abbey shell initialization,</li>
+<li>internal DNS,</li>
+<li>the home.arpa search domain,</li>
+<li>timezone and chrony,</li>
+<li>MOTD,</li>
+<li>and the issue banner.</li>
+</ul>
+<p>The host resolved edge01.home.arpa through Technitium at 192.168.1.221, and NTP synchronization was healthy.</p>
+<h3 id="static-site-role">Static Site Role</h3>
+<p>I added a focused static_site_host role and a static-sites.yml playbook.</p>
+<p>The role installs:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>nginx</span></span>
+<span class="line"><span>firewalld</span></span>
+<span class="line"><span>policycoreutils-python-utils</span></span></code></pre>
+<p>It creates:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>User:  abbey-deploy</span></span>
+<span class="line"><span>Group: abbey-deploy</span></span>
+<span class="line"><span>Root:  /srv/www</span></span></code></pre>
+<p>The first site uses:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/srv/www/abbeyroot.com/</span></span>
+<span class="line"><span>├── current -> /srv/www/abbeyroot.com/releases/bootstrap</span></span>
+<span class="line"><span>└── releases/</span></span>
+<span class="line"><span>    └── bootstrap/</span></span>
+<span class="line"><span>        └── index.html</span></span></code></pre>
+<p>The bootstrap release contains a simple placeholder confirming that the hosting platform is online.</p>
+<p>The role also configures:</p>
+<ul>
+<li>an nginx virtual host,</li>
+<li>an nginx /healthz endpoint,</li>
+<li>persistent SELinux file contexts,</li>
+<li>restored httpd_sys_content_t labels,</li>
+<li>permanent HTTP access through firewalld,</li>
+<li>and nginx configuration validation before reload.</li>
+</ul>
+<h3 id="check-mode-correction">Check-Mode Correction</h3>
+<p>The first check-mode run found a real workflow issue.</p>
+<p>Ansible reported that it would create the bootstrap release directory, but because check mode does not actually create it, the following symlink task failed when it attempted to point current at a nonexistent target.</p>
+<p>I did not use force because that would weaken the safety of the real task.</p>
+<p>Instead, the symlink task now skips initial creation during check mode when the target release does not already exist.</p>
+<p>The following check-mode run completed with no failures.</p>
+<h2 id="validate">Validate</h2>
+<p>The host passed all functional checks.</p>
+<h3 id="services">Services</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>nginx:            active and enabled</span></span>
+<span class="line"><span>firewalld:        active</span></span>
+<span class="line"><span>sshd:             active</span></span>
+<span class="line"><span>chronyd:          active</span></span>
+<span class="line"><span>qemu-guest-agent: active</span></span></code></pre>
+<h3 id="firewall">Firewall</h3>
+<p>The permanent firewalld HTTP service returned:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>yes</span></span></code></pre>
+<h3 id="selinux">SELinux</h3>
+<p>The site root, release directory, symlink, and placeholder content all received:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>httpd_sys_content_t</span></span></code></pre>
+<h3 id="nginx">Nginx</h3>
+<p>The configuration test succeeded:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>nginx: configuration file /etc/nginx/nginx.conf test is successful</span></span></code></pre>
+<p>The placeholder was available at:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>http://192.168.1.84/</span></span></code></pre>
+<p>The health endpoint returned:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ok</span></span></code></pre>
+<p>Hostname-based tests succeeded for:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>abbeyroot.com</span></span>
+<span class="line"><span>www.abbeyroot.com</span></span>
+<span class="line"><span>sites01.home.arpa</span></span></code></pre>
+<h3 id="dns">DNS</h3>
+<p>Forward and reverse Technitium records were added and validated:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>sites01.home.arpa -> 192.168.1.84</span></span>
+<span class="line"><span>192.168.1.84 -> sites01.home.arpa</span></span></code></pre>
+<h3 id="idempotency">Idempotency</h3>
+<p>A second normal run of the focused static-site playbook completed without changes.</p>
+<p>That confirms the role converges cleanly after the initial deployment.</p>
+<h2 id="decisions">Decisions</h2>
+<p>The main decisions from this session were:</p>
+<ol>
+<li>Keep Rocky Linux 10.2 because it matches the current template and Ansible control node.</li>
+<li>Use native nginx instead of Docker.</li>
+<li>Keep Nginx Proxy Manager on ubuntu-dev01 during this session.</li>
+<li>Keep public DNS, TLS, and router changes out of scope.</li>
+<li>Build sites elsewhere and deploy only finished static artifacts.</li>
+<li>Use release directories and an atomic current symlink.</li>
+<li>Treat the DHCP address as temporary until it is reserved by MAC address.</li>
+<li>Keep real deployment tooling separate from the host-provisioning role.</li>
+</ol>
+<h2 id="security-observation">Security Observation</h2>
+<p>A full Ansible inventory dump displayed decrypted Vault variables.</p>
+<p>No secret values are recorded in project documentation, but the exposed credentials and Umami secrets must be rotated before the hosting platform is exposed publicly.</p>
+<p>This also reinforces that ansible-inventory –host should not be used casually when encrypted group variables are loaded.</p>
+<p>The graph view is safer for ordinary inventory review.</p>
+<h2 id="result">Result</h2>
+<p>sites01 is now a functioning, reproducible static website host.</p>
+<p>The host can serve abbeyroot.com internally, and the implementation establishes the directory, user, firewall, SELinux, nginx, health-check, and Ansible patterns needed to add more static sites later.</p>
+<p>The next session should deploy the real Abbey Root website through this release structure.</p>
+<p>It should not combine that deployment with moving the public reverse proxy.</p>
+<h2 id="follow-up">Follow-up</h2>
+<ul>
+<li>Reserve 192.168.1.84 for BC:24:11:02:02:84.</li>
+<li>Rotate the exposed Ansible and Umami secrets.</li>
+<li>Regenerate generated inventory documentation.</li>
+<li>Build a reusable artifact deployment workflow.</li>
+<li>Deploy the real Abbey Root site.</li>
+<li>Configure the existing Nginx Proxy Manager instance.</li>
+<li>Evaluate moving public ingress to edge01 separately.</li>
+</ul>
+<nav aria-label="Journal navigation"><hr><p><a href="/journal/2026/2026-08-02-august-2-multi-plant-updates/">← Previous: August 2 Multi-Plant Updates</a></p><p><a href="/journal/2026/2026-08-03-new-plant-onboarding-runbook/">Next: New Plant Onboarding Runbook →</a></p></nav></article></main></body></html>
