@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/martha-my-dear/current.jpg",
-        "sha256": "462d72f278e40124f5d4ed7d3d7a4ffa1949ebc399d2c6e0d0c911aeb12b248a",
+        "sha256": "51110b6ba1d205f10fb3d478baafa3ef4fbf5c34ddcd48fd5ae9fd68890906bb",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-09.jpg",
-        "sha256": "50b112865da1e7ea558ba1e1f3f62833d364c59af94b31f8b7519a78605e7a53"
+        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-18.jpg",
+        "sha256": "e0970e35bd2c0fbed90cc236c25c16a96d979841bdcce3e79faa7b9513b6013a"
       },
       "tools": {
         "exiftool": "12.76",
@@ -373,6 +373,40 @@
         "private_metadata_detected": false,
         "source_hash_unchanged": true
       }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/martha-my-dear/photo-09.jpg",
+        "sha256": "51110b6ba1d205f10fb3d478baafa3ef4fbf5c34ddcd48fd5ae9fd68890906bb",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-09",
+        "source_filename": "martha-my-dear-2026-08-18.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-18.jpg",
+        "sha256": "e0970e35bd2c0fbed90cc236c25c16a96d979841bdcce3e79faa7b9513b6013a"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
     }
   ],
   "plant": {
@@ -384,5 +418,12 @@
     "maximum_edge": 2400,
     "metadata_removed": true
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "source_project": {
+    "slug": "abbey-root"
+  },
+  "target_project": {
+    "domain": "bradcooke.com",
+    "slug": "bradcooke"
+  }
 }

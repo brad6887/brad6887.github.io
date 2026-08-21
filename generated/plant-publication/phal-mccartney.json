@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/phal-mccartney/current.jpg",
-        "sha256": "8f41a4964aeeb5de1ae7b8ba755b0ddb0739c787dd14e48384594dd4f0da197a",
+        "sha256": "3456ea04405579427a0ea06092af68f49a1ae6bc4540f3949b090f9b04d080bd",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/phal-mccartney/photos/phal-mccartney-2026-08-09-05.jpg",
-        "sha256": "bddd21ba0c7cef7706385a0b79fce0476f3856b2839078c1e01147126fce7e07"
+        "path": "working/plants/phal-mccartney/photos/phal-mccartney-2026-08-18.jpg",
+        "sha256": "0a3e183600cbef0bfa8b28e9595bd23f9767375ace0b58fb38a7bf0b1edf662f"
       },
       "tools": {
         "exiftool": "12.76",
@@ -1087,6 +1087,40 @@
         "private_metadata_detected": false,
         "source_hash_unchanged": true
       }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/phal-mccartney/photo-30.jpg",
+        "sha256": "3456ea04405579427a0ea06092af68f49a1ae6bc4540f3949b090f9b04d080bd",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-30",
+        "source_filename": "phal-mccartney-2026-08-18.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/phal-mccartney/photos/phal-mccartney-2026-08-18.jpg",
+        "sha256": "0a3e183600cbef0bfa8b28e9595bd23f9767375ace0b58fb38a7bf0b1edf662f"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
     }
   ],
   "plant": {
@@ -1098,5 +1132,12 @@
     "maximum_edge": 2400,
     "metadata_removed": true
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "source_project": {
+    "slug": "abbey-root"
+  },
+  "target_project": {
+    "domain": "bradcooke.com",
+    "slug": "bradcooke"
+  }
 }

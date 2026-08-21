@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-07-19
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/martha-my-dear/hero.jpg?v=1ab4c1e261ca
-currentImage: /images/plants/martha-my-dear/current.jpg?v=462d72f278e4
+currentImage: /images/plants/martha-my-dear/current.jpg?v=51110b6ba1d2
 indexImage: /images/plants/martha-my-dear/index.jpg?v=14aa75c95d9d
 tags:
 - orchid
@@ -162,3 +162,19 @@ Martha dropped a yellow leaf mid-week. Her bloom display is winding down, but se
 ### Care
 
 Fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Martha My Dear — 2026-08-18 — Weekly Update](/images/plants/martha-my-dear/photo-09.jpg?v=51110b6ba1d2)
+
+### Observations
+
+Martha has settled in well after dropping two older basal leaves; her remaining foliage is firm and green, the roots are plump and healthy, and she’s still holding several blooms a month after coming home.
+
+### Care
+
+Watered

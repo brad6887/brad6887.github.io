@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/revolution/current.jpg",
-        "sha256": "f369794e43b1087212d2ebace4e5c8b549facd4df7c038af4e570c28a17e2f25",
+        "sha256": "e188f6f2ddb629de3bbbe100a5cbd07b98c60500c9af7d995f797ebb8d5b0036",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/revolution/photos/revolution-2026-08-09.jpg",
-        "sha256": "d3196d1597594bd53ab9b0ba44a2f4821ee24c384660e1547091d532ab2dee79"
+        "path": "working/plants/revolution/photos/revolution-2026-08-18.jpg",
+        "sha256": "05b179fd8fc36617a292801e340fa7183ad4676acbe149b06de3c12363be2426"
       },
       "tools": {
         "exiftool": "12.76",
@@ -1087,6 +1087,40 @@
         "private_metadata_detected": false,
         "source_hash_unchanged": true
       }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/revolution/photo-30.jpg",
+        "sha256": "e188f6f2ddb629de3bbbe100a5cbd07b98c60500c9af7d995f797ebb8d5b0036",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-30",
+        "source_filename": "revolution-2026-08-18.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/revolution/photos/revolution-2026-08-18.jpg",
+        "sha256": "05b179fd8fc36617a292801e340fa7183ad4676acbe149b06de3c12363be2426"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
     }
   ],
   "plant": {
@@ -1098,5 +1132,12 @@
     "maximum_edge": 2400,
     "metadata_removed": true
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "source_project": {
+    "slug": "abbey-root"
+  },
+  "target_project": {
+    "domain": "bradcooke.com",
+    "slug": "bradcooke"
+  }
 }

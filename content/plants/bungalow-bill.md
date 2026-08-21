@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-03-29
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/bungalow-bill/hero.png?v=b8b87a88bbc4
-currentImage: /images/plants/bungalow-bill/current.jpg?v=b98d6ebfa973
+currentImage: /images/plants/bungalow-bill/current.jpg?v=52aeb08557d4
 tags:
 - orchid
 - phalaenopsis
@@ -322,3 +322,19 @@ Bill remains stable in recovery. His leaves are firm and hydrated, and several v
 ### Care
 
 Fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Bungalow Bill — 2026-08-18 — Weekly Update](/images/plants/bungalow-bill/photo-26.jpg?v=52aeb08557d4)
+
+### Observations
+
+The upper leaves remain firm, dark green, and nicely hydrated, while the older lower leaves are still hanging low without any obvious further decline.
+
+### Care
+
+Watered

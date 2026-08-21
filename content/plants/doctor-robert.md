@@ -3,14 +3,14 @@ title: Doctor Robert
 description: The rescue and recovery story of Doctor Robert, a Phalaenopsis rescued
   from neglect.
 type: orchid
-status: recovering
+status: thriving
 species: Phalaenopsis
 acquired: 2026-03-01
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/doctor-robert/hero.jpeg?v=a9c6e0f921dd
-currentImage: /images/plants/doctor-robert/current.jpg?v=d241bd4c2792
+currentImage: /images/plants/doctor-robert/current.jpg?v=5b5706038014
 tags:
 - orchid
 - orchid-rescue
@@ -601,3 +601,19 @@ Doctor Robert's remaining leaf stays firm and glossy. The root system was cleane
 ### Care
 
 Removed dead roots and fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Doctor Robert — 2026-08-18 — Weekly Update](/images/plants/doctor-robert/photo-25.jpg?v=5b5706038014)
+
+### Observations
+
+Doctor Robert continues to look good. That new leaf has grown considerably since 8/9 and is standing up nicely, while the mature leaf remains firm and dark green; the exposed roots also still look solid.
+
+### Care
+
+Watered

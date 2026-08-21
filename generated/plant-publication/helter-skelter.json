@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/helter-skelter/current.jpg",
-        "sha256": "91e728eac59190df95661f1a06034951bed2efaec4a9df6c8df7d546b39ef4d1",
+        "sha256": "6cb0dd93decf5b572c569b9aa85fd8775ac5d4fe9d7c0ad9a9d610d996a5adfe",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/helter-skelter/photos/helter-skelter-2026-08-09.jpg",
-        "sha256": "50b4ce89b8ae06680a5cadecf2ef961562349b75cc66603a9dd4543f57e2a693"
+        "path": "working/plants/helter-skelter/photos/helter-skelter-2026-08-18.jpg",
+        "sha256": "1a44f43d4d6e81c6062a56685d5bfab99759e7ba045910912fce0a4b45bd9fa1"
       },
       "tools": {
         "exiftool": "12.76",
@@ -543,6 +543,40 @@
         "private_metadata_detected": false,
         "source_hash_unchanged": true
       }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/helter-skelter/photo-15.jpg",
+        "sha256": "6cb0dd93decf5b572c569b9aa85fd8775ac5d4fe9d7c0ad9a9d610d996a5adfe",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-15",
+        "source_filename": "helter-skelter-2026-08-18.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/helter-skelter/photos/helter-skelter-2026-08-18.jpg",
+        "sha256": "1a44f43d4d6e81c6062a56685d5bfab99759e7ba045910912fce0a4b45bd9fa1"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
     }
   ],
   "plant": {
@@ -554,5 +588,12 @@
     "maximum_edge": 2400,
     "metadata_removed": true
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "source_project": {
+    "slug": "abbey-root"
+  },
+  "target_project": {
+    "domain": "bradcooke.com",
+    "slug": "bradcooke"
+  }
 }

@@ -7,9 +7,9 @@ status: recovering
 species: Phalaenopsis
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/lady-madonna/hero.jpeg?v=a5680896b47c
-currentImage: /images/plants/lady-madonna/current.jpg?v=81c7466d34db
+currentImage: /images/plants/lady-madonna/current.jpg?v=079e2db1cee7
 tags:
 - orchid
 - orchid-rescue
@@ -435,3 +435,19 @@ Lady Madonna remains stable in recovery. The leaves continue to hold their shape
 ### Care
 
 Fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Lady Madonna — 2026-08-18 — Weekly Update](/images/plants/lady-madonna/photo-23.jpg?v=079e2db1cee7)
+
+### Observations
+
+Lady Madonna remains stable with firm green foliage and a clean crown. No confirmed new leaf yet, but she continues to hold well while recovering from the move, with no obvious signs of decline.
+
+### Care
+
+Watered

@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2019-01-01
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/revolution/hero.jpeg?v=88f85ce77b4b
-currentImage: /images/plants/revolution/current.jpg?v=f369794e43b1
+currentImage: /images/plants/revolution/current.jpg?v=e188f6f2ddb6
 indexImage: /images/plants/revolution/index.jpg?v=26f5800eeca1
 tags:
 - orchid
@@ -414,3 +414,19 @@ Revolution dropped a yellow leaf mid-week but otherwise remains stable and conti
 ### Care
 
 Fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Revolution — 2026-08-18 — Weekly Update](/images/plants/revolution/photo-30.jpg?v=e188f6f2ddb6)
+
+### Observations
+
+New leaf continues strong growth and expansion. Lowest leaf remains slightly yellow-green; monitoring for normal age-related decline. Overall status: healthy / actively growing.
+
+### Care
+
+Watered

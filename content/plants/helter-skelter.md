@@ -8,9 +8,9 @@ species: Dendrobium
 acquired: 2026-03-01
 featured: true
 draft: false
-updatedDate: 2026-08-09
+updatedDate: 2026-08-18
 heroImage: /images/plants/helter-skelter/hero.jpeg?v=e05397d7f144
-currentImage: /images/plants/helter-skelter/current.jpg?v=91e728eac591
+currentImage: /images/plants/helter-skelter/current.jpg?v=6cb0dd93decf
 tags:
 - orchid
 - orchid-rescue
@@ -481,3 +481,19 @@ Helter Skelter continues steady vegetative growth. The newest cane is developing
 ### Care
 
 Fertilized.
+
+---
+
+## 2026-08-18 — Weekly Update
+
+### Photos
+
+![Helter Skelter — 2026-08-18 — Weekly Update](/images/plants/helter-skelter/photo-15.jpg?v=6cb0dd93decf)
+
+### Observations
+
+Helter Skelter continues strong active growth, with the newest cane gaining height and its upper leaves continuing to open. The developing cane remains firm and healthy, while the older growth and previous cosmetic leaf damage remain stable.
+
+### Care
+
+Watered
