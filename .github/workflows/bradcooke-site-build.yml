@@ -1,0 +1,82 @@
+name: BradCooke.com
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "site/**"
+      - "content/**"
+      - ".abbey/project.yml"
+      - ".github/workflows/bradcooke-site-build.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "site/**"
+      - "content/**"
+      - ".abbey/project.yml"
+      - ".github/workflows/bradcooke-site-build.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: BradCooke.com build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    defaults:
+      run:
+        working-directory: site
+
+    steps:
+      - name: Check out Abbey Root
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Verify generated entry point
+        run: test -f dist/index.html
+
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/dist
+
+  deploy:
+    name: BradCooke.com deploy
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy GitHub Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

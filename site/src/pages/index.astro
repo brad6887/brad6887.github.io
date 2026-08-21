@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = await getCollection("projects", ({ data }) => {
+  return data.draft !== true;
+});
+
+const featuredProject =
+  projects.find((project) => project.data.featured === true) ?? projects[0];
+---
+
+<Layout
+  title="Brad Cooke"
+  description="Linux infrastructure, automation, Infrastructure-as-Code, and AI-assisted development."
+>
+  <section>
+    <h1>Brad Cooke</h1>
+
+    <p>
+      Linux • Automation • Infrastructure as Code • AI
+    </p>
+
+    <p>
+      I build Linux infrastructure, automation, and AI-assisted development
+      environments while documenting what I learn along the way.
+    </p>
+
+    <p>
+      <a href="/about/">About</a> ·
+      <a href="/projects/">Projects</a> ·
+      <a href="/orchid-rescue/">Orchid Rescue</a> ·
+      <a href="/museum/">Museum of Dumb Ideas</a> ·
+      <a href="/contact/">Contact</a>
+    </p>
+  </section>
+
+  {featuredProject && (
+    <section>
+      <p class="section-label">Featured Project</p>
+      <ProjectCard project={featuredProject} />
+    </section>
+  )}
+
+  <section>
+    <h2>Current Focus</h2>
+
+    <ul>
+      <li>Building BradCooke.com as a technical portfolio and project journal.</li>
+      <li>Expanding Abbey Root as a reproducible Linux lab.</li>
+      <li>Using Ansible, Git, templates, and generated documentation to reduce manual work.</li>
+      <li>Developing ai-worker01 into a dedicated AI experimentation node.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I’m Working Toward</h2>
+
+    <p>
+      My goal is to build useful systems, break them safely, understand how they
+      work, automate what repeats, and share the lessons through this site.
+    </p>
+  </section>
+</Layout>

@@ -1,0 +1,45 @@
+schema_version: 1
+project:
+  name: BradCooke.com
+  slug: bradcooke
+  description: Personal publishing, projects, museum exhibits, and Orchid Rescue.
+framework:
+  name: Abbey
+  schema_version: 1
+configuration:
+  allow_toolkit_defaults: false
+capabilities:
+  personal_publishing: true
+workflow:
+  journal:
+    policy: event-driven
+validation:
+  commands:
+    - git diff --check
+paths:
+  planning: docs/planning
+  session_updates: docs/session-updates
+  journal: content/journal
+imports:
+  plants:
+    content: content/plants
+    public_images: site/public/images/plants
+    manifests: generated/plant-publication
+site:
+  source: site
+  build:
+    method: npm
+    output: dist
+  validation:
+    public_root: site/public
+    media_manifests: []
+    required_routes:
+      - /
+      - /journal/
+      - /museum/
+      - /orchid-rescue/
+      - /projects/
+  publish:
+    method: github-pages
+    target: origin:main
+    domain: bradcooke.com
