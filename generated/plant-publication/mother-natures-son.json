@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/mother-natures-son/current.jpg",
-        "sha256": "9ebc1aed23f90f5d04dcb92c0fd73bc4d8f35fe00f4e322aa0a61b62aafcb42a",
+        "sha256": "fc0650dafe595ac6a52dc2840dae878a422d96da00e64fb721c6dc208b1e0dd5",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/mother-natures-son/photos/mother-natures-son-2026-08-18.jpg",
-        "sha256": "e7e6f88b93f62875cdb46899892a23f9560903f552265e5d7a76d733afa12bd7"
+        "path": "working/plants/mother-natures-son/photos/mother-natures-son-2026-08-23.jpg",
+        "sha256": "79a1465759d63f13e755cc8157a2498d5df62bfc422bb739dbd36896ab72c013"
       },
       "tools": {
         "exiftool": "12.76",
@@ -1309,6 +1309,40 @@
         "canonical_original_preserved": true,
         "path": "working/plants/mother-natures-son/photos/mother-natures-son-2026-08-18.jpg",
         "sha256": "e7e6f88b93f62875cdb46899892a23f9560903f552265e5d7a76d733afa12bd7"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/mother-natures-son/photo-38.jpg",
+        "sha256": "fc0650dafe595ac6a52dc2840dae878a422d96da00e64fb721c6dc208b1e0dd5",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-38",
+        "source_filename": "mother-natures-son-2026-08-23.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/mother-natures-son/photos/mother-natures-son-2026-08-23.jpg",
+        "sha256": "79a1465759d63f13e755cc8157a2498d5df62bfc422bb739dbd36896ab72c013"
       },
       "tools": {
         "exiftool": "12.76",

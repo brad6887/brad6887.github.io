@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-03-01
 featured: true
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-23
 heroImage: /images/plants/doctor-robert/hero.jpeg?v=a9c6e0f921dd
-currentImage: /images/plants/doctor-robert/current.jpg?v=5b5706038014
+currentImage: /images/plants/doctor-robert/current.jpg?v=4f7f0226ac99
 tags:
 - orchid
 - orchid-rescue
@@ -617,3 +617,19 @@ Doctor Robert continues to look good. That new leaf has grown considerably since
 ### Care
 
 Watered
+
+---
+
+## 2026-08-23 — Weekly Update
+
+### Photos
+
+![Doctor Robert — 2026-08-23 — Weekly Update](/images/plants/doctor-robert/photo-26.jpg?v=4f7f0226ac99)
+
+### Observations
+
+Doctor Robert continues to look excellent. The new leaf has made very noticeable progress even since 8/18—larger, thicker, and opening nicely—while the mature leaf remains firm and glossy and the exposed roots look substantial.
+
+### Care
+
+Watered.

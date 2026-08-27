@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2019-01-01
 featured: true
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-23
 heroImage: /images/plants/revolution/hero.jpeg?v=88f85ce77b4b
-currentImage: /images/plants/revolution/current.jpg?v=e188f6f2ddb6
+currentImage: /images/plants/revolution/current.jpg?v=2abc2c2018cd
 indexImage: /images/plants/revolution/index.jpg?v=26f5800eeca1
 tags:
 - orchid
@@ -430,3 +430,19 @@ New leaf continues strong growth and expansion. Lowest leaf remains slightly yel
 ### Care
 
 Watered
+
+---
+
+## 2026-08-23 — Weekly Update
+
+### Photos
+
+![Revolution — 2026-08-23 — Weekly Update](/images/plants/revolution/photo-31.jpg?v=2abc2c2018cd)
+
+### Observations
+
+Revolution continues to look good, with the new leaf growing strongly and the mature leaves remaining firm. The older bottom leaf still has that lighter yellow-green tone we have been watching, but the change remains gradual and consistent with normal leaf turnover.
+
+### Care
+
+Watered.

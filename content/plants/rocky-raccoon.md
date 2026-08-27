@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-08-02
 featured: true
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-23
 heroImage: /images/plants/rocky-raccoon/hero.jpg?v=0b14ca9608f4
-currentImage: /images/plants/rocky-raccoon/current.jpg?v=559e112f496e
+currentImage: /images/plants/rocky-raccoon/current.jpg?v=fdad5675694c
 tags:
 - orchid
 - orchid-rescue
@@ -124,3 +124,19 @@ Rocky remains stable and is still recovering from the severe dehydration he came
 ### Care
 
 Watered
+
+---
+
+## 2026-08-23 — Weekly Update
+
+### Photos
+
+![Rocky Raccoon — 2026-08-23 — Weekly Update](/images/plants/rocky-raccoon/photo-05.jpg?v=fdad5675694c)
+
+### Observations
+
+Rocky continues to look stable; the leaves are still floppy from his rough start, but they’re staying green and the crown looks healthy. Still recovering, with no signs that he’s moving backward.
+
+### Care
+
+Watered.
