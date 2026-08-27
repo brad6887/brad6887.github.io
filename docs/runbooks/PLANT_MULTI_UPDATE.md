@@ -130,12 +130,19 @@ Example:
     - revolution-2026-08-18-01.jpg
     - revolution-2026-08-18-02.jpg
   current: revolution-2026-08-18-01.jpg
-  narrative: "Steady recovery. The new leaf continues to grow."
-  care: "Watered."
+  narrative: >-
+    Steady recovery. The new leaf continues to grow.
+  care: Watered.
   status: null
 ```
 
 Confirm that the worksheet contains only the intended plant slugs and date.
+Validate its YAML and structure before checking canonical workspace state:
+
+```bash
+worksheet="working/plant-updates/YYYY-MM-DD.yml"
+abbey plant update-batch validate "$worksheet"
+```
 
 ## 5. Preview and Apply the Batch
 
@@ -143,7 +150,7 @@ Preview the complete canonical update:
 
 ```bash
 abbey plant update-batch apply \
-  "working/plant-updates/YYYY-MM-DD.yml" \
+  "$worksheet" \
   --dry-run
 ```
 
@@ -152,7 +159,7 @@ worksheet:
 
 ```bash
 abbey plant update-batch apply \
-  "working/plant-updates/YYYY-MM-DD.yml"
+  "$worksheet"
 ```
 
 The command validates the complete batch before writing, copies photographs
@@ -164,13 +171,27 @@ Do not remove incoming files until canonical copies, history entries, and
 published pages have been verified. Preserve or archive original exports when
 they are the authoritative source photographs.
 
+If every update reports `DONE ... update already applied`, do not delete or
+recreate canonical files. Continue with plant validation and export. If apply
+reports an incomplete or inconsistent existing update, stop and inspect the
+named workspace before proceeding.
+
 ## 6. Validate the Updated Plants
 
-Validate an explicit list and stop at the first failure:
+Populate the plant array from the reviewed worksheet, preserving its order:
 
 ```bash
-plants=(plant-one plant-two plant-three)
+mapfile -t plants < <(
+  abbey plant update-batch slugs "$worksheet"
+)
 
+printf 'Plants: %s\n' "${plants[*]}"
+```
+
+Confirm the printed list, then validate each plant and stop at the first
+failure:
+
+```bash
 for plant in "${plants[@]}"
 do
   abbey plant validate "$plant" || break
@@ -276,3 +297,24 @@ abbey site publish
 The command rebuilds and validates the site, then asks before pushing the
 configured branch and starting the GitHub Pages deployment. Verify several
 updated live plant pages after the deployment succeeds.
+
+Check the GitHub Actions deployment from the BradCooke.com repository:
+
+```bash
+gh run list \
+  --repo brad6887/brad6887.github.io \
+  --branch main \
+  --limit 5
+
+run_id="REPLACE_WITH_RUN_ID"
+gh run watch "$run_id" \
+  --repo brad6887/brad6887.github.io
+```
+
+Finally, verify that a representative live page contains the observation date:
+
+```bash
+curl -fsSL \
+  https://bradcooke.com/orchid-rescue/rocky-raccoon/ |
+  rg "YYYY-MM-DD"
+```
