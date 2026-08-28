@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/lady-madonna/current.jpg",
-        "sha256": "1f40ff82c05b93b6862399b25e35f432462e26f23c5a59c162fa5507c7a04555",
+        "sha256": "4a915c07b8940b3047811fd8a80fe38662cbd180618d4dbc6bdafcbb76f0d8d0",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/lady-madonna/photos/lady-madonna-2026-08-23.jpg",
-        "sha256": "919bdc6dc0ca975018ef24197c72f124881a20ae49ea02f79b5006f230b184a1"
+        "path": "working/plants/lady-madonna/photos/lady-madonna-2026-08-28.jpg",
+        "sha256": "63023d8c5ed07e33bf4e6dee07f1693c13082d7c55c8b87afd3886c6aa3466a7"
       },
       "tools": {
         "exiftool": "12.76",
@@ -867,6 +867,40 @@
         "canonical_original_preserved": true,
         "path": "working/plants/lady-madonna/photos/lady-madonna-2026-08-23.jpg",
         "sha256": "919bdc6dc0ca975018ef24197c72f124881a20ae49ea02f79b5006f230b184a1"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/lady-madonna/photo-25.jpg",
+        "sha256": "4a915c07b8940b3047811fd8a80fe38662cbd180618d4dbc6bdafcbb76f0d8d0",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-25",
+        "source_filename": "lady-madonna-2026-08-28.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/lady-madonna/photos/lady-madonna-2026-08-28.jpg",
+        "sha256": "63023d8c5ed07e33bf4e6dee07f1693c13082d7c55c8b87afd3886c6aa3466a7"
       },
       "tools": {
         "exiftool": "12.76",

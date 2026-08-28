@@ -3,18 +3,18 @@ title: Lady Madonna
 description: The rescue and recovery story of Lady Madonna, a Phalaenopsis rescued
   from neglect.
 type: orchid
-status: recovering
+status: thriving
 species: Phalaenopsis
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-28
 heroImage: /images/plants/lady-madonna/hero.jpeg?v=a5680896b47c
-currentImage: /images/plants/lady-madonna/current.jpg?v=1f40ff82c05b
+currentImage: /images/plants/lady-madonna/current.jpg?v=4a915c07b894
 tags:
 - orchid
 - orchid-rescue
 - phalaenopsis
-- recovering
+- thriving
 ---
 
 ## Lady Madonna
@@ -467,3 +467,15 @@ She still looks stable. Foliage is maintaining good color with no new yellowing,
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-28 — Weekly Update
+
+### Photos
+
+![Lady Madonna — 2026-08-28 — Weekly Update](/images/plants/lady-madonna/photo-25.jpg?v=4a915c07b894)
+
+### Observations
+
+Lady Madonna had a nice surprise this week: a new flower spike, first noticed on 8/28 and already visible in the 8/23 photo. After spending the summer recovering from the move, she appears ready to bloom again. Her roots remain strong, the foliage is stable, and the new spike is developing cleanly from a leaf axil. For now, care will stay the same while we let the spike gain some length before staking.
