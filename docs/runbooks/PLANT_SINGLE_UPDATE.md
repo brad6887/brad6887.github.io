@@ -96,8 +96,17 @@ abbey plant update <slug> \
   --dry-run
 ```
 
-`--care` and `--status` are optional. Review the preview, then repeat the
-command without `--dry-run`.
+`--care` and `--status` are optional. Review the preview. To actually apply the
+update, repeat the same command without `--dry-run`:
+
+```bash
+abbey plant update <slug> \
+  --photo "$HOME/incoming/photos/<slug>-YYYY-MM-DD.jpg" \
+  --narrative "Current condition and visible changes." \
+  --care "Watered." \
+  --status thriving \
+  --date YYYY-MM-DD
+```
 
 The command copies the photograph into the canonical workspace, appends a
 dated history entry, selects the new current photograph, and updates structured
@@ -275,5 +284,25 @@ abbey site publish
 ```
 
 The command rebuilds and validates the site, then asks before pushing the
-configured branch and starting the GitHub Pages deployment. Verify the live
-plant page after the deployment succeeds.
+configured branch and starting the GitHub Pages deployment. List the recent
+GitHub Actions runs and watch the deployment run:
+
+```bash
+gh run list \
+  --repo brad6887/brad6887.github.io \
+  --branch main \
+  --limit 5
+
+run_id="REPLACE_WITH_RUN_ID"
+gh run watch "$run_id" \
+  --repo brad6887/brad6887.github.io
+```
+
+After the deployment succeeds, verify that the live plant page contains the
+observation date:
+
+```bash
+curl -fsSL \
+  "https://bradcooke.com/orchid-rescue/<slug>/" |
+  rg "YYYY-MM-DD"
+```
