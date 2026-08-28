@@ -63,7 +63,12 @@ IMG_9896.JPG
 IMG_9896.xmp
 ```
 
-Preview the metadata-derived rename from Abbey Root:
+The interactive update reads the plant name from the XMP caption and the
+capture date from the image before either file is renamed. Keep the original
+export names for the normal interactive workflow.
+
+For scripting or recovery, preview the metadata-derived rename from Abbey
+Root:
 
 ```bash
 cd "$ABBEY_REPO"
@@ -72,7 +77,8 @@ abbey plant rename-exports "$HOME/incoming/photos" --dry-run
 
 The proposed slug and capture date must match the intended plant and
 observation date. Correct the XMP description if necessary, then repeat the
-preview. Apply the rename only after the complete preview is correct:
+preview. Apply the rename only when using the explicit command workflow below
+and after the complete preview is correct:
 
 ```bash
 abbey plant rename-exports "$HOME/incoming/photos"
@@ -84,11 +90,38 @@ verified.
 
 ### 2. Preview and Apply the Observation
 
-From Abbey Root, preview the canonical update:
+From Abbey Root, start the metadata-driven interactive update:
+
+```bash
+cd "$ABBEY_REPO"
+abbey plant update
+```
+
+Abbey scans `$HOME/incoming/photos`, lists metadata-complete photo/XMP pairs,
+and matches each XMP caption to an existing plant workspace. Select the photo,
+confirm the plant and capture date, then enter the status, update title,
+observation, and optional care note. The title defaults to `Weekly Update` but
+may describe a special event, such as `New Flower Spike`.
+
+The command shows the proposed incoming rename and runs the complete update as
+a dry-run preview. Review the preview, then answer the separate apply prompt.
+Applying renames the selected photo and XMP sidecar together, updates the
+canonical workspace, and validates the plant. A cancelled preview changes
+nothing.
+
+Use a different intake directory when necessary:
+
+```bash
+abbey plant update --incoming /path/to/photos
+```
+
+For scripting, recovery, or an already renamed photograph, use the explicit
+form. Preview the canonical update first:
 
 ```bash
 abbey plant update <slug> \
   --photo "$HOME/incoming/photos/<slug>-YYYY-MM-DD.jpg" \
+  --title "New Flower Spike" \
   --narrative "Current condition and visible changes." \
   --care "Watered." \
   --status thriving \
@@ -96,12 +129,14 @@ abbey plant update <slug> \
   --dry-run
 ```
 
-`--care` and `--status` are optional. Review the preview. To actually apply the
-update, repeat the same command without `--dry-run`:
+`--title` defaults to `Weekly Update`; `--care` and `--status` are optional.
+Review the preview. To actually apply the update, repeat the same command
+without `--dry-run`:
 
 ```bash
 abbey plant update <slug> \
   --photo "$HOME/incoming/photos/<slug>-YYYY-MM-DD.jpg" \
+  --title "New Flower Spike" \
   --narrative "Current condition and visible changes." \
   --care "Watered." \
   --status thriving \
@@ -110,7 +145,8 @@ abbey plant update <slug> \
 
 The command copies the photograph into the canonical workspace, appends a
 dated history entry, selects the new current photograph, and updates structured
-status metadata. It rejects a second observation for the same date.
+status metadata. It rejects a second observation for the same date regardless
+of the update title.
 
 ### 3. Validate the Canonical Workspace
 
