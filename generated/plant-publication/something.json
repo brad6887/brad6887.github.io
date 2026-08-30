@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpeg",
         "height": 2400,
-        "path": "site/public/images/plants/something/hero.jpeg",
+        "path": "site/public/images/plants/something/original.jpeg",
         "sha256": "8a840aa1950c661c7b6fb6c49644bc4cf71b6b1f5d2675ff0dbc6c7ed28bbc21",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/something/photos/Something - 1.jpeg",
+        "sha256": "164dd9d0787ee59806c5347251a0bfb6486b280b27bb6886192d791374d2d826"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpeg",
+        "height": 2400,
+        "path": "site/public/images/plants/something/hero.jpeg",
+        "sha256": "0735b1b56e709093ec1aa5a8224d2a3c7fe0bdb7072f5370d5799800442b444e",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/something/photos/Something - 1.jpeg",
-        "sha256": "164dd9d0787ee59806c5347251a0bfb6486b280b27bb6886192d791374d2d826"
+        "path": "working/plants/something/photos/Something - 6.jpeg",
+        "sha256": "1d956c29ac9ced24ee98c4871dc3a0024d609e84b7792f2f262f0e67e43982ac"
       },
       "tools": {
         "exiftool": "12.76",

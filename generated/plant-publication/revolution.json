@@ -2,6 +2,40 @@
   "images": [
     {
       "derivative": {
+        "format": "png",
+        "height": 1600,
+        "path": "site/public/images/plants/revolution/original.png",
+        "sha256": "66f33f36e4dfed7f47a94e5bfe699af908d57d5a3daeb42e731f7078fca870e8",
+        "width": 1200
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/revolution/photos/Revolution - 1.png",
+        "sha256": "6945bf4b52755a3e7edb75cc7b769bbde96fba0197a6ab8418a91e6341ec2ba5"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": null
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
         "format": "jpeg",
         "height": 2400,
         "path": "site/public/images/plants/revolution/hero.jpeg",

@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpeg",
         "height": 2400,
-        "path": "site/public/images/plants/helter-skelter/hero.jpeg",
+        "path": "site/public/images/plants/helter-skelter/original.jpeg",
         "sha256": "e05397d7f1443a694c5144a9dd46d2307fd686a22f4f57ad8efe99a21e9e0e4a",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/helter-skelter/photos/HelterSkelter - 1 of 12.jpeg",
+        "sha256": "d591e3468f3bd7c62d4076f25513396d16ee8aa1468d0796e81d9c62daee0ef9"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/helter-skelter/hero.jpg",
+        "sha256": "b160bfc0939c9dbb98475ba22d4a94519744d095cdfa99db336ffffeedc3e5e0",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/helter-skelter/photos/HelterSkelter - 1 of 12.jpeg",
-        "sha256": "d591e3468f3bd7c62d4076f25513396d16ee8aa1468d0796e81d9c62daee0ef9"
+        "path": "working/plants/helter-skelter/photos/helter-skelter-2026-08-23.jpg",
+        "sha256": "f4b9c956b85e74f6c321f4cd0c86692d9252d6e8002516e817908032f7858a5f"
       },
       "tools": {
         "exiftool": "12.76",

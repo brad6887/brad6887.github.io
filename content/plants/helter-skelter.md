@@ -9,7 +9,8 @@ acquired: 2026-03-01
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/helter-skelter/hero.jpeg?v=e05397d7f144
+originalImage: /images/plants/helter-skelter/original.jpeg?v=e05397d7f144
+heroImage: /images/plants/helter-skelter/hero.jpg?v=b160bfc0939c
 currentImage: /images/plants/helter-skelter/current.jpg?v=581ae5a0a60f
 tags:
 - orchid

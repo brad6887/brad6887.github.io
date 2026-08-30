@@ -9,7 +9,8 @@ acquired: 2026-06-14
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/honey-pie/hero.jpeg?v=4a892a826853
+originalImage: /images/plants/honey-pie/original.jpeg?v=4a892a826853
+heroImage: /images/plants/honey-pie/hero.jpg?v=cd6079a210e5
 currentImage: /images/plants/honey-pie/current.jpg?v=1c4c2d8ef6a8
 tags:
 - orchid

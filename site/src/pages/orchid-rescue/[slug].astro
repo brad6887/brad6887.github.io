@@ -1,4 +1,5 @@
 ---
+import PlantImageRoles from "../../components/PlantImageRoles.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { formatDate } from "../../lib/date";
@@ -28,18 +29,12 @@ const { Content } = await render(plant);
   title={`${plant.data.title} | Orchid Rescue`}
   description={plant.data.description}
 >
-  <main class="page">
+  <div class="page">
     <p><a href="/orchid-rescue/">← Orchid Rescue</a></p>
 
     <h1>{plant.data.title}</h1>
 
-    {plant.data.heroImage && (
-      <img
-        class="hero-image"
-        src={plant.data.heroImage}
-        alt={`${plant.data.title} at the beginning of the rescue`}
-      />
-    )}
+    <PlantImageRoles {...plant.data} />
 
     <dl>
       <dt>Status</dt>
@@ -60,45 +55,21 @@ const { Content } = await render(plant);
       )}
     </dl>
 
+    {plant.data.updatedDate && <p>Last updated: {formatDate(plant.data.updatedDate)}</p>}
+
     <article class="plant-content">
       <Content />
     </article>
 
-    {plant.data.currentImage && (
-      <section class="current-status">
-        <h2>Current Condition</h2>
-
-        <img
-          src={plant.data.currentImage}
-          alt={`${plant.data.title} in its current condition`}
-        />
-
-        {plant.data.updatedDate && (
-          <p>
-            Last updated: {formatDate(plant.data.updatedDate)}
-          </p>
-        )}
-      </section>
-    )}
-  </main>
+  </div>
 </Layout>
 
 <style>
   .page {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
     line-height: 1.6;
-  }
-
-  .hero-image,
-  .current-status img {
-    display: block;
-    width: 100%;
-    max-height: 650px;
-    margin: 1.5rem 0;
-    border-radius: 0.75rem;
-    object-fit: contain;
   }
 
   dt {
@@ -111,7 +82,9 @@ const { Content } = await render(plant);
   }
 
   .plant-content {
-    margin-top: 2rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    overflow-wrap: anywhere;
   }
 
   .plant-content :global(img) {
@@ -125,7 +98,14 @@ const { Content } = await render(plant);
     object-fit: contain;
   }
 
-  .current-status {
-    margin-top: 3rem;
+  .plant-content :global(.plant-history-notes) {
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin: 2rem 0;
+    background: var(--color-surface);
   }
+  .plant-content :global(summary) { cursor: pointer; font-weight: 700; }
+  .plant-content :global(summary:focus-visible) { outline: 3px solid var(--color-link); }
+
 </style>

@@ -9,6 +9,7 @@ acquired: 2019-01-01
 featured: true
 draft: false
 updatedDate: 2026-08-30
+originalImage: /images/plants/revolution/original.png?v=66f33f36e4df
 heroImage: /images/plants/revolution/hero.jpeg?v=88f85ce77b4b
 currentImage: /images/plants/revolution/current.jpg?v=5efd9bdf5136
 indexImage: /images/plants/revolution/index.jpg?v=26f5800eeca1

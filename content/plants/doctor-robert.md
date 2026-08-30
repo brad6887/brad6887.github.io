@@ -9,7 +9,8 @@ acquired: 2026-03-01
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/doctor-robert/hero.jpeg?v=a9c6e0f921dd
+originalImage: /images/plants/doctor-robert/original.jpeg?v=a9c6e0f921dd
+heroImage: /images/plants/doctor-robert/hero.jpeg?v=7e27be5957ad
 currentImage: /images/plants/doctor-robert/current.jpg?v=a68df897ac82
 tags:
 - orchid

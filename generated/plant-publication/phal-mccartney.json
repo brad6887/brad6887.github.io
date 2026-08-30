@@ -4,6 +4,40 @@
       "derivative": {
         "format": "jpeg",
         "height": 2400,
+        "path": "site/public/images/plants/phal-mccartney/original.jpeg",
+        "sha256": "64429204026b04b70c41a8e7d58e20780b3b796a063c781db30bd53285bea386",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/phal-mccartney/photos/Phal_McCartney - 1.jpeg",
+        "sha256": "a9ac4448dca2d312c912aca51ccac8a50ce65e4acad80c8700a1a267158ef8d0"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpeg",
+        "height": 2400,
         "path": "site/public/images/plants/phal-mccartney/hero.jpeg",
         "sha256": "6218e3692367d77c7fd4d061e8259b87289519154f5a852a642e2d7c6eea1065",
         "width": 1800

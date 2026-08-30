@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpg",
         "height": 2400,
-        "path": "site/public/images/plants/mother-natures-son/hero.jpg",
+        "path": "site/public/images/plants/mother-natures-son/original.jpg",
         "sha256": "2b4b7b45c9300ca6e45efb9386e7dba6ffae912c94ea76045f51845a99732c89",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/mother-natures-son/photos/Mother_natures_son - 1.jpg",
+        "sha256": "7a4664600abced8129b8bbbd2bec28185ae34bd0d8bed4512d0232e1888ce9d2"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpeg",
+        "height": 2400,
+        "path": "site/public/images/plants/mother-natures-son/hero.jpeg",
+        "sha256": "12d2fd2e6ee9fdb0237c025c8a41b2965c8f010b4ab9723217f2ea8bcf74ae68",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/mother-natures-son/photos/Mother_natures_son - 1.jpg",
-        "sha256": "7a4664600abced8129b8bbbd2bec28185ae34bd0d8bed4512d0232e1888ce9d2"
+        "path": "working/plants/mother-natures-son/photos/Mother_natures_son - 14.jpeg",
+        "sha256": "15df162f013206c40e134b003e888864b10ab8d6225ee6fab2cdfa6b13a50941"
       },
       "tools": {
         "exiftool": "12.76",

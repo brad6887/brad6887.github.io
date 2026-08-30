@@ -9,7 +9,8 @@ acquired: 2026-08-02
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/rocky-raccoon/hero.jpg?v=0b14ca9608f4
+originalImage: /images/plants/rocky-raccoon/original.jpg?v=0b14ca9608f4
+heroImage: /images/plants/rocky-raccoon/hero.jpg?v=9160031a298d
 currentImage: /images/plants/rocky-raccoon/current.jpg?v=f2d1608d6715
 tags:
 - orchid

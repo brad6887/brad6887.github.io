@@ -9,7 +9,8 @@ acquired: 2026-01-05
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/something/hero.jpeg?v=8a840aa1950c
+originalImage: /images/plants/something/original.jpeg?v=8a840aa1950c
+heroImage: /images/plants/something/hero.jpeg?v=0735b1b56e70
 currentImage: /images/plants/something/current.jpg?v=167cb27b94be
 indexImage: /images/plants/something/index.jpg?v=bc9cc8a0ca97
 tags:

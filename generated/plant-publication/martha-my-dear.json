@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpg",
         "height": 2400,
-        "path": "site/public/images/plants/martha-my-dear/hero.jpg",
+        "path": "site/public/images/plants/martha-my-dear/original.jpg",
         "sha256": "1ab4c1e261cae75ffe3ecd8312c12d534cc3594d24244e0cfe8b8c15cd310ea5",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/martha-my-dear/photos/Martha - 1.JPG",
+        "sha256": "b3666153e4be3bc84e4beefb6ab48642172efd0de286bd0935408be5a92b115c"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/martha-my-dear/hero.jpg",
+        "sha256": "48b436adf95a66d4dd2f9cd8a7347db79c9a54eac611a239e4677f5c6cdd5267",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/martha-my-dear/photos/Martha - 1.JPG",
-        "sha256": "b3666153e4be3bc84e4beefb6ab48642172efd0de286bd0935408be5a92b115c"
+        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-01.jpg",
+        "sha256": "da7fd1a2dc0f93a8a5691f522ac5c6d8ba1d52ae5ba7e3e3ef9a61578dacdc92"
       },
       "tools": {
         "exiftool": "12.76",

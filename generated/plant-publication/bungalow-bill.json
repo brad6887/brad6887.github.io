@@ -2,6 +2,40 @@
   "images": [
     {
       "derivative": {
+        "format": "jpeg",
+        "height": 2400,
+        "path": "site/public/images/plants/bungalow-bill/original.jpeg",
+        "sha256": "a4f9c9f7aa5a98120949b4ee043359cb02add0fec892533f01d49ce4d121191c",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/bungalow-bill/photos/Bungalow Bill - 1 of 13.jpeg",
+        "sha256": "2f024080f58c902fdb725225cd2a5a5ad3f69213c57712abf93a9c0f91ad2d6a"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
         "format": "png",
         "height": 1572,
         "path": "site/public/images/plants/bungalow-bill/hero.png",

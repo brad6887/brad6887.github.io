@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpeg",
         "height": 2400,
-        "path": "site/public/images/plants/doctor-robert/hero.jpeg",
+        "path": "site/public/images/plants/doctor-robert/original.jpeg",
         "sha256": "a9c6e0f921dd9cfbae6b44f13d2d7c4a2bf4bffcbdab82320fb2ec4f42ac32e6",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/doctor-robert/photos/IMG_C52D2813-DCED-40FD-BBF7-605ACE5D9306.jpeg",
+        "sha256": "114b25005d8563423a88c65cd4965152da48500654f132341094b87d1cfcbb7a"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpeg",
+        "height": 2400,
+        "path": "site/public/images/plants/doctor-robert/hero.jpeg",
+        "sha256": "7e27be5957ad1aa3df76d5693248d58ddde413d9b6ee8151bf91843e90eee7e5",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/doctor-robert/photos/IMG_C52D2813-DCED-40FD-BBF7-605ACE5D9306.jpeg",
-        "sha256": "114b25005d8563423a88c65cd4965152da48500654f132341094b87d1cfcbb7a"
+        "path": "working/plants/doctor-robert/photos/IMG_1481C7B6-2459-4C3F-826D-752A88C735DC.jpeg",
+        "sha256": "2e4138d4757d2ce61b1bdfb621b485d24465faac551ba11a8052106fb1cea4ff"
       },
       "tools": {
         "exiftool": "12.76",

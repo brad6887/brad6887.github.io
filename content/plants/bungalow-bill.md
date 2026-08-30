@@ -9,6 +9,7 @@ acquired: 2026-03-29
 featured: true
 draft: false
 updatedDate: 2026-08-30
+originalImage: /images/plants/bungalow-bill/original.jpeg?v=a4f9c9f7aa5a
 heroImage: /images/plants/bungalow-bill/hero.png?v=b8b87a88bbc4
 currentImage: /images/plants/bungalow-bill/current.jpg?v=bf03c1232727
 tags:

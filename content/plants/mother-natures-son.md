@@ -9,7 +9,8 @@ acquired: 2026-02-01
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/mother-natures-son/hero.jpg?v=2b4b7b45c930
+originalImage: /images/plants/mother-natures-son/original.jpg?v=2b4b7b45c930
+heroImage: /images/plants/mother-natures-son/hero.jpeg?v=12d2fd2e6ee9
 currentImage: /images/plants/mother-natures-son/current.jpg?v=901f57936f9c
 tags:
 - orchid

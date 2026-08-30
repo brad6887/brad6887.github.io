@@ -8,7 +8,8 @@ species: Phalaenopsis
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/lady-madonna/hero.jpeg?v=a5680896b47c
+originalImage: /images/plants/lady-madonna/original.jpeg?v=b6aee45098e7
+heroImage: /images/plants/lady-madonna/hero.jpeg?v=032a75bb2b04
 currentImage: /images/plants/lady-madonna/current.jpg?v=ef779d1f5d1c
 tags:
 - orchid

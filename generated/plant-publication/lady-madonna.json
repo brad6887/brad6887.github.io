@@ -4,8 +4,42 @@
       "derivative": {
         "format": "jpeg",
         "height": 2400,
+        "path": "site/public/images/plants/lady-madonna/original.jpeg",
+        "sha256": "b6aee45098e7fc5be49edd9e9b42a70e7802b091cb067f342d4f5a38c9cf1b59",
+        "width": 1800
+      },
+      "publication": {
+        "field": "photos.original",
+        "name": "original",
+        "type": "role"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/lady-madonna/photos/Lady_Madonna - 1.jpeg",
+        "sha256": "40d6346e1f1399874aa77801efec067144f43da9b94ae3f908f1c74bdf0b682c"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpeg",
+        "height": 2400,
         "path": "site/public/images/plants/lady-madonna/hero.jpeg",
-        "sha256": "a5680896b47c191df1e24e407a65ff8b07c93b296f175274f98ddf44f66cbd01",
+        "sha256": "032a75bb2b040635387b76fd9f96c6cbb8f78bac76906b401ec47fc326545c61",
         "width": 1800
       },
       "publication": {
@@ -15,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/lady-madonna/photos/Lady_Madonna - 17.jpeg",
-        "sha256": "051113004b2a9a33d482882abc6b430f4d17bdd56f21970c78405623f38eb4ab"
+        "path": "working/plants/lady-madonna/photos/Lady_Madonna - 18.jpeg",
+        "sha256": "30b6549d0aa76104f4d7b74f4472dabdc9a4ab618d99bdccfaa71743b37ec584"
       },
       "tools": {
         "exiftool": "12.76",

@@ -9,7 +9,8 @@ acquired: 2026-07-19
 featured: true
 draft: false
 updatedDate: 2026-08-30
-heroImage: /images/plants/martha-my-dear/hero.jpg?v=1ab4c1e261ca
+originalImage: /images/plants/martha-my-dear/original.jpg?v=1ab4c1e261ca
+heroImage: /images/plants/martha-my-dear/hero.jpg?v=48b436adf95a
 currentImage: /images/plants/martha-my-dear/current.jpg?v=d43012d8c727
 indexImage: /images/plants/martha-my-dear/index.jpg?v=14aa75c95d9d
 tags:

@@ -8,6 +8,7 @@ species: Phalaenopsis
 featured: true
 draft: false
 updatedDate: 2026-08-30
+originalImage: /images/plants/phal-mccartney/original.jpeg?v=64429204026b
 heroImage: /images/plants/phal-mccartney/hero.jpeg?v=6218e3692367
 currentImage: /images/plants/phal-mccartney/current.jpg?v=e78bc6423c2d
 indexImage: /images/plants/phal-mccartney/index.jpeg?v=6218e3692367
