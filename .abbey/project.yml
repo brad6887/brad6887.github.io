@@ -35,6 +35,9 @@ site:
     media_manifests: []
     required_routes:
       - /
+      - /about/
+      - /plants/
+      - /contact/
       - /journal/
       - /museum/
       - /orchid-rescue/

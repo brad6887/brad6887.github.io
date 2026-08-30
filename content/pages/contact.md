@@ -2,7 +2,7 @@
 title: Contact
 description: Get in touch with Brad Cooke about plants, projects, or the website.
 nav: true
-nav_order: 30
+nav_order: 60
 draft: false
 ---
 

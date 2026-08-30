@@ -5,22 +5,28 @@ const pages = await getCollection('pages', ({ data }) => {
   return data.nav === true && data.draft !== true;
 });
 
-const navPages = pages.sort((a, b) => {
-  return a.data.nav_order - b.data.nav_order;
-});
+const navLinks = [
+  ...pages.map((page) => ({
+    title: page.data.title,
+    href: `/${page.id}/`,
+    order: page.data.nav_order,
+  })),
+  { title: 'Museum', href: '/museum/', order: 30 },
+  { title: 'Bread Pitt', href: 'https://breadpitt.net/', order: 40 },
+  { title: 'Abbey Root', href: 'https://abbeyroot.com/', order: 50 },
+].sort((a, b) => a.order - b.order);
 ---
 
 <header class="site-header">
-  <nav class="site-nav">
+  <nav class="site-nav" aria-label="Primary">
     <a class="site-brand" href="/">Brad Cooke</a>
 
     <div class="site-links">
-      {navPages.map((page) => (
-        <a href={`/${page.id}/`}>{page.data.title}</a>
+      {navLinks.map((link) => (
+        <a href={link.href} aria-current={Astro.url.pathname === link.href ? 'page' : undefined}>
+          {link.title}{link.href.startsWith('https://') && <span aria-hidden="true"> ↗</span>}
+        </a>
       ))}
-
-      <a href="/orchid-rescue/">Orchid Rescue</a>
-      <a href="/museum/">Museum</a>
     </div>
   </nav>
 </header>

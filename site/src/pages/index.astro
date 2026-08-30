@@ -1,65 +1,77 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import HubCard from "../components/HubCard.astro";
 
-const projects = await getCollection("projects", ({ data }) => {
-  return data.draft !== true;
-});
-
-const featuredProject =
-  projects.find((project) => project.data.featured === true) ?? projects[0];
+const orchid = await getEntry("plants", "phal-mccartney");
+const plantImage = orchid?.data.indexImage ?? orchid?.data.currentImage ?? orchid?.data.heroImage;
 ---
 
 <Layout
   title="Brad Cooke"
-  description="Linux infrastructure, automation, Infrastructure-as-Code, and AI-assisted development."
+  description="A sample of my projects and hobbies: plants, cooking, weird ideas, and my home lab."
 >
-  <section>
+  <section class="home-intro">
     <h1>Brad Cooke</h1>
-
-    <p>
-      Linux • Automation • Infrastructure as Code • AI
-    </p>
-
-    <p>
-      I build Linux infrastructure, automation, and AI-assisted development
-      environments while documenting what I learn along the way.
-    </p>
-
-    <p>
-      <a href="/about/">About</a> ·
-      <a href="/projects/">Projects</a> ·
-      <a href="/orchid-rescue/">Orchid Rescue</a> ·
-      <a href="/museum/">Museum of Dumb Ideas</a> ·
-      <a href="/contact/">Contact</a>
-    </p>
+    <p>This is a sample of some of the things I work on in my spare time. I'm always adding new stuff.</p>
   </section>
 
-  {featuredProject && (
-    <section>
-      <p class="section-label">Featured Project</p>
-      <ProjectCard project={featuredProject} />
-    </section>
-  )}
-
-  <section>
-    <h2>Current Focus</h2>
-
-    <ul>
-      <li>Building BradCooke.com as a technical portfolio and project journal.</li>
-      <li>Expanding Abbey Root as a reproducible Linux lab.</li>
-      <li>Using Ansible, Git, templates, and generated documentation to reduce manual work.</li>
-      <li>Developing ai-worker01 into a dedicated AI experimentation node.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>What I’m Working Toward</h2>
-
-    <p>
-      My goal is to build useful systems, break them safely, understand how they
-      work, automate what repeats, and share the lessons through this site.
-    </p>
+  <section class="hub-grid" aria-label="Projects and hobbies">
+    <HubCard
+      title="Plants"
+      description="This is where I track the health and wellness of my plants."
+      href="/plants/"
+      image={plantImage}
+      imageAlt="Phal McCartney orchid"
+    />
+    <HubCard
+      title="Bread Pitt"
+      description="This is where I collect recipes and document my cooking experiments."
+      href="https://breadpitt.net/"
+      image="/images/projects/bread-pitt.jpg"
+      imageAlt="A finished loaf from Bread Pitt"
+    />
+    <HubCard
+      title="Museum of Dumb Ideas"
+      description="This is where I put things I find weird and amusing. Feel free to send me suggestions."
+      href="/museum/"
+      image="/images/museum/brad-posing-with-stuck-jeep.jpeg"
+      imageAlt="Brad posing with a stuck Jeep"
+    />
+    <HubCard
+      title="Abbey Root"
+      description="This is where I document my home lab setup and the technical workings behind my websites."
+      href="https://abbeyroot.com/"
+      image="/images/projects/abbey-root-lab-network-placeholder.webp"
+      imageAlt="Placeholder illustration of a home lab network, not an accurate or canonical lab diagram"
+    />
   </section>
 </Layout>
+
+<style>
+  .home-intro {
+    margin-bottom: 2rem;
+  }
+
+  .home-intro h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .home-intro p {
+    max-width: 44rem;
+    font-size: 1.15rem;
+    color: var(--color-muted);
+  }
+
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .hub-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

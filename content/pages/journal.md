@@ -1,7 +1,7 @@
 ---
 title: Journal
 description: Notes, progress updates, lessons learned, and project history.
-nav: true
+nav: false
 nav_order: 30
 draft: false
 ---

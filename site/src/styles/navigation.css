@@ -8,25 +8,42 @@
   margin: 0 auto;
   padding: 1rem;
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
 }
 
 .site-brand {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .site-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
-@media (max-width: 600px) {
+.site-links a {
+  white-space: nowrap;
+}
+
+.site-nav a:focus-visible {
+  outline: 2px solid var(--color-link);
+  outline-offset: 4px;
+}
+
+.site-links a[aria-current="page"] {
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
   .site-nav {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .site-links {
-    flex-wrap: wrap;
+  .site-links a {
+    padding-block: 0.25rem;
   }
 }

@@ -1,0 +1,89 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const { title, description, href, image, imageAlt = "" } = Astro.props;
+const external = href.startsWith("https://");
+---
+
+<article class="hub-card">
+  <a href={href}>
+    {image ? (
+      <img
+        src={image}
+        alt={imageAlt}
+        width="640"
+        height="360"
+      />
+    ) : (
+      <div class="hub-domain" aria-hidden="true">{external ? new URL(href).hostname : title}</div>
+    )}
+    <div class="hub-copy">
+      <h2>{title}{external && <span aria-hidden="true"> ↗</span>}</h2>
+      <p>{description}</p>
+    </div>
+  </a>
+</article>
+
+<style>
+  .hub-card {
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    background: var(--color-surface);
+  }
+
+  .hub-card a {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .hub-card a:hover h2,
+  .hub-card a:focus-visible h2 {
+    text-decoration: underline;
+  }
+
+  .hub-card a:focus-visible {
+    outline: 3px solid var(--color-link);
+    outline-offset: 4px;
+  }
+
+  .hub-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.75rem 0.75rem 0 0;
+  }
+
+  .hub-domain {
+    display: grid;
+    aspect-ratio: 16 / 9;
+    place-items: center;
+    color: var(--color-muted);
+    font-size: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .hub-copy {
+    padding: 1.25rem;
+  }
+
+  .hub-copy h2 {
+    margin: 0 0 0.5rem;
+    color: var(--color-link);
+    font-size: 1.35rem;
+  }
+
+  .hub-copy p {
+    margin: 0;
+  }
+</style>
