@@ -7,9 +7,9 @@ status: thriving
 species: Phalaenopsis
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/phal-mccartney/hero.jpeg?v=6218e3692367
-currentImage: /images/plants/phal-mccartney/current.jpg?v=61eec75ba998
+currentImage: /images/plants/phal-mccartney/current.jpg?v=e78bc6423c2d
 indexImage: /images/plants/phal-mccartney/index.jpeg?v=6218e3692367
 tags:
 - orchid
@@ -370,3 +370,19 @@ She continues to look good after the 8/9 repot—leaves are firm and healthy, an
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Phal McCartney — 2026-08-30 — Weekly Update](/images/plants/phal-mccartney/photo-32.jpg?v=e78bc6423c2d)
+
+### Observations
+
+REQUIRED: She continues to look excellent three weeks after the repot—leaves are firm and dark green, the crown looks healthy, and the exposed roots remain plump and stable. The repot appears to have gone very smoothly.
+
+### Care
+
+watered

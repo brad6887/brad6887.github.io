@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-08-02
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/rocky-raccoon/hero.jpg?v=0b14ca9608f4
-currentImage: /images/plants/rocky-raccoon/current.jpg?v=fdad5675694c
+currentImage: /images/plants/rocky-raccoon/current.jpg?v=f2d1608d6715
 tags:
 - orchid
 - orchid-rescue
@@ -140,3 +140,19 @@ Rocky continues to look stable; the leaves are still floppy from his rough start
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Rocky Raccoon — 2026-08-30 — Weekly Update](/images/plants/rocky-raccoon/photo-06.jpg?v=f2d1608d6715)
+
+### Observations
+
+REQUIRED: Rocky is still very much in recovery mode, with those original leaves remaining floppy, but they’re staying green and the crown looks solid. About a month into the rescue, he continues to hold steady while we wait for that first clear sign of new growth.
+
+### Care
+
+watered

@@ -8,9 +8,9 @@ species: Cattleya
 acquired: 2026-02-01
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/mother-natures-son/hero.jpg?v=2b4b7b45c930
-currentImage: /images/plants/mother-natures-son/current.jpg?v=fc0650dafe59
+currentImage: /images/plants/mother-natures-son/current.jpg?v=901f57936f9c
 tags:
 - orchid
 - orchid-rescue
@@ -484,3 +484,19 @@ The newer growth remains firm and healthy, and that white root with the green ti
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Mother Nature's Son — 2026-08-30 — Weekly Update](/images/plants/mother-natures-son/photo-39.jpg?v=901f57936f9c)
+
+### Observations
+
+REQUIRED: That newest upright growth has made very noticeable progress since the 8/23 photo—it’s elongating quickly and looks plump and healthy, while the established leaves remain firm.
+
+### Care
+
+watered

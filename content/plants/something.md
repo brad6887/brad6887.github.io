@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-01-05
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/something/hero.jpeg?v=8a840aa1950c
-currentImage: /images/plants/something/current.jpg?v=d7956dc9e8d1
+currentImage: /images/plants/something/current.jpg?v=167cb27b94be
 indexImage: /images/plants/something/index.jpg?v=bc9cc8a0ca97
 tags:
 - orchid
@@ -347,3 +347,19 @@ Something continues to look good. That new root is really taking off with a brig
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Something — 2026-08-30 — Weekly Update](/images/plants/something/photo-26.jpg?v=167cb27b94be)
+
+### Observations
+
+REQUIRED: The newest leaves are firm and healthy, and that prominent root is still actively growing with a bright green tip; the older lower leaf continues its gradual decline, but nothing about it is concerning given all the active growth./do
+
+### Care
+
+watered

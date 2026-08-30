@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/martha-my-dear/current.jpg",
-        "sha256": "b415c6d1ac6c6eec5f4b716225a5ca2a0ca75dafcda9ceb1827ca6672379e902",
+        "sha256": "d43012d8c727e74ad7e57848f075ed758da6c5fede61af36a281ee8333c01804",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-23.jpg",
-        "sha256": "013ce01d74ce294eff57ee2ac95db8adca23bd281e90685f89a02dea01fa3343"
+        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-30.jpg",
+        "sha256": "e96d332d6f955aebb076e2979b5df08e773da4b5767f9c286516a524192e800e"
       },
       "tools": {
         "exiftool": "12.76",
@@ -425,6 +425,40 @@
         "canonical_original_preserved": true,
         "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-23.jpg",
         "sha256": "013ce01d74ce294eff57ee2ac95db8adca23bd281e90685f89a02dea01fa3343"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/martha-my-dear/photo-11.jpg",
+        "sha256": "d43012d8c727e74ad7e57848f075ed758da6c5fede61af36a281ee8333c01804",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-11",
+        "source_filename": "martha-my-dear-2026-08-30.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/martha-my-dear/photos/martha-my-dear-2026-08-30.jpg",
+        "sha256": "e96d332d6f955aebb076e2979b5df08e773da4b5767f9c286516a524192e800e"
       },
       "tools": {
         "exiftool": "12.76",

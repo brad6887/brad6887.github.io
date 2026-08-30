@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2019-01-01
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/revolution/hero.jpeg?v=88f85ce77b4b
-currentImage: /images/plants/revolution/current.jpg?v=2abc2c2018cd
+currentImage: /images/plants/revolution/current.jpg?v=5efd9bdf5136
 indexImage: /images/plants/revolution/index.jpg?v=26f5800eeca1
 tags:
 - orchid
@@ -446,3 +446,19 @@ Revolution continues to look good, with the new leaf growing strongly and the ma
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Revolution — 2026-08-30 — Weekly Update](/images/plants/revolution/photo-32.jpg?v=5efd9bdf5136)
+
+### Observations
+
+REQUIRED: Revolution is looking strong after her June repot, with the newest leaf now broad, glossy, and nearly caught up to the older growth. She’s settled into the fresh medium well and is clearly back in active growth mode, building strength for whatever comes next.
+
+### Care
+
+watered

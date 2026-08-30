@@ -8,9 +8,9 @@ species: Phalaenopsis
 acquired: 2026-06-14
 featured: true
 draft: false
-updatedDate: 2026-08-23
+updatedDate: 2026-08-30
 heroImage: /images/plants/honey-pie/hero.jpeg?v=4a892a826853
-currentImage: /images/plants/honey-pie/current.jpg?v=eca2b7dff3f5
+currentImage: /images/plants/honey-pie/current.jpg?v=1c4c2d8ef6a8
 tags:
 - orchid
 - phalaenopsis
@@ -304,3 +304,19 @@ She's still looking healthy underneath, with firm green foliage and substantial 
 ### Care
 
 Watered.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Honey Pie — 2026-08-30 — Weekly Update](/images/plants/honey-pie/photo-18.jpg?v=1c4c2d8ef6a8)
+
+### Observations
+
+REQUIRED: She still looks very healthy vegetatively: the leaves are firm and green, and the exposed roots remain substantial. The bloom cycle is now clearly in its final stretch, with only a handful of flowers remaining, but the flower spike itself is still green—so I'd continue leaving it alone and see what Honey Pie does with it once the last blooms drop.
+
+### Care
+
+watered

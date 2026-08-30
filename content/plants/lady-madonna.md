@@ -7,9 +7,9 @@ status: thriving
 species: Phalaenopsis
 featured: true
 draft: false
-updatedDate: 2026-08-28
+updatedDate: 2026-08-30
 heroImage: /images/plants/lady-madonna/hero.jpeg?v=a5680896b47c
-currentImage: /images/plants/lady-madonna/current.jpg?v=4a915c07b894
+currentImage: /images/plants/lady-madonna/current.jpg?v=ef779d1f5d1c
 tags:
 - orchid
 - orchid-rescue
@@ -479,3 +479,19 @@ Watered.
 ### Observations
 
 Lady Madonna had a nice surprise this week: a new flower spike, first noticed on 8/28 and already visible in the 8/23 photo. After spending the summer recovering from the move, she appears ready to bloom again. Her roots remain strong, the foliage is stable, and the new spike is developing cleanly from a leaf axil. For now, care will stay the same while we let the spike gain some length before staking.
+
+---
+
+## 2026-08-30 — Weekly Update
+
+### Photos
+
+![Lady Madonna — 2026-08-30 — Weekly Update](/images/plants/lady-madonna/photo-26.jpg?v=ef779d1f5d1c)
+
+### Observations
+
+REQUIRED: Lady Madonna’s new flower spike is already showing noticeable growth just two days after it was first documented. The spike remains healthy, upright, and actively extending as she heads into another bloom cycle.
+
+### Care
+
+watered

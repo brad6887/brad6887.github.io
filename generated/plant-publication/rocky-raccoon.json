@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/rocky-raccoon/current.jpg",
-        "sha256": "fdad5675694c736df4b8b9beee4b242a5295bdf5237fc4c33cf647ce2cc7c40d",
+        "sha256": "f2d1608d671516b71cf88cc8a9adc499878b587e92a89d8a5ae592f1ae8dfc4b",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/rocky-raccoon/photos/rocky-raccoon-2026-08-23.jpg",
-        "sha256": "5b81a295e9ce74288d8e9bef4073c15e150771569cd08fd242637955f9a421cb"
+        "path": "working/plants/rocky-raccoon/photos/rocky-raccoon-2026-08-30.jpg",
+        "sha256": "09852e9f4ddb6585f3f6750a83b4d80d9a92d2b9aa5d027468cacc6817601da9"
       },
       "tools": {
         "exiftool": "12.76",
@@ -221,6 +221,40 @@
         "canonical_original_preserved": true,
         "path": "working/plants/rocky-raccoon/photos/rocky-raccoon-2026-08-23.jpg",
         "sha256": "5b81a295e9ce74288d8e9bef4073c15e150771569cd08fd242637955f9a421cb"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/rocky-raccoon/photo-06.jpg",
+        "sha256": "f2d1608d671516b71cf88cc8a9adc499878b587e92a89d8a5ae592f1ae8dfc4b",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-06",
+        "source_filename": "rocky-raccoon-2026-08-30.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/rocky-raccoon/photos/rocky-raccoon-2026-08-30.jpg",
+        "sha256": "09852e9f4ddb6585f3f6750a83b4d80d9a92d2b9aa5d027468cacc6817601da9"
       },
       "tools": {
         "exiftool": "12.76",

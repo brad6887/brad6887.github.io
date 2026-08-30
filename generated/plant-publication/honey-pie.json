@@ -39,7 +39,7 @@
         "format": "jpg",
         "height": 2400,
         "path": "site/public/images/plants/honey-pie/current.jpg",
-        "sha256": "eca2b7dff3f589c1da41fa69650d0039de167d73ec54410cc55f4666590ae990",
+        "sha256": "1c4c2d8ef6a8550b2f24fd1ef7c8bed826e5df29805cd095063851dbbf5678b6",
         "width": 1800
       },
       "publication": {
@@ -49,8 +49,8 @@
       },
       "source": {
         "canonical_original_preserved": true,
-        "path": "working/plants/honey-pie/photos/honey-pie-2026-08-23.jpg",
-        "sha256": "6ceb94bc7ff2b4acb572cd99510dce67438e516ac4430a4bd5efab0184adabc5"
+        "path": "working/plants/honey-pie/photos/honey-pie-2026-08-30.jpg",
+        "sha256": "b50e60c4547c78da38814a8db2a2b8e193ddcf5e0be5a85e885b3bf6da102247"
       },
       "tools": {
         "exiftool": "12.76",
@@ -629,6 +629,40 @@
         "canonical_original_preserved": true,
         "path": "working/plants/honey-pie/photos/honey-pie-2026-08-23.jpg",
         "sha256": "6ceb94bc7ff2b4acb572cd99510dce67438e516ac4430a4bd5efab0184adabc5"
+      },
+      "tools": {
+        "exiftool": "12.76",
+        "imagemagick": "Version: ImageMagick 6.9.12-98 Q16 x86_64 18038 https://legacy.imagemagick.org"
+      },
+      "transformation": {
+        "auto_orient": true,
+        "colorspace": "sRGB",
+        "maximum_edge": 2400,
+        "metadata_removed": true,
+        "quality": 85
+      },
+      "validation": {
+        "private_metadata_detected": false,
+        "source_hash_unchanged": true
+      }
+    },
+    {
+      "derivative": {
+        "format": "jpg",
+        "height": 2400,
+        "path": "site/public/images/plants/honey-pie/photo-18.jpg",
+        "sha256": "1c4c2d8ef6a8550b2f24fd1ef7c8bed826e5df29805cd095063851dbbf5678b6",
+        "width": 1800
+      },
+      "publication": {
+        "name": "photo-18",
+        "source_filename": "honey-pie-2026-08-30.jpg",
+        "type": "history"
+      },
+      "source": {
+        "canonical_original_preserved": true,
+        "path": "working/plants/honey-pie/photos/honey-pie-2026-08-30.jpg",
+        "sha256": "b50e60c4547c78da38814a8db2a2b8e193ddcf5e0be5a85e885b3bf6da102247"
       },
       "tools": {
         "exiftool": "12.76",
