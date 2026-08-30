@@ -31,7 +31,8 @@ leaving the deferred orchid chronology, narrative, and photo-header work alone.
 - Use the approved network diagram as a temporary Abbey Root tile visual,
   preserving a source asset without implying technical accuracy or adding clues.
 - Validate the build, routes, links, responsive behavior, and working-tree scope.
-- Capture Session 2 through Abbey tooling. Do not commit, push, or publish.
+- Capture Session 2 through Abbey tooling. Commit, push, and publish only
+  after explicit approval.
 
 ## Summary
 
@@ -40,8 +41,10 @@ The homepage centers on Plants, Bread Pitt, Museum of Dumb Ideas, and Abbey
 Root in the approved order. Plants links to a new landing page, while Bread
 Pitt and Abbey Root link to their separate canonical sites.
 
-The implementation is validated and uncommitted on ubuntu-dev01. The live
-site has not changed.
+The implementation was validated on ubuntu-dev01 and published to
+[BradCooke.com](https://bradcooke.com/) after Brad explicitly approved
+publication on 2026-08-30. The publication record below supersedes the earlier
+uncommitted-preview state.
 
 ## Accomplishments
 
@@ -132,6 +135,10 @@ manifests, or orchid templates changed.
 
 ## Validation
 
+The implementation and placeholder checks below record the pre-publication
+state. The later authorized commit, push, deployment, and live checks are
+recorded under Publication.
+
 - Confirmed hostname `ubuntu-dev01`, user `bcooke`, the authoritative
   repository path, a clean starting working tree on `main`, and remote
   `git@github.com:brad6887/brad6887.github.io.git`.
@@ -217,10 +224,48 @@ Astro's configured redirects generate a small HTML meta-refresh page for a
 static build. This is appropriate for the current GitHub Pages deployment;
 it is not a server-issued HTTP 301 in the deployed static artifact.
 
+## Publication
+
+Brad approved the preview and explicitly requested publication on 2026-08-30.
+All repository work remained on ubuntu-dev01 in
+`/home/bcooke/git/brad6887.github.io`.
+
+- Reconfirmed the approved 16-file working tree and unchanged remote baseline.
+  Re-ran `abbey session`, `abbey review`, the publish dry run, the 579 internal
+  link/image checks, protected-content checks, and staged whitespace checks.
+- Committed the approved redesign as
+  `ece9f035f011abb0970d70dbae8277c05c1a463b`
+  (`Redesign BradCooke.com as a personal hub`).
+- Published with `abbey site publish`, using the configured `origin:main`
+  GitHub Pages target. Its fresh build generated 179 pages and passed all
+  eight required-route checks before the push.
+- The project-owned [GitHub Pages workflow run 33332321011](https://github.com/brad6887/brad6887.github.io/actions/runs/33332321011)
+  built and deployed that exact commit successfully. Deployment completed
+  at 2026-08-30 14:59:13 CDT (19:59:13 UTC).
+- Verified the live homepage's approved introduction, four destinations,
+  four images, stylesheets, and explicit placeholder alt text. The served
+  WebP was exactly 42,766 bytes and matched the local SHA-256:
+  `8e5511aa0922a83bc356c18342aec8ef1e19afd16874bec9e15c3e855d19a5c5`.
+- All 20 unique required/Orchid Rescue routes returned HTTP 200, including
+  all 13 baseline orchid routes. The live Projects redirect artifact,
+  Plants link to Orchid Rescue, and approved About copy also passed.
+- No technical-accuracy claims or Clydeverse/Cooke Holdings additions were
+  introduced. The diagram remains an explicitly temporary placeholder.
+- `abbey end` confirmed a clean, synchronized repository, committed session
+  documentation, and no Abbey Doctor failures. Full session certification
+  remains incomplete only because of pre-existing missing/stale generated
+  backlog statistics. This unrelated housekeeping issue was left unchanged.
+- The successful hosted workflow reported Node.js runtime-deprecation
+  annotations for existing Pages actions. These were non-blocking; no
+  workflow or dependency changes were made during publication.
+
+This publication record is a documentation-only follow-up; it does not
+change the deployed website source. No public journal entry was requested.
+
 ## Next Steps
 
-- Review the uncommitted Session 2 changes on ubuntu-dev01.
-- Commit and publish only when explicitly requested.
+- Handle the pre-existing backlog-statistics/certification issue through a
+  separate Abbey housekeeping review.
 - Replace the temporary Abbey Root visual with an accurate lab diagram in a
   later session. That future visual could support subtle Easter eggs, but no
   Clydeverse/Cooke Holdings additions are included in this continuation.
@@ -252,6 +297,7 @@ left unchanged. No repository test script is defined; validation used the
 existing build, Abbey checks, artifact checks, and browser review.
 
 The update retains Abbey's `status: pending` and `reviewed: false` defaults
-for the subsequent planning review. No public journal entry or post-commit
-certification was created. All site and capture changes are confined to the
+for the subsequent planning review. No public journal entry was created.
+Post-commit certification was attempted; its existing blocker is recorded
+under Publication. All site and capture changes are confined to the
 authoritative ubuntu-dev01 repository.
